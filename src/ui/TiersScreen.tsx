@@ -17,7 +17,7 @@ export function TiersScreen() {
   return (
     <div className="screen">
       <header className="topbar">
-        <button className="btn btn--ghost btn--icon" onClick={goHome} aria-label="Takaisin">
+        <button type="button" className="btn btn--ghost btn--icon" onClick={goHome} aria-label="Takaisin">
           ←
         </button>
         <h2 className="topbar__title">
@@ -61,6 +61,7 @@ export function TiersScreen() {
               <span className="card__status">
                 {playable && (
                   <button
+                    type="button"
                     className="btn btn--primary"
                     onClick={() => startRound({ ikaluokka: selectedIkaluokka, vaikeustaso: tier })}
                   >

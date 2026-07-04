@@ -22,9 +22,9 @@ import type {
   Vaikeustaso,
 } from '../domain/types';
 
-export type View = 'home' | 'tiers' | 'round' | 'result' | 'settings';
+type View = 'home' | 'tiers' | 'round' | 'result' | 'settings';
 
-export interface PresentedQuestion {
+interface PresentedQuestion {
   question: Question;
   /** Näyttöpaikka → alkuperäinen vaihtoehtoindeksi (vaihtoehdot sekoitetaan). */
   optionOrder: number[];
@@ -40,7 +40,7 @@ interface RoundState {
   chosenDisplayIndex: number | null;
 }
 
-export interface RoundOutcome {
+interface RoundOutcome {
   result: RoundResult;
   newlyUnlocked: Vaikeustaso | null;
   newAchievements: AchievementDef[];

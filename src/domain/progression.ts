@@ -12,7 +12,7 @@ import type {
   Vaikeustaso,
 } from './types';
 
-export const DEFAULT_SETTINGS: Settings = {
+const DEFAULT_SETTINGS: Settings = {
   soundEnabled: true,
   animationsEnabled: true,
 };
@@ -60,7 +60,7 @@ export function highestUnlockedTier(ageGroup: AgeGroupState): Vaikeustaso {
 }
 
 /** Palauttaa uuden save-tilan, jossa ikäluokka on varmasti alustettu. */
-export function ensureAgeGroup(save: SaveData, ik: Ikaluokka): SaveData {
+function ensureAgeGroup(save: SaveData, ik: Ikaluokka): SaveData {
   if (save.ageGroups[ik]) return save;
   return {
     ...save,
@@ -68,7 +68,7 @@ export function ensureAgeGroup(save: SaveData, ik: Ikaluokka): SaveData {
   };
 }
 
-export interface ApplyRoundOutcome {
+interface ApplyRoundOutcome {
   save: SaveData;
   /** Tässä kierroksessa avautunut uusi vaikeustaso, jos avautui. */
   newlyUnlocked: Vaikeustaso | null;

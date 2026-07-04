@@ -3,7 +3,7 @@
 
 import type { Aihealue, Ikaluokka, Vaikeustaso } from './types';
 
-export interface IkaluokkaInfo {
+interface IkaluokkaInfo {
   koodi: Ikaluokka;
   nimi: string;
   ikakuvaus: string;
@@ -32,7 +32,7 @@ export const VAIKEUSTASO_NIMI: Record<Vaikeustaso, string> = {
   mestari: 'Mestari',
 };
 
-export const AIHEALUE_NIMI: Record<Aihealue, string> = {
+const AIHEALUE_NIMI: Record<Aihealue, string> = {
   perusteet: 'Perusteet ja sanasto',
   kentta: 'Kenttä ja pesät',
   roolit: 'Pelipaikat ja roolit',

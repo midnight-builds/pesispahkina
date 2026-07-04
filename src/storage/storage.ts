@@ -4,7 +4,7 @@
 import { createEmptySave } from '../domain/progression';
 import type { SaveData, Settings } from '../domain/types';
 
-export const STORAGE_KEY = 'pesispahkina.save.v1';
+const STORAGE_KEY = 'pesispahkina.save.v1';
 
 function isValidSave(value: unknown): value is SaveData {
   if (typeof value !== 'object' || value === null) return false;
