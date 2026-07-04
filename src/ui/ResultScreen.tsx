@@ -11,7 +11,6 @@ export function ResultScreen() {
   const comment = useMemo(() => {
     if (!outcome) return '';
     return pickComment(`tulos-${outcome.result.stars}` as CommentSituation);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [outcome]);
 
   if (!outcome) return null;

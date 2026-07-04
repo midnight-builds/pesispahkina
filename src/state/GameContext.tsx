@@ -234,7 +234,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
       updateSettings,
       doResetProgress,
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [save, view, selectedIkaluokka, round, outcome]);
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
