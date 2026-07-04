@@ -14,7 +14,7 @@ import type {
   Tulos,
 } from './types';
 
-export type Rng = () => number;
+type Rng = () => number;
 
 function shuffle<T>(arr: readonly T[], rng: Rng): T[] {
   const a = [...arr];

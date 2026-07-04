@@ -26,6 +26,7 @@ export function HomeScreen() {
           return (
             <button
               key={info.koodi}
+              type="button"
               className="card card--age"
               onClick={() => openTiers(info.koodi)}
             >
@@ -58,7 +59,7 @@ export function HomeScreen() {
           <span className="stat__value">{save.achievements.length}</span>
           <span className="stat__label">saavutusta</span>
         </div>
-        <button className="btn btn--ghost" onClick={openSettings}>
+        <button type="button" className="btn btn--ghost" onClick={openSettings}>
           ⚙ Asetukset
         </button>
       </footer>

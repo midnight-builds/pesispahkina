@@ -66,6 +66,7 @@ export function ResultScreen() {
         <div className="result__actions">
           {newlyUnlocked && (
             <button
+              type="button"
               className="btn btn--primary btn--wide"
               onClick={() => startRound({ ikaluokka, vaikeustaso: nextTier(vaikeustaso)! })}
             >
@@ -73,12 +74,13 @@ export function ResultScreen() {
             </button>
           )}
           <button
+            type="button"
             className="btn btn--secondary btn--wide"
             onClick={() => startRound({ ikaluokka, vaikeustaso })}
           >
             Pelaa uudelleen
           </button>
-          <button className="btn btn--ghost btn--wide" onClick={goHome}>
+          <button type="button" className="btn btn--ghost btn--wide" onClick={goHome}>
             Takaisin alkuun
           </button>
         </div>

@@ -9,7 +9,7 @@ const ikaluokkaValues = IKALUOKAT.map((i) => i.koodi) as [Ikaluokka, ...Ikaluokk
 const vaikeustasoValues = VAIKEUSTASOT as [Vaikeustaso, ...Vaikeustaso[]];
 const aihealueValues = AIHEALUEET as [Aihealue, ...Aihealue[]];
 
-export const questionSchema = z
+const questionSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/, 'id: vain pienet kirjaimet, numerot ja väliviivat'),
     concept: z.string().min(1),
@@ -27,10 +27,10 @@ export const questionSchema = z
     path: ['oikeaIndeksi'],
   });
 
-export const questionsSchema = z.array(questionSchema);
+const questionsSchema = z.array(questionSchema);
 
 /** Normalisoi kysymystekstin lähes-duplikaattien vertailua varten. */
-export function normalizeText(text: string): string {
+function normalizeText(text: string): string {
   return text
     .toLowerCase()
     .normalize('NFKD')
@@ -39,7 +39,7 @@ export function normalizeText(text: string): string {
     .trim();
 }
 
-export interface ContentIssue {
+interface ContentIssue {
   kind: 'duplicate-id' | 'near-duplicate-text';
   message: string;
 }
@@ -76,9 +76,9 @@ export function findContentIssues(questions: readonly Question[]): ContentIssue[
 }
 
 /** Enintään montako sanamuotovarianttia samasta conceptista sallitaan per lokero. */
-export const CONCEPT_VARIANTTI_RAJA = 3;
+const CONCEPT_VARIANTTI_RAJA = 3;
 
-export interface ConceptWarning {
+interface ConceptWarning {
   message: string;
 }
 

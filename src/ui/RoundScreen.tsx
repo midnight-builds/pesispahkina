@@ -33,7 +33,7 @@ export function RoundScreen() {
   return (
     <div className="screen">
       <header className="topbar">
-        <button className="btn btn--ghost btn--icon" onClick={goHome} aria-label="Keskeytä">
+        <button type="button" className="btn btn--ghost btn--icon" onClick={goHome} aria-label="Keskeytä">
           ✕
         </button>
         <div className="round-meta">
@@ -71,6 +71,7 @@ export function RoundScreen() {
           return (
             <button
               key={displayIndex}
+              type="button"
               className={cls}
               disabled={revealed}
               onClick={() => chooseAnswer(displayIndex)}
@@ -85,7 +86,7 @@ export function RoundScreen() {
         <div className={'reveal' + (lastAnswer.correct ? ' reveal--ok' : ' reveal--no')}>
           <p className="reveal__headline">{comment}</p>
           <p className="reveal__explanation">{q.selitys}</p>
-          <button className="btn btn--primary btn--wide" onClick={advance}>
+          <button type="button" className="btn btn--primary btn--wide" onClick={advance}>
             {isLast ? 'Näytä tulokset' : 'Jatka'}
           </button>
         </div>

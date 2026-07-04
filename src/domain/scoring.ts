@@ -8,7 +8,7 @@ import {
   PUTKIBONUS_ALKAA,
 } from './config';
 
-export interface ScoreStep {
+interface ScoreStep {
   /** Putken pituus tämän vastauksen jälkeen. */
   streakAfter: number;
   /** Tästä vastauksesta ansaitut pisteet. */

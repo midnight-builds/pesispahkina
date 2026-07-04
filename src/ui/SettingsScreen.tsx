@@ -10,7 +10,7 @@ export function SettingsScreen() {
   return (
     <div className="screen">
       <header className="topbar">
-        <button className="btn btn--ghost btn--icon" onClick={goHome} aria-label="Takaisin">
+        <button type="button" className="btn btn--ghost btn--icon" onClick={goHome} aria-label="Takaisin">
           ←
         </button>
         <h2 className="topbar__title">Asetukset</h2>
@@ -58,7 +58,7 @@ export function SettingsScreen() {
       <div className="danger">
         <p className="section-label">Etenemisen nollaus</p>
         {!confirming ? (
-          <button className="btn btn--danger btn--wide" onClick={() => setConfirming(true)}>
+          <button type="button" className="btn btn--danger btn--wide" onClick={() => setConfirming(true)}>
             Nollaa kaikki edistyminen
           </button>
         ) : (
@@ -66,6 +66,7 @@ export function SettingsScreen() {
             <p>Tämä poistaa kaikki pisteet, tasot ja saavutukset. Asetukset säilyvät. Tätä ei voi perua.</p>
             <div className="danger__buttons">
               <button
+                type="button"
                 className="btn btn--danger"
                 onClick={() => {
                   doResetProgress();
@@ -73,7 +74,7 @@ export function SettingsScreen() {
               >
                 Kyllä, nollaa
               </button>
-              <button className="btn btn--ghost" onClick={() => setConfirming(false)}>
+              <button type="button" className="btn btn--ghost" onClick={() => setConfirming(false)}>
                 Peruuta
               </button>
             </div>
