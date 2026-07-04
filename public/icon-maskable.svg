@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="PesäPähkinä">
+  <defs>
+    <linearGradient id="bgm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12a061"/>
+      <stop offset="1" stop-color="#0b6b41"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bgm)"/>
+  <!-- pidä sisältö turva-alueella (keskellä ~80%) maskable-leikkausta varten -->
+  <circle cx="256" cy="236" r="88" fill="#ffffff"/>
+  <path d="M201 194 q55 42 0 84" fill="none" stroke="#e23b3b" stroke-width="9" stroke-linecap="round"/>
+  <path d="M311 194 q-55 42 0 84" fill="none" stroke="#e23b3b" stroke-width="9" stroke-linecap="round"/>
+</svg>
