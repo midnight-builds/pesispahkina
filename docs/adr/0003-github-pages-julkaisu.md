@@ -2,8 +2,9 @@
 
 ## Päätös
 
-PesäPähkinä julkaistaan staattisena sivuna **GitHub Pagesiin** midnightbuilds-
-organisaation projektisivuna: `https://midnightbuilds.github.io/pesispahkina/`.
+PesäPähkinä julkaistaan staattisena sivuna **GitHub Pagesiin** midnight-builds-
+organisaation projektisivuna: `https://midnight-builds.github.io/pesispahkina/`.
+Repo: `git@github.com:midnight-builds/pesispahkina.git`.
 
 Seuraukset:
 - **Ei URL-reititintä.** Näkymät (koti, kierros, tulos, asetukset) hoidetaan

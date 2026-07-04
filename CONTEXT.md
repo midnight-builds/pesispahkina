@@ -30,6 +30,18 @@ Kysymys, jonka pelaajan viimeisin vastaus meni väärin. Nostetaan
 todennäköisemmin takaisin tuleviin kierroksiin. Ks. [[0001-kevyt-kertausmekaniikka]].
 _Avoid_: virhe, väärä kysymys
 
+**Concept** (sääntökohta):
+Lyhyt slug siitä, mitä yksittäistä sääntökohtaa kysymys testaa (esim.
+`kolme-paloa-vuoronvaihto`). Sama concept saa esiintyä usealla eri sanamuodolla,
+mutta rajatusti. Käytetään samankaltaisuuden hallintaan.
+Ks. [[0004-datavetoinen-sisalto-agenttilaajennukselle]].
+_Avoid_: aihe (se on Aihealue), tagi
+
+**Pelimuoto**:
+Tapa pelata (v1: yksi tietovisakierros). Kierroslogiikka on ohuen pelimuoto-
+sauman takana, jotta muita muotoja voi lisätä myöhemmin.
+_Avoid_: mode, peli
+
 **Aihealue**:
 Kysymyksen sisältöluokka. Yksi per kysymys. Laajennettava lista; nykyiset arvot:
 `perusteet` (Perusteet ja sanasto), `kentta` (Kenttä ja pesät), `roolit`
