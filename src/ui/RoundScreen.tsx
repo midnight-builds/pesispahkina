@@ -76,7 +76,10 @@ export function RoundScreen() {
               disabled={revealed}
               onClick={() => chooseAnswer(displayIndex)}
             >
-              {q.vaihtoehdot[originalIndex]}
+              <span className="option__key" aria-hidden>
+                {String.fromCharCode(65 + displayIndex)}
+              </span>
+              <span>{q.vaihtoehdot[originalIndex]}</span>
             </button>
           );
         })}
