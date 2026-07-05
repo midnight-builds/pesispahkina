@@ -2,6 +2,9 @@ import { useGame } from '../state/GameContext';
 import { IKALUOKAT, VAIKEUSTASO_NIMI } from '../domain/config';
 import { highestUnlockedTier } from '../domain/progression';
 import { Stars } from './Stars';
+import { PixelSprite } from './pixel';
+import { BATTER, BALL } from './sprites';
+import { RulesInfoButton } from './RulesInfoButton';
 
 export function HomeScreen() {
   const { save, openTiers, openSettings } = useGame();
@@ -9,10 +12,14 @@ export function HomeScreen() {
   return (
     <div className="screen">
       <header className="hero">
+        <div className="hero__scene">
+          <PixelSprite sprite={BALL} scale={4} className="hero__ball" />
+          <PixelSprite sprite={BATTER} scale={5} className="hero__batter" title="Pesäpallon lyöjä" />
+        </div>
         <h1 className="hero__title">
           Pesä<span className="hero__accent">Pähkinä</span>
         </h1>
-        <p className="hero__subtitle">Opi pesäpallon säännöt pelaamalla.</p>
+        <p className="hero__subtitle">Opi pesäpallon säännöt pelaamalla!</p>
       </header>
 
       <p className="section-label">Valitse ikäluokka</p>
@@ -51,17 +58,22 @@ export function HomeScreen() {
       </div>
 
       <footer className="home-footer">
-        <div className="stat">
-          <span className="stat__value">{save.totalPoints}</span>
-          <span className="stat__label">pistettä</span>
+        <div className="home-footer__stats">
+          <div className="stat">
+            <span className="stat__value">{save.totalPoints}</span>
+            <span className="stat__label">pistettä</span>
+          </div>
+          <div className="stat">
+            <span className="stat__value">{save.achievements.length}</span>
+            <span className="stat__label">saavutusta</span>
+          </div>
         </div>
-        <div className="stat">
-          <span className="stat__value">{save.achievements.length}</span>
-          <span className="stat__label">saavutusta</span>
+        <div className="home-footer__actions">
+          <RulesInfoButton />
+          <button type="button" className="btn btn--ghost" onClick={openSettings}>
+            ⚙ Asetukset
+          </button>
         </div>
-        <button type="button" className="btn btn--ghost" onClick={openSettings}>
-          ⚙ Asetukset
-        </button>
       </footer>
     </div>
   );

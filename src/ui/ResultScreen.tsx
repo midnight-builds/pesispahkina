@@ -31,7 +31,7 @@ export function ResultScreen() {
   return (
     <div className="screen screen--center">
       <div className="result">
-        <Stars count={result.stars} className="stars--big" />
+        <Stars count={result.stars} scale={5} />
         <p className="result__headline">{comment}</p>
 
         <div className="result__score">
