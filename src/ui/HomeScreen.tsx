@@ -58,18 +58,22 @@ export function HomeScreen() {
       </div>
 
       <footer className="home-footer">
-        <div className="stat">
-          <span className="stat__value">{save.totalPoints}</span>
-          <span className="stat__label">pistettä</span>
+        <div className="home-footer__stats">
+          <div className="stat">
+            <span className="stat__value">{save.totalPoints}</span>
+            <span className="stat__label">pistettä</span>
+          </div>
+          <div className="stat">
+            <span className="stat__value">{save.achievements.length}</span>
+            <span className="stat__label">saavutusta</span>
+          </div>
         </div>
-        <div className="stat">
-          <span className="stat__value">{save.achievements.length}</span>
-          <span className="stat__label">saavutusta</span>
+        <div className="home-footer__actions">
+          <RulesInfoButton />
+          <button type="button" className="btn btn--ghost" onClick={openSettings}>
+            ⚙ Asetukset
+          </button>
         </div>
-        <RulesInfoButton />
-        <button type="button" className="btn btn--ghost" onClick={openSettings}>
-          ⚙ Asetukset
-        </button>
       </footer>
     </div>
   );

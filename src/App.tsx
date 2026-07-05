@@ -4,7 +4,7 @@ import { TiersScreen } from './ui/TiersScreen';
 import { RoundScreen } from './ui/RoundScreen';
 import { ResultScreen } from './ui/ResultScreen';
 import { SettingsScreen } from './ui/SettingsScreen';
-import { FieldBackdrop } from './ui/FieldBackdrop';
+import { RetroBackdrop } from './ui/RetroBackdrop';
 
 export default function App() {
   const { view } = useGame();
@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="app__frame">
-        <FieldBackdrop />
+        <RetroBackdrop />
         {view === 'home' && <HomeScreen />}
         {view === 'tiers' && <TiersScreen />}
         {view === 'round' && <RoundScreen />}
