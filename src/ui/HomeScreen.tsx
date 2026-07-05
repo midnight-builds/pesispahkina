@@ -17,7 +17,7 @@ export function HomeScreen() {
           <PixelSprite sprite={BATTER} scale={5} className="hero__batter" title="Pesäpallon lyöjä" />
         </div>
         <h1 className="hero__title">
-          Pesä<span className="hero__accent">Pähkinä</span>
+          Pesis<span className="hero__accent">Pähkinä</span>
         </h1>
         <p className="hero__subtitle">Opi pesäpallon säännöt pelaamalla!</p>
       </header>

@@ -1,4 +1,4 @@
-# PesäPähkinä
+# PesisPähkinä
 
 Selainpeli, joka opettaa pesäpallon sääntöjä lapsille ja heidän vanhemmilleen.
 Tämä tiedosto on projektin sanasto (ubiikki kieli) — ei toteutusyksityiskohtia.

@@ -13,7 +13,7 @@ lopun mukaan (pelaaja kuuluu luokkaan sen mukaan, minkä ikäinen on vuoden lopu
 | B      | 17–19 v (tytöt), 17–18 v (pojat) | |
 | A      | 18–21 v (pojat) |                              |
 
-PesäPähkinän ensimmäinen versio kattaa ikäluokat **G, F, E ja D**.
+PesisPähkinän ensimmäinen versio kattaa ikäluokat **G, F, E ja D**.
 
 Kentät ikäluokittain (taustatietoa, ei välttämättä pelissä tarvittavaa):
 - Tenavakenttä: E-tytöt sekä F- ja G-juniorit

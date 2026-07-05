@@ -2,7 +2,7 @@
 
 ## Päätös
 
-PesäPähkinä julkaistaan staattisena sivuna **GitHub Pagesiin** midnight-builds-
+PesisPähkinä julkaistaan staattisena sivuna **GitHub Pagesiin** midnight-builds-
 organisaation projektisivuna: `https://midnight-builds.github.io/pesispahkina/`.
 Repo: `git@github.com:midnight-builds/pesispahkina.git`.
 

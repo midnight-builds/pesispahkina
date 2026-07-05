@@ -33,7 +33,7 @@ export function RulesInfoButton() {
               </button>
             </header>
             <p className="modal__text">
-              PesäPähkinän kysymykset perustuvat Suomen Pesäpalloliiton virallisiin
+              PesisPähkinän kysymykset perustuvat Suomen Pesäpalloliiton virallisiin
               pelisääntöihin ja ikäluokkien erityissääntöihin.
             </p>
             <a

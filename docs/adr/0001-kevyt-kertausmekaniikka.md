@@ -2,7 +2,7 @@
 
 ## Päätös
 
-PesäPähkinä käyttää kevyttä kertausta: väärin mennyt kysymys nostetaan
+PesisPähkinä käyttää kevyttä kertausta: väärin mennyt kysymys nostetaan
 todennäköisemmin takaisin peliin, mutta ilman tiukkaa spaced repetition -takuuta.
 
 Säännöt:
