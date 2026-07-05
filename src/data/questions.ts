@@ -422,7 +422,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'lyominen',
-    kysymys: 'Milloin syöttö on oikea, jos lyöjä ei lyö?',
+    kysymys: 'Milloin syöttö on oikea, jos lyöjä ei lyö? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kun pallo nousee vähintään metrin lukkarin pään yli ja osuu lautaselle',
       'Kun pallo menee suoraan lyöjän ohi',
@@ -438,7 +438,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'roolit',
-    kysymys: 'Mikä on jokeripelaaja?',
+    kysymys: 'Mikä on jokeripelaaja? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Pelaaja, joka voi tulla lyömään viemättä kenenkään lyöntivuoroa',
       'Joukkueen paras lyöjä',
@@ -454,7 +454,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'eteneminen',
-    kysymys: 'Mikä on vapaataival?',
+    kysymys: 'Mikä on vapaataival? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Tuomion mukainen oikeus edetä pesältä toiselle ilman kiinnijäämisen vaaraa',
       'Vapaa-aika ottelun tauolla',
@@ -470,7 +470,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'eteneminen',
-    kysymys: 'Milloin etenijä voi menettää pesäturvansa pesällä ollessaan?',
+    kysymys: 'Milloin etenijä voi menettää pesäturvansa pesällä ollessaan? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kun hän on irti pesästä sillä hetkellä, kun pallo tulee pesällä olevan ulkopelaajan haltuun',
       'Aina vuoronvaihdon jälkeen',
@@ -486,7 +486,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'eteneminen',
-    kysymys: 'Mitä tarkoittaa pesäpallossa estäminen?',
+    kysymys: 'Mitä tarkoittaa pesäpallossa estäminen? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Tekoa, jolla pelaaja häiritsee vastapelaajan aktiivista pelitekoa',
       'Sitä, että pelaaja juoksee väärää reittiä pesälle',
@@ -501,7 +501,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'ottelu',
-    kysymys: 'Milloin ottelussa pelataan kotiutuskilpailu?',
+    kysymys: 'Milloin ottelussa pelataan kotiutuskilpailu? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Jos ottelu on supervuoroparin jälkeen edelleen tasan',
       'Aina heti ensimmäisen jakson jälkeen',
@@ -516,7 +516,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'eteneminen',
-    kysymys: 'Mikä tilanne syntyy, kun etenijöitä on kaikilla kolmella kenttäpesällä ja lyöjälle syötetään?',
+    kysymys: 'Mikä tilanne syntyy, kun etenijöitä on kaikilla kolmella kenttäpesällä ja lyöjälle syötetään? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Ajolähtö eli ajotilanne', 'Kunniajuoksu', 'Pesärikko'],
     oikeaIndeksi: 0,
     selitys:
@@ -528,7 +528,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'ottelu',
-    kysymys: 'Millä tavalla tuomari ilmoittaa vihellyksellään palon?',
+    kysymys: 'Millä tavalla tuomari ilmoittaa vihellyksellään palon? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kahdella puolipitkällä vihellyksellä',
       'Yhdellä pitkällä vihellyksellä',
@@ -672,7 +672,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
-    kysymys: 'Kenen on väistettävä, jos ulkopelaajalla ei ole palloa eikä mahdollisuutta saada sitä haltuunsa?',
+    kysymys: 'Kenen on väistettävä, jos ulkopelaajalla ei ole palloa eikä mahdollisuutta saada sitä haltuunsa? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Ulkopelaajan on väistettävä sisäpelaajaa',
       'Sisäpelaajan on aina väistettävä ulkopelaajaa',
@@ -688,7 +688,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
-    kysymys: 'Montako vaihetta syötön tekninen suoritus sisältää?',
+    kysymys: 'Montako vaihetta syötön tekninen suoritus sisältää? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Neljä: sijoittuminen, alkuasento, syöttöliike ja väistyminen',
       'Kaksi: heitto ja kiinniotto',
@@ -703,7 +703,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
-    kysymys: 'Milloin lukkari saa syöttöoikeuden seuraavalle lyöjälle?',
+    kysymys: 'Milloin lukkari saa syöttöoikeuden seuraavalle lyöjälle? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kun pallo on käynyt kotipesässä, kenttäpesällä ja palannut kotipesässä olevalle ulkopelaajalle',
       'Heti kun edellinen lyöjä on lyönyt',
@@ -719,7 +719,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
-    kysymys: 'Mitä tapahtuu, jos ulkopelaaja on pelialueen rajojen ulkopuolella syöttöhetkellä ja lyöjä lyö?',
+    kysymys: 'Mitä tapahtuu, jos ulkopelaaja on pelialueen rajojen ulkopuolella syöttöhetkellä ja lyöjä lyö? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kärkietenijä (ja tarvittaessa muut) saa vapaataivaloikeuden',
       'Lyönti mitätöidään aina kokonaan',
@@ -735,7 +735,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
-    kysymys: 'Mikä erottaa sallitun taktisen pudotuksen kopista?',
+    kysymys: 'Mikä erottaa sallitun taktisen pudotuksen kopista? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Pallo pudotetaan tahallisesti välittömänä jatkeena kiinniotolle eikä viivytellä',
       'Taktinen pudotus tehdään aina kahdella kädellä',
@@ -751,7 +751,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
-    kysymys: 'Mitä vaihtopakko tarkoittaa ajotilanteessa?',
+    kysymys: 'Mitä vaihtopakko tarkoittaa ajotilanteessa? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Jokaisen etenijän on päästävä turvaan seuraavalle pesälle tai lopulliseen ratkaisuun',
       'Ulkopelaajien on vaihdettava keskenään pelipaikkaa',
@@ -767,7 +767,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
-    kysymys: 'Milloin etenijä häviää pesäkilvan ja palaa?',
+    kysymys: 'Milloin etenijä häviää pesäkilvan ja palaa? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kun hän on irti pesästä, jolla hänellä on turva, ja pallo on seuraavalla pesällä ulkopelaajan hallussa',
       'Kun hän juoksee kärkeä pitkin liian hitaasti',
@@ -783,7 +783,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
-    kysymys: 'Mitä kunniajuoksun tehnyt pelaaja voi yrittää kolmospesältä?',
+    kysymys: 'Mitä kunniajuoksun tehnyt pelaaja voi yrittää kolmospesältä? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Tuplajuoksua heti, kun pallo on käynyt kotipesässä olevan ulkopelaajan hallussa',
       'Hän ei voi enää yrittää mitään',
@@ -799,7 +799,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'roolit',
-    kysymys: 'Montako eri jokeripelaajaa joukkue voi käyttää yhdessä sisävuorossa?',
+    kysymys: 'Montako eri jokeripelaajaa joukkue voi käyttää yhdessä sisävuorossa? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Kolmea eri jokeripelaajaa, kutakin kerran', 'Rajattoman määrän', 'Vain yhtä koko ottelun ajan'],
     oikeaIndeksi: 0,
     selitys: 'Joukkue voi käyttää jokaisessa sisävuorossa kolmea eri jokeripelaajaa, kutakin kerran.',
@@ -811,7 +811,7 @@ export const QUESTIONS: Question[] = [
     vaikeustaso: 'osaaja',
     aihealue: 'ottelu',
     kysymys:
-      'Yksi vuoronvaihdon ehdoista on, että kolme sisäpelaajaa on palanut. Mikä toinen ehto voi myös laukaista vuoronvaihdon?',
+      'Yksi vuoronvaihdon ehdoista on, että kolme sisäpelaajaa on palanut. Mikä toinen ehto voi myös laukaista vuoronvaihdon? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Joukkue ei ole saanut riittävästi juoksuja, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi eikä jokereita ole enää',
       'Ottelu on kestänyt yli tunnin',
@@ -838,7 +838,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
-    kysymys: 'Miksi lyöntiä kutsutaan, jos pallo osuu lyödessä mailaan useammin kuin kerran?',
+    kysymys: 'Miksi lyöntiä kutsutaan, jos pallo osuu lyödessä mailaan useammin kuin kerran? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Kaksoislyönti, joka on laiton', 'Kunnari', 'Näpy'],
     oikeaIndeksi: 0,
     selitys: 'Kaksoislyönti eli pallon osuminen mailaan useammin kuin kerran lyönnin aikana on aina laiton.',
@@ -849,7 +849,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
-    kysymys: 'Milloin syöttö tuomitaan mitättömäksi eikä oikeaksi tai vääräksi?',
+    kysymys: 'Milloin syöttö tuomitaan mitättömäksi eikä oikeaksi tai vääräksi? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Esimerkiksi kun lukkari syöttää ennen kuin syöttötuomari on ilmoittanut tuomionsa edellisestä syötöstä',
       'Aina kun lyöjä ei lyö syöttöä',
@@ -865,7 +865,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
-    kysymys: 'Miten pelaaja ilmaisee ottavansa vapaataipaleen vastaan?',
+    kysymys: 'Miten pelaaja ilmaisee ottavansa vapaataipaleen vastaan? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Lähtemällä välittömästi etenemään', 'Nostamalla kätensä ylös', 'Huutamalla tuomarille'],
     oikeaIndeksi: 0,
     selitys: 'Vapaataivaloikeuden saaneen on otettava se vastaan välittömästi lähtemällä etenemään, muuten oikeus menetetään.',
@@ -1054,7 +1054,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'eteneminen',
-    kysymys: 'Mikä on tuplahaava?',
+    kysymys: 'Mikä on tuplahaava? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Tilanne, jossa kaksi etenijää haavoittuu, kun irti pesältä ollut pelaaja menettää turvan seuraavan saadessa sen',
       'Kaksi perättäistä oikeaa syöttöä',
@@ -1070,7 +1070,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'eteneminen',
-    kysymys: 'Mitä pesäpallossa tarkoittaa "ähky" eli "tukehtuminen"?',
+    kysymys: 'Mitä pesäpallossa tarkoittaa "ähky" eli "tukehtuminen"? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Etenijä ei ehdi palata laittoman lyönnin jälkeen lähtöpesälleen ennen seuraavan etenijän saapumista sinne',
       'Pelaaja väsyy kesken pitkän juoksun',
@@ -1086,7 +1086,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'ottelu',
-    kysymys: 'Mikä näistä EI ole pesäpallon virallinen rangaistuslaji?',
+    kysymys: 'Mikä näistä EI ole pesäpallon virallinen rangaistuslaji? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kaksinkertainen keltainen kortti, joka syntyy kahdesta huomautuksesta',
       'Varoitus (1 rangaistuspiste, keltainen kortti)',
@@ -1102,7 +1102,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'ottelu',
-    kysymys: 'Kenen eduksi epäselvä pesäkilpa tuomitaan, jos tulosta ei voida varmasti havaita?',
+    kysymys: 'Kenen eduksi epäselvä pesäkilpa tuomitaan, jos tulosta ei voida varmasti havaita? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Sisäpelaajan eduksi', 'Ulkopelaajan eduksi', 'Sen joukkueen eduksi, joka on voitolla'],
     oikeaIndeksi: 0,
     selitys: 'Jos pesäkilvan tulosta ei voida varmasti ratkaista, tilanne on tuomittava sisäpelaajan eduksi.',
@@ -1113,7 +1113,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'ottelu',
-    kysymys: 'Miten toimitaan, jos tavoittamaton laillinen läpilyönti on virheellisesti vihelletty laittomaksi?',
+    kysymys: 'Miten toimitaan, jos tavoittamaton laillinen läpilyönti on virheellisesti vihelletty laittomaksi? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Tilanne tuomitaan, kuten se olisi edennyt ilman virheellistä vihellystä',
       'Lyönti mitätöidään aina kokonaan',
@@ -1129,7 +1129,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'ottelu',
-    kysymys: 'Millainen vihellys ilmoittaa laittoman lyönnin?',
+    kysymys: 'Millainen vihellys ilmoittaa laittoman lyönnin? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Vuorottelevat lyhyet ja pitkät vihellykset', 'Yksi pitkä vihellys', 'Kolme puolipitkää vihellystä'],
     oikeaIndeksi: 0,
     selitys: 'Laiton lyönti ilmoitetaan vuorottelevilla lyhyillä ja pitkillä vihellyksillä.',
@@ -1140,7 +1140,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'ottelu',
-    kysymys: 'Mitä tapahtuu, jos kotiutuskilpailussa lyöjä tai etenijä on väärä eli ei ole vuorossa oleva pari?',
+    kysymys: 'Mitä tapahtuu, jos kotiutuskilpailussa lyöjä tai etenijä on väärä eli ei ole vuorossa oleva pari? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Parin suoritus mitätöidään ja seuraava pari tulee vuoroon', 'Ottelu päättyy tasapeliin', 'Joukkue saa automaattisesti juoksun'],
     oikeaIndeksi: 0,
     selitys: 'Jos lyöjä tai etenijä on kotiutuskilpailussa väärä, koko parin suoritus mitätöidään ja seuraava pari tulee vuoroon.',
@@ -1151,7 +1151,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'eteneminen',
-    kysymys: 'Mikä on yksi mahdollinen rangaistus, kun ulkopelaaja syyllistyy estämiseen?',
+    kysymys: 'Mikä on yksi mahdollinen rangaistus, kun ulkopelaaja syyllistyy estämiseen? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kärkietenijän (tai useamman etenijän) vapaataivaloikeus',
       'Ulkopelaajan automaattinen sulkeminen ottelusta',
@@ -1183,7 +1183,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'ottelu',
-    kysymys: 'Mikä on yksi vuoronvaihdon laukaisevista ehdoista kahden saadun juoksun jälkeen?',
+    kysymys: 'Mikä on yksi vuoronvaihdon laukaisevista ehdoista kahden saadun juoksun jälkeen? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kahden lisäjuoksun puuttuminen, kun viimeinen lyöjä muuttuu lopullisesti etenijäksi eikä jokereita ole enää',
       'Se, että peli on kestänyt yli tunnin',
@@ -1199,7 +1199,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'eteneminen',
-    kysymys: 'Voiko ulkopelaaja polttaa lyöjän ykköspesälle heti kolmannen oikean syötön jälkeen, vaikka lyöjä olisi vielä kotipesässä?',
+    kysymys: 'Voiko ulkopelaaja polttaa lyöjän ykköspesälle heti kolmannen oikean syötön jälkeen, vaikka lyöjä olisi vielä kotipesässä? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
       'Kyllä, koska lyöjä on jo muuttunut lopullisesti etenijäksi eikä ole enää turvassa kotipesässä',
       'Ei koskaan, lyöjä on aina turvassa kotipesässä',
@@ -1215,7 +1215,7 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'mestari',
     aihealue: 'roolit',
-    kysymys: 'Mitä jokeripelaajien on tehtävä ennen kuin vuoron aloittanut sisäpelaaja pääsee samassa vuorossa uudestaan lyöntivuoroon?',
+    kysymys: 'Mitä jokeripelaajien on tehtävä ennen kuin vuoron aloittanut sisäpelaaja pääsee samassa vuorossa uudestaan lyöntivuoroon? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: ['Jokaisen jokeripelaajan on käytävä lyömässä', 'Jokereiden ei tarvitse lyödä ollenkaan', 'Vain yhden jokerin täytyy lyödä'],
     oikeaIndeksi: 0,
     selitys: 'Jokaisen jokeripelaajan on käytävä lyömässä ennen kuin vuoron aloittanut sisäpelaaja tulee samassa vuorossa toistamiseen lyöntivuoroon.',
