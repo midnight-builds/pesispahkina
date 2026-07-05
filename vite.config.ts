@@ -12,8 +12,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icon.svg', 'icon-maskable.svg'],
       manifest: {
-        name: 'PesäPähkinä',
-        short_name: 'PesäPähkinä',
+        name: 'PesisPähkinä',
+        short_name: 'PesisPähkinä',
         description: 'Opi pesäpallon säännöt pelaamalla.',
         lang: 'fi',
         theme_color: '#0f7a4d',

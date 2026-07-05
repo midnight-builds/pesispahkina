@@ -1,4 +1,4 @@
-# PesäPähkinä
+# PesisPähkinä
 
 Mobiili ensin -selainpeli, joka opettaa pesäpallon sääntöjä lapsille ja heidän
 vanhemmilleen. Toimii ilman kirjautumista ja ilman backendiä; eteneminen
