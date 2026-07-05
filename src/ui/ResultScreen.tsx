@@ -6,7 +6,7 @@ import { nextTier } from '../domain/progression';
 import { Stars } from './Stars';
 
 export function ResultScreen() {
-  const { outcome, save, startRound, goHome } = useGame();
+  const { outcome, save, startRound, goHome, poolSize } = useGame();
 
   const comment = useMemo(() => {
     if (!outcome) return '';
@@ -21,6 +21,12 @@ export function ResultScreen() {
   const tierState = save.ageGroups[ikaluokka]?.tiers[vaikeustaso];
   const almost =
     result.success && !newlyUnlocked && tierState?.streak === AVAUTUMISEEN_TARVITAAN - 1;
+
+  // Avautunut taso voi olla vielä sisällötön (esim. osaaja/mestari). Tarjoa
+  // "Seuraava taso" -nappi vain jos siinä on pelattavia kysymyksiä — muuten
+  // nappi olisi kuollut (startRound ei tee mitään tyhjällä poolilla).
+  const nextPlayable =
+    newlyUnlocked !== null && poolSize({ ikaluokka, vaikeustaso: newlyUnlocked }) > 0;
 
   return (
     <div className="screen screen--center">
@@ -46,6 +52,7 @@ export function ResultScreen() {
         {newlyUnlocked && (
           <div className="banner banner--unlock">
             🔓 Uusi taso avautui: <strong>{VAIKEUSTASO_NIMI[newlyUnlocked]}</strong>
+            {!nextPlayable && <span className="banner__note"> — kysymykset tulossa pian!</span>}
           </div>
         )}
 
@@ -64,7 +71,7 @@ export function ResultScreen() {
         )}
 
         <div className="result__actions">
-          {newlyUnlocked && (
+          {newlyUnlocked && nextPlayable && (
             <button
               type="button"
               className="btn btn--primary btn--wide"

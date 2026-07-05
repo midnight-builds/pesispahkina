@@ -436,6 +436,10 @@ button.card:active {
   border: 1px solid rgba(255, 213, 74, 0.4);
   color: var(--gold);
 }
+.banner__note {
+  font-weight: 500;
+  opacity: 0.85;
+}
 
 /* ---------- Achievements ---------- */
 .achievements {

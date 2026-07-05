@@ -1,7 +1,7 @@
 // Pelin keskitetty tila: save-data, näkymä ja käynnissä oleva kierros.
 // Yksi pelimuoto (tietovisakierros) — kierroslogiikka on tämän sauman takana.
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useContext, useMemo, useRef, useState, type ReactNode } from 'react';
 import confetti from 'canvas-confetti';
 import { QUESTIONS } from '../data/questions';
 import { ACHIEVEMENT_BY_ID, evaluateAchievements, type AchievementDef } from '../domain/achievements';
@@ -47,7 +47,7 @@ interface RoundOutcome {
   celebrate: boolean;
 }
 
-interface GameContextValue {
+export interface GameContextValue {
   save: SaveData;
   view: View;
   selectedIkaluokka: Ikaluokka | null;
@@ -89,6 +89,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
   const [selectedIkaluokka, setSelectedIkaluokka] = useState<Ikaluokka | null>(null);
   const [round, setRound] = useState<RoundState | null>(null);
   const [outcome, setOutcome] = useState<RoundOutcome | null>(null);
+  // Vartioi, että kierros viimeistellään täsmälleen kerran. `advance` ajoittaa
+  // finishRoundin setterin sisällä (queueMicrotask), joten sama viimeistely voi
+  // tulla useasti (StrictModen kaksoiskutsu tai nopea tuplaklikkaus). Ilman tätä
+  // pisteet, kierroslaskuri ja tason avautuminen kirjautuisivat kahteen kertaan.
+  const finalizedRef = useRef(false);
 
   function commitSave(next: SaveData) {
     persistSave(next);
@@ -122,6 +127,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     function startRound(lokero: Lokero) {
       const pool = questionsForLokero(QUESTIONS, lokero);
       if (pool.length === 0) return;
+      finalizedRef.current = false;
       const questions = present(buildRound(pool, save.questionResults));
       setSelectedIkaluokka(lokero.ikaluokka);
       setRound({
@@ -165,6 +171,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }
 
     function finishRound(state: RoundState) {
+      if (finalizedRef.current) return;
+      finalizedRef.current = true;
       const result = finalizeRound(state.lokero, state.answers);
       const { save: applied, newlyUnlocked } = applyRoundResult(save, result);
       const earnedIds = evaluateAchievements(applied, result, newlyUnlocked);
