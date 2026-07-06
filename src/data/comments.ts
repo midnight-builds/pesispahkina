@@ -14,7 +14,7 @@ export const COMMENTS: Record<CommentSituation, string[]> = {
   vaarin: [
     'Ei haittaa, tästä opit uuden säännön.',
     'Hyvä yritys — nyt tiedät oikean vastauksen.',
-    'Näin se menee. Jatketaan!',
+    'Meni pieleen — mutta jatketaan!',
     'Virheistä oppii parhaiten.',
   ],
   putki: [
