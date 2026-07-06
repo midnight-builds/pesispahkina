@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useGame } from '../state/GameContext';
 import { VAIKEUSTASO_NIMI } from '../domain/config';
 import { pickComment, type CommentSituation } from '../domain/comments';
+import { QuestionSourceButton } from './QuestionSourceButton';
 
 export function RoundScreen() {
   const { round, chooseAnswer, advance, goHome } = useGame();
@@ -89,6 +90,7 @@ export function RoundScreen() {
         <div className={'reveal' + (lastAnswer.correct ? ' reveal--ok' : ' reveal--no')}>
           <p className="reveal__headline">{comment}</p>
           <p className="reveal__explanation">{q.selitys}</p>
+          <QuestionSourceButton lahde={q.lahde} tarkistettu={q.tarkistettu} />
           <button type="button" className="btn btn--primary btn--wide" onClick={advance}>
             {isLast ? 'Näytä tulokset' : 'Jatka'}
           </button>

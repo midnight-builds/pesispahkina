@@ -459,6 +459,11 @@ button.card:active {
   padding: 8px 10px;
   font-size: 0.8rem;
 }
+.btn--small {
+  min-height: 38px;
+  padding: 8px 12px;
+  font-size: 0.62rem;
+}
 .btn:hover {
   filter: brightness(1.08);
 }

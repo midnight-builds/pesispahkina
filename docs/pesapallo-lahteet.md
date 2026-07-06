@@ -27,7 +27,13 @@ minkään mukaan otetun ikäluokan sääntöversion kanssa.
 - Pelipaikat/ulkopeli: **lukkari, koppari (sieppari), pesävahti, polttaja**
 - Sisäpeli: **lyöjä, etenijä**
 - Pesät: **kotipesä, ykköspesä, kakkospesä, kolmospesä**
-- Jako: **sisäkenttäpeli / ulkokenttäpeli** (EI "lähi-/kaukapelaaja")
+- Pelivuorot: **sisävuoro / ulkovuoro**, **sisäpeli / ulkopeli**,
+  **sisäjoukkue / ulkojoukkue** (EI "lähi-/kaukapelaaja"). Huom: **"sisäkenttä"
+  ei esiinny säännöissä lainkaan** (tarkistettu 2026 pelisäännöistä,
+  pienpesiksestä ja E/F–G-erityissäännöistä 2026-07-05); puhekielessä kuulee
+  joskus sanan "ulkokenttä", mutta sekään ei ole sääntötermi. Kenttä jakautuu
+  sääntöjen 6 §:n mukaan **varsinaiseen pelialueeseen** ja sitä ympäröivään
+  **välialueeseen**.
 - Palot: **palo** (pallo pesällä ennen etenijää), **haava/haavoittuminen**
 - Lyönnit: **kärkilyönti, näpy/näppi, kunnari**
 
