@@ -16,26 +16,47 @@ Tausta: ADR 0005 (`docs/adr/0005-kysymysten-lahdemetadata.md`) ja
 
 ## Prosessi
 
-### 1. Hanki ground truth
+### 1. Tarkista ensin cache — älä hae verkosta turhaan
 
-Lataa viralliset PDF:t sivulta
-https://www.pesis.fi/kilpailu/saannot-maaraykset ja pura tekstiksi:
+Puretut sääntötekstit **säilyvät istuntojen yli** kansiossa
+`.claude/verify/ground-truth/` (EI `/tmp`, joka tyhjenee istuntojen välillä).
+Kansio on `.gitignore`:ssa, koska sisältö on PPL:n tekijänoikeudellista
+sääntötekstiä — **sitä ei koskaan committoida repoon**, mutta se pysyy
+levyllä ja on siksi käytettävissä myös uusissa istunnoissa ilman uutta
+latausta.
+
+Manifest `.claude/verify/ground-truth/LAHTEET.md` listaa mitä on jo
+tallessa: dokumentti, lähde-URL, hakupäivä, sääntövuosi. **Lue tämä
+ensin.**
+
+1. Jos manifestissa oleva dokumentti kattaa tarvitsemasi sääntöversion ja
+   vuoden → käytä olemassa olevaa `.txt`-tiedostoa sellaisenaan. ÄLÄ hae
+   PDF:ää uudelleen.
+2. Jos olet epävarma onko cache ajantasainen, tee **kevyt** tarkistus:
+   hae vain sivun https://www.pesis.fi/kilpailu/saannot-maaraykset listaus
+   (WebFetch riittää tähän, koska ei tarvitse lukea itse PDF:ää) ja vertaa
+   sääntövuotta manifestiin. Älä lataa PDF:ää pelkän vuosivertailun takia.
+3. Hae ja pura PDF uudelleen VAIN jos: (a) tarvittua dokumenttia ei ole
+   cachessa, (b) sivulla on uudempi sääntövuosi kuin manifestissa, tai
+   (c) käyttäjä nimenomaan pyytää tuoreen tarkistuksen.
+
+Kun haet (tai päivität) dokumentin:
 
 ```bash
-mkdir -p /tmp/verify/ground-truth /tmp/verify/reports
+mkdir -p .claude/verify/ground-truth
 # Hae ajantasaiset PDF-linkit sivulta, sitten esim.:
-curl -sL <pelisaannot-url> -o /tmp/verify/pelisaannot.pdf
-pdftotext -layout /tmp/verify/pelisaannot.pdf \
-  /tmp/verify/ground-truth/pesapallon-pelisaannot-<vuosi>.txt
+curl -sL <pelisaannot-url> -o /tmp/pelisaannot.pdf
+pdftotext -layout /tmp/pelisaannot.pdf \
+  .claude/verify/ground-truth/pesapallon-pelisaannot-<vuosi>.txt
 ```
+
+ja **päivitä `LAHTEET.md`** samalla (dokumentti, URL, hakupäivä, vuosi) —
+muuten seuraava istunto ei tiedä että cache on jo tuore.
 
 Tarvittavat dokumentit: **Pesäpallon pelisäännöt**, **Pienpesiksen
 pelisäännöt**, **Erityissäännöt E-pelisarja ja F–G**. `pdftotext` kuuluu
 poppler-utils-pakettiin. HUOM: WebFetch ei osaa lukea näitä PDF:iä suoraan —
-käytä aina pdftotextiä.
-
-**Sääntötekstejä ei commitoida repoon** (PPL:n tekijänoikeus). Ne elävät
-vain /tmp:ssä tarkistuksen ajan.
+käytä aina pdftotextiä itse sääntötekstin purkuun.
 
 ### 2. Jaa kysymykset osiin
 
@@ -48,9 +69,15 @@ Jaa id:t ~10 kysymyksen osiin ja laske kunkin osan rivialue
 
 ### 3. Käynnistä verifiointiagentit rinnakkain
 
-Kirjoita jaettu ohje tiedostoon `/tmp/verify/OHJE.md` (mallipohja alla) ja
-käynnistä yksi ali-agentti per osa. Jokainen agentti saa: osan numeron,
-rivialueen, id-listan ja raporttipolun `/tmp/verify/reports/osa-NN.md`.
+Kirjoita jaettu ohje tiedostoon `/tmp/pesispahkina-verify/ohje.md` (mallipohja
+alla) ja käynnistä yksi ali-agentti per osa. Jokainen agentti saa: osan
+numeron, rivialueen, id-listan ja raporttipolun
+`/tmp/pesispahkina-verify/reports/osa-NN.md`. Nämä ovat kertakäyttöistä
+scratchia — ei ground truth eikä pysyvää dokumentaatiota — joten `/tmp` on
+oikea paikka niille (ks. `docs/agents/session-artifacts.md`). Jos
+työ jää kesken istunnon lopussa, kirjaa tila `.claude/handoff-verifiointi.md`:ään
+(tiivistelmänä, ei kopioimalla raakaraportteja) — älä jätä osa-NN.md-
+raportteja lojumaan repoon "seuraavaa istuntoa varten".
 
 **Tärkeät säännöt agenteille:**
 - Ali-agentit EIVÄT muokkaa `questions.ts`:ää — rinnakkaiset editoinnit
