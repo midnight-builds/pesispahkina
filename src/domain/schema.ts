@@ -9,6 +9,12 @@ const ikaluokkaValues = IKALUOKAT.map((i) => i.koodi) as [Ikaluokka, ...Ikaluokk
 const vaikeustasoValues = VAIKEUSTASOT as [Vaikeustaso, ...Vaikeustaso[]];
 const aihealueValues = AIHEALUEET as [Aihealue, ...Aihealue[]];
 
+const lahdeSchema = z.object({
+  dokumentti: z.string().min(1),
+  kohta: z.string().min(1).optional(),
+  url: z.string().url().optional(),
+});
+
 const questionSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/, 'id: vain pienet kirjaimet, numerot ja väliviivat'),
@@ -21,6 +27,8 @@ const questionSchema = z
     oikeaIndeksi: z.number().int().min(0),
     selitys: z.string().min(5),
     kuva: z.string().optional(),
+    lahde: lahdeSchema.optional(),
+    tarkistettu: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'tarkistettu: muotoa VVVV-KK-PP').optional(),
   })
   .refine((q) => q.oikeaIndeksi < q.vaihtoehdot.length, {
     message: 'oikeaIndeksi viittaa vaihtoehtojen ulkopuolelle',

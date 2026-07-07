@@ -23,9 +23,17 @@ Sisältötesti `src/domain/content.test.ts` kaatuu, jos lisäys on virheellinen.
    - `vaikeustaso` — `aloittelija` | `harjoittelija` | `osaaja` | `mestari`.
    - `aihealue` — yksi arvo (ks. `src/domain/config.ts`).
    - `kysymys`, `vaihtoehdot` (2–4), `oikeaIndeksi` (0-pohjainen), `selitys`.
+   - `lahde` (valinnainen, mutta **suositeltu uusille kysymyksille**, ks. ADR
+     0005) — `{ dokumentti, kohta?, url? }`. `kohta` on luvun/aiheen nimi
+     ("Kenttä ja pelipaikat"), **ei sivu- tai pykälänumero** — numerointi
+     muuttuu vuosittain kun uusi sääntö-PDF julkaistaan.
+   - `tarkistettu` (valinnainen, muotoa `VVVV-KK-PP`) — milloin väite on
+     viimeksi verrattu ajantasaisiin sääntöihin. Täytä aina kun täytät
+     `lahde`-kentän.
 3. **Tarkkuus:** jokainen väite on tarkistettava virallisista säännöistä
    (ks. `docs/pesapallo-lahteet.md`). G/F noudattavat **pienpesistä** — älä käytä
-   niissä täyssääntöjä.
+   niissä täyssääntöjä. Koko kysymyspankin järjestelmällinen tarkistus:
+   ks. `docs/agents/verifying-content.md`.
 4. **Vältä toistoa:** katso ensin, mitä `concept`-arvoja lokerossa jo on. Lisää
    mieluummin **uusi sääntökohta** kuin sama uudelleen. `npm test` tulostaa
    pehmeän concept-jakaumaraportin (ei kaada) — se paljastaa kattavuusaukot.

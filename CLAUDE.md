@@ -23,3 +23,9 @@ Default label vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `read
 ### Domain docs
 
 Single-context layout: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
+### Content verification
+
+Kysymyssisältö tarkistetaan virallisia sääntöjä vasten toistettavalla
+rituaalilla (rinnakkaiset ali-agentit + pdftotext-ground-truth). See
+`docs/agents/verifying-content.md`. Lisääminen: `docs/agents/adding-content.md`.

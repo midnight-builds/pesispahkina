@@ -14,6 +14,13 @@ export type Aihealue =
 
 export type Tulos = 'right' | 'wrong';
 
+/** Kysymyksen sääntölähde (ks. ADR 0005). `kohta` on luvun/aiheen nimi, ei sivunumero. */
+export interface Lahde {
+  dokumentti: string;
+  kohta?: string;
+  url?: string;
+}
+
 /** Yksi kysymys. Vakaa `id`, johon historia viittaa (ks. ADR 0001). */
 export interface Question {
   id: string;
@@ -31,6 +38,10 @@ export interface Question {
   selitys: string;
   /** Valinnainen kuva (polku). v1-sisältö on tekstipohjaista. */
   kuva?: string;
+  /** Mistä virallisesta säännöstä väite on peräisin (ks. ADR 0005). */
+  lahde?: Lahde;
+  /** Milloin kysymys on viimeksi verrattu ajantasaisiin sääntöihin, VVVV-KK-PP. */
+  tarkistettu?: string;
 }
 
 /** (ikäluokka × vaikeustaso) -lokero. */

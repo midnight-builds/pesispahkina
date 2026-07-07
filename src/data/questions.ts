@@ -18,6 +18,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Ruotsin', 'Suomen', 'Norjan'],
     oikeaIndeksi: 1,
     selitys: 'Pesäpallo on Suomen kansallispeli, jonka kehitti Lauri "Tahko" Pihkala.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Pelisäännöt, pesäpallon perusteos (esipuhe)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'perusteet-kaksi-joukkuetta',
@@ -29,6 +35,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kaksi', 'Kolme', 'Yksi'],
     oikeaIndeksi: 0,
     selitys: 'Ottelussa on kaksi joukkuetta: toinen on sisäpelivuorossa ja toinen ulkopelivuorossa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'perusteet-sisa-ulko',
@@ -40,6 +52,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Ulkopelivuorossa oleva', 'Sisäpelivuorossa oleva', 'Molemmat yhtä aikaa'],
     oikeaIndeksi: 1,
     selitys: 'Sisäpelivuorossa oleva joukkue lyö ja juoksee. Ulkopelivuorossa oleva on kentällä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'perusteet-sisapelin-tavoite',
@@ -51,6 +69,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Ottaa mahdollisimman monta koppia', 'Tehdä juoksuja', 'Estää kaikki lyönnit'],
     oikeaIndeksi: 1,
     selitys: 'Sisäpelijoukkue yrittää tehdä juoksuja etenemällä pesältä toiselle.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'perusteet-tuomari',
@@ -62,6 +86,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Lukkari', 'Yleisö', 'Tuomari'],
     oikeaIndeksi: 2,
     selitys: 'Tuomari valvoo peliä ja tekee ratkaisut sääntöjen mukaan.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '44 § Ottelun tuomarit / Tuomarin tehtävät; pienpesiksessä 6 § Tuomarit',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- ALOITTELIJA · kenttä ja pesät (G–D) ----------
@@ -75,6 +105,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kaksi', 'Kolme', 'Neljä'],
     oikeaIndeksi: 1,
     selitys: 'Kotipesän lisäksi kentällä on kolme pesää: ykkös-, kakkos- ja kolmospesä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'kentta-kotipesa',
@@ -86,21 +122,34 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kotipesältä', 'Kolmospesältä', 'Ulkokentältä'],
     oikeaIndeksi: 0,
     selitys: 'Lyöjä seisoo ja lyö kotipesällä. Sieltä lähdetään etenemään pesille.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
-    id: 'kentta-jako',
-    concept: 'kentta-jako',
+    id: 'perusteet-pelivuorojen-nimet',
+    concept: 'sisa-ulkopeli',
     ikaluokat: ['G', 'F', 'E', 'D'],
     vaikeustaso: 'aloittelija',
-    aihealue: 'kentta',
-    kysymys: 'Mihin kahteen osaan pesäpallokenttä jaetaan?',
+    aihealue: 'perusteet',
+    kysymys: 'Millä nimillä joukkueiden pelivuoroja kutsutaan pesäpallossa?',
     vaihtoehdot: [
-      'Etukenttään ja takapihaan',
-      'Sisäkenttään ja ulkokenttään',
-      'Vasempaan ja oikeaan pesään',
+      'Sisävuoro ja ulkovuoro',
+      'Sisäkenttä ja ulkokenttä',
+      'Etuvuoro ja takavuoro',
     ],
-    oikeaIndeksi: 1,
-    selitys: 'Kenttä jaetaan sisäkenttään ja ulkokenttään.',
+    oikeaIndeksi: 0,
+    selitys:
+      'Joukkueet ovat vuorotellen sisävuorossa (lyövät ja etenevät) ja ulkovuorossa (puolustavat kentällä). "Sisäkenttä" ei ole sääntöjen termi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue; 11 § Vuoronvalinta; 12 § Vuoronvaihto; pienpesiksessä 7 § Sisäpeli ja 8 § Ulkopeli',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'kentta-kolmospesa',
@@ -112,6 +161,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Ykköspesä', 'Kakkospesä', 'Kolmospesä'],
     oikeaIndeksi: 2,
     selitys: 'Etenijä kiertää ykkös-, kakkos- ja kolmospesän ja pyrkii sitten kotiutumaan.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto; kotiutuskilpailun kuvaus',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- ALOITTELIJA · roolit (G–D) ----------
@@ -125,6 +180,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Tuomari', 'Pesävahti', 'Lukkari'],
     oikeaIndeksi: 2,
     selitys: 'Lukkari on ulkopelin pelaaja, joka syöttää pallon lyöjälle kotipesällä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'roolit-lyoja',
@@ -136,6 +197,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Lyöjäksi', 'Lukkariksi', 'Tuomariksi'],
     oikeaIndeksi: 0,
     selitys: 'Palloa lyövää sisäpelin pelaajaa kutsutaan lyöjäksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'roolit-etenija',
@@ -147,6 +214,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Lukkariksi', 'Etenijäksi', 'Kaukalyöjäksi'],
     oikeaIndeksi: 1,
     selitys: 'Pesillä etenevää sisäpelin pelaajaa kutsutaan etenijäksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'roolit-pesavahti',
@@ -154,14 +227,16 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['G', 'F', 'E', 'D'],
     vaikeustaso: 'aloittelija',
     aihealue: 'roolit',
-    kysymys: 'Mikä on pesävahdin tehtävä?',
+    kysymys: 'Mikä on pesällä olevan ulkopelaajan tehtävä?',
     vaihtoehdot: [
       'Vartioida pesää ja ottaa pallo kiinni',
       'Syöttää pallo lyöjälle',
       'Toimia ottelun tuomarina',
     ],
     oikeaIndeksi: 0,
-    selitys: 'Pesävahti on ulkopelaaja, joka vartioi pesää ja yrittää polttaa etenijän.',
+    selitys: 'Pesällä oleva ulkopelaaja vartioi pesää ja yrittää polttaa etenijän. Säännöissä ei käytetä erillistä nimeä "pesävahti" — puhutaan vain ulkopelaajasta.',
+    lahde: { dokumentti: 'Pesäpallon pelisäännöt 2026', kohta: '15 § Ulkopelaaja pesällä' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'roolit-ulkopelin-tavoite',
@@ -177,6 +252,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 2,
     selitys: 'Ulkopelijoukkue yrittää saada palot ja estää sisäpeliä tekemästä juoksuja.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- ALOITTELIJA · lyöminen (G–D) ----------
@@ -190,6 +271,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Räpylällä', 'Mailalla', 'Kädellä'],
     oikeaIndeksi: 1,
     selitys: 'Lyöjä lyö pallon mailalla.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'I JAKSO, 2 § Maila',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'lyominen-syotto-suunta',
@@ -201,6 +288,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Suoraan ylöspäin', 'Kovaa vaakasuoraan', 'Vierittäen maata pitkin'],
     oikeaIndeksi: 0,
     selitys: 'Lukkari heittää pallon suoraan ylöspäin kotipesän yläpuolelle. Tämä erottaa pesäpallon baseballista.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'IV JAKSO, 23 § Yleistä / 25 § Syötön tekninen suoritus',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- ALOITTELIJA · eteneminen ja palot (G–D) ----------
@@ -214,6 +307,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Maali', 'Juoksu', 'Kori'],
     oikeaIndeksi: 1,
     selitys: 'Piste on nimeltään juoksu. Se syntyy, kun etenijä kiertää pesät ja kotiutuu.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'VI JAKSO, 41 § Juoksu',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'eteneminen-palo',
@@ -229,6 +328,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 2,
     selitys: 'Palo syntyy, kun ulkopelaaja saa pallon pesälle ennen kuin etenijä ehtii sinne.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'VI JAKSO, 33 § Pesäkilpa',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'eteneminen-koppi',
@@ -244,6 +349,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Ilmasta kiinni otettu lyönti eli koppi haavoittaa lyöjän, ja hän joutuu palaamaan.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'V JAKSO, 30 § Koppilyönti / III JAKSO, 18 §',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'eteneminen-turvassa',
@@ -259,6 +370,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 1,
     selitys: 'Etenijä on turvassa, kun hän ehtii pesälle ennen kuin pallo saadaan sinne.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'III JAKSO, 20 § Milloin sisäpelaaja on turvassa pesällä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- ALOITTELIJA · pienpesis (vain G ja F) ----------
@@ -272,6 +389,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kevyellä tenavapallolla', 'Kovalla aikuisten pallolla', 'Tennispallolla'],
     oikeaIndeksi: 0,
     selitys: 'G- ja F-junioreilla käytetään kevyempää tenavapalloa, joka on turvallisempi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '1 § Pallo',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'pien-tenavakentta',
@@ -283,6 +406,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Aikuisten kokoisella kentällä', 'Pienemmällä tenavakentällä', 'Jääkiekkokaukalossa'],
     oikeaIndeksi: 1,
     selitys: 'Nuorimmat pelaavat pienemmällä tenavakentällä, joka sopii lasten peliin.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 §',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'pien-paikkojen-kierto',
@@ -300,6 +429,170 @@ export const QUESTIONS: Question[] = [
     selitys: 'Pienpesiksessä paikkoja kierrätetään, jotta kaikki pääsevät pelaamaan ja oppimaan eri rooleja.',
   },
 
+  // ---------- ALOITTELIJA · lisää E-D (täysisääntöjen omat perusfaktat, ei pienpesis) ----------
+  {
+    id: 'aloittelija-de-joukkuekoko',
+    concept: 'joukkueen-koko-taysisaannot',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'perusteet',
+    kysymys:
+      'Montako pelaajaa joukkueessa saa enintään olla D-E-junioreiden ja sitä vanhempien otteluissa? (ei pienpesiksessä)',
+    vaihtoehdot: ['Enintään 12 pelaajaa', 'Enintään 20 pelaajaa', 'Enintään 7 pelaajaa'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Joukkueen muodostavat enintään kaksi pelinjohtajaa ja enintään 12 pelaajaa. Pienpesisjoukkue on pienempi, 5–7 pelaajaa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-kypara-pakko',
+    concept: 'kypara-pakko-taysisaannot',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'perusteet',
+    kysymys: 'Ketkä ovat velvollisia käyttämään kypärää D-E-junioreiden otteluissa?',
+    vaihtoehdot: [
+      'Kaikki peliin osallistuvat pelaajat pelipaikasta riippumatta',
+      'Vain lyöjä ja etenijät',
+      'Kypärä ei ole pakollinen junioreille',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Vuonna 2008 ja sen jälkeen syntyneiden pelaajien (mm. D- ja E-junioreiden) otteluissa kypärän käyttöpakko koskee kaikkia ulko- ja sisäpeliin osallistuvia pelaajia pelipaikasta riippumatta.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '4 § Kypärä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-hutunkeitto',
+    concept: 'hutunkeitto-vuoronvalinta',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'ottelu',
+    kysymys:
+      'Miten päätetään, kumpi joukkue saa valita sisä- vai ulkovuoron ottelun alussa D-E-junioreiden ja sitä vanhempien otteluissa?',
+    vaihtoehdot: [
+      'Hutunkeitolla (mailasta vuorotellen kiinni ottamalla)',
+      'Kolikonheitolla',
+      'Edellisen ottelun voittaja saa aina valita',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Joukkueiden kapteenit suorittavat pelituomarin johdolla vuoronvalinnan hutunkeitolla eli ottamalla vuorotellen kiinni mailan varresta.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '11 § Vuoronvalinta',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-lyontijarjestys-sitovuus',
+    concept: 'lyontijarjestyksen-noudattaminen',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'ottelu',
+    kysymys: 'Kuinka pitkään joukkueen on noudatettava ottelupöytäkirjaan merkittyä lyöntijärjestystä?',
+    vaihtoehdot: [
+      'Koko ottelun ajan (vaihtaa saa vain tiettyjen jaksojen välissä)',
+      'Vain ensimmäisen vuoroparin ajan',
+      'Lyöntijärjestystä saa vaihtaa vapaasti milloin vain',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pöytäkirjaan merkittyä lyöntijärjestystä on noudatettava koko ottelun ajan. Sen saa vaihtaa vain esim. jaksojen välissä ilmoittamalla siitä pelituomarille.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '27 § Lyöntijärjestys',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-d-jakson-vuoroparit',
+    concept: 'jakson-vuoroparien-maara',
+    ikaluokat: ['D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'ottelu',
+    kysymys:
+      'Montako vuoroparia yhteen jaksoon kuuluu täysimittaisessa D-junioreiden ja sitä vanhempien ottelussa, ellei sarjamääräyksissä ole lyhennetty?',
+    vaihtoehdot: ['Neljä', 'Kaksi', 'Kymmenen'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Virallisessa ottelussa pelataan kaksi neljän vuoroparin mittaista jaksoa. Juniori-otteluissa jakson pituutta voidaan sarjamääräyksillä lyhentää.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '8 § Otteluaika',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-suoja-alue-henkilomaara',
+    concept: 'kotipesan-suoja-alue-henkilomaara',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'kentta',
+    kysymys:
+      'Enintään kuinka moni nimetty joukkueen jäsen saa olla kotipesän suoja-alueella kerrallaan johtamassa peliä?',
+    vaihtoehdot: ['Kaksi', 'Yksi', 'Viisi'],
+    oikeaIndeksi: 0,
+    selitys: 'Kotipesän suoja-alueella voi olla enintään kaksi nimettyä joukkueen jäsentä johtamassa peliä hillitysti.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä (kotipesän suoja-alue)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-vaihtopenkin-toimihenkilot',
+    concept: 'vaihtopenkin-toimihenkilomaara',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'roolit',
+    kysymys: 'Kuinka monta nimettyä toimihenkilöä joukkueen vaihtopelaajien lisäksi saa enintään olla vaihtopenkillä?',
+    vaihtoehdot: ['Enintään 6', 'Enintään 1', 'Rajattomasti'],
+    oikeaIndeksi: 0,
+    selitys: 'Vaihtopenkillä saa olla joukkueen vaihtopelaajien lisäksi enintään 6 nimettyä toimihenkilöä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-pesarikko',
+    concept: 'pesarikko-kasite',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'eteneminen',
+    kysymys: 'Mitä tarkoittaa pesärikko?',
+    vaihtoehdot: [
+      'Etenijä saapuu pesälle käymättä edellisellä pesällä',
+      'Etenijä juoksee liian nopeasti',
+      'Ulkopelaaja pudottaa pallon',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pesärikon tekee etenijä, joka saapuu pesälle käymättä edellisellä pesällä (myös koppilyönnillä tai vapaataipaleella). Pesärikon tehnyt pelaaja palaa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '34 § Pesärikko',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+
   // ---------- HARJOITTELIJA · yleiset (G–D) ----------
   {
     id: 'harj-lyoja-vs-etenija',
@@ -311,6 +604,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Lyöjä', 'Etenijä', 'Lukkari'],
     oikeaIndeksi: 1,
     selitys: 'Kun lyöjä on lyönyt ja lähtenyt juoksemaan, häntä kutsutaan etenijäksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '17 § Sisäpelaaja – lyöjä – etenijä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-ulkopelaajat-sijainti',
@@ -322,6 +621,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Katsomossa', 'Kotipesällä lyömässä', 'Kentällä ottamassa palloa kiinni'],
     oikeaIndeksi: 2,
     selitys: 'Ulkopelaajat ovat kentällä valmiina ottamaan pallon kiinni ja polttamaan etenijöitä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-vuoro-vaihtuu',
@@ -331,12 +636,19 @@ export const QUESTIONS: Question[] = [
     aihealue: 'ottelu',
     kysymys: 'Mitä tarkoittaa, että vuoro vaihtuu?',
     vaihtoehdot: [
-      'Sisäpeli ja ulkopeli vaihtavat osia keskenään',
+      'Sisävuoro ja ulkovuoro vaihtavat osia keskenään',
       'Ottelu päättyy heti',
       'Tuomari vaihdetaan toiseen',
     ],
     oikeaIndeksi: 0,
-    selitys: 'Vuoron vaihtuessa sisäpelijoukkue siirtyy ulkopeliin ja ulkopelijoukkue pääsee lyömään.',
+    selitys:
+      'Vuoron vaihtuessa sisävuorolla ollut joukkue siirtyy ulkovuoroon ja ulkovuorolla ollut joukkue pääsee lyömään.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto; 12 § Vuoronvaihto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- HARJOITTELIJA · E ja D (varsinaiset säännöt) ----------
@@ -347,9 +659,15 @@ export const QUESTIONS: Question[] = [
     vaikeustaso: 'harjoittelija',
     aihealue: 'roolit',
     kysymys: 'Miksi kutsutaan vuoroa, jolloin joukkue on kentällä ottamassa palloa kiinni?',
-    vaihtoehdot: ['Ulkopeliksi', 'Sisäpeliksi', 'Väliajaksi'],
+    vaihtoehdot: ['Ulkovuoroksi', 'Sisävuoroksi', 'Väliajaksi'],
     oikeaIndeksi: 0,
-    selitys: 'Kentällä puolustavan joukkueen vuoroa kutsutaan ulkopeliksi.',
+    selitys: 'Kentällä puolustavan joukkueen vuoroa kutsutaan ulkovuoroksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto; 12 § Vuoronvaihto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-kolme-paloa',
@@ -361,6 +679,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Vuoro vaihtuu ulkopelille', 'Ottelu päättyy', 'Joukkue saa juoksun'],
     oikeaIndeksi: 0,
     selitys: 'Kolmen palon jälkeen sisäpelivuoro päättyy ja joukkueet vaihtavat osia.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '12 § Vuoronvaihto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-kunnari',
@@ -368,14 +692,17 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'eteneminen',
-    kysymys: 'Mitä tarkoittaa kunnari?',
+    kysymys: 'Mitä tarkoittaa kunniajuoksu ("kunnari")?',
     vaihtoehdot: [
-      'Lyöjä etenee omalla lyönnillään kolmospesälle asti',
+      'Lyöjä etenee omalla lyönnillään kolmospesälle asti, ilman että häntä on yritetty polttaa matkalla',
       'Lyöjä lyö pallon katsomoon',
       'Lukkari epäonnistuu syötössä',
     ],
     oikeaIndeksi: 0,
-    selitys: 'Kunnari tarkoittaa, että lyöjä ehtii omalla lyönnillään kolmospesälle asti.',
+    selitys:
+      'Kunniajuoksu (puhekielessä "kunnari") syntyy, kun lyöjä ehtii omalla lyönnillään kolmospesälle asti eikä häntä ole yritetty polttaa välipesillä matkalla.',
+    lahde: { dokumentti: 'Pesäpallon pelisäännöt 2026', kohta: '42 § Kunniajuoksu' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-napy',
@@ -402,6 +729,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Etenijä kiertää pesät järjestyksessä: ykkös-, kakkos- ja kolmospesä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-jaksot',
@@ -413,6 +746,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kaksi', 'Kolme', 'Yksi'],
     oikeaIndeksi: 0,
     selitys: 'Ottelussa on kaksi varsinaista jaksoa. Tasapelin ratketessa pelataan lisäjakso.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- HARJOITTELIJA · lisää E-D (hieman vaikeampia) ----------
@@ -431,6 +770,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Syöttö on oikea, jos lukkarilla on syöttöoikeus, syöttö on teknisesti oikea ja pallo kohoaa vähintään metrin lukkarin pään yli pudoten syöttölautaselle.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '23 § Syöttö on oikea, väärä tai mitätön',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-jokeri-kasite',
@@ -447,6 +792,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Jokeripelaaja on ylimääräinen sisäpelaaja, joka voi tulla lyömään viemättä keneltäkään tämän varsinaista lyöntivuoroa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-vapaataival-kasite',
@@ -463,6 +814,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Vapaataival on tuomion mukainen oikeus edetä pesältä toiselle ilman, että vastustaja voi polttaa etenijää matkalla.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '39 § Vapaataivaloikeuden käyttäminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-pesaturvan-menetys',
@@ -479,6 +836,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Etenijä menettää pesäturvansa muun muassa silloin, kun hän on irti pesästä hetkellä, jolloin lyödystä pallosta otetaan koppi tai pallo tulee pesällä olevan ulkopelaajan haltuun.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '20 § Milloin sisäpelaaja on turvassa pesällä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-estaminen-kasite',
@@ -494,6 +857,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Estäminen on tarkoitukseton tai tarkoituksellinen teko, jolla pelaaja häiritsee vastapelaajan aktiivista pelitekoa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '22 § Estäminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-kotiutuskilpailu-kasite',
@@ -509,6 +878,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Kotiutuskilpailu ratkaisee ottelun, jos tulos on supervuoroparin jälkeen edelleen tasan.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Kotiutuskilpailu (jaksosta II)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-ajolahto-kasite',
@@ -521,6 +896,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Kun kaikilla kenttäpesillä on etenijä ja lukkari syöttää lyöntivuoroiselle pelaajalle ensimmäisen syötön, syntyy ajotilanne (ajolähtö).',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '40 § Eteneminen ajotilanteessa',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-tuomarimerkki-palo',
@@ -536,6 +917,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Palo vihelletään kahdella puolipitkällä vihellyksellä. Koppi taas ilmoitetaan lyhyillä, toistuvilla vihellyksillä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '48 § Vihellysmerkit',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- HARJOITTELIJA · lisää D (D-erityispiirteitä) ----------
@@ -549,6 +936,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Joukkueen kapteenilla', 'Kenellä tahansa pelaajalla', 'Vain pelinjohtajalla'],
     oikeaIndeksi: 0,
     selitys: 'D-ikäisten otteluissa puheoikeus tuomaria kohtaan on aina joukkueen kapteenilla, ei pelinjohtajalla.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'I Jakso, Joukkue-luku (puheoikeus)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-d-pallo',
@@ -560,6 +953,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Naisten pallolla', 'Miesten pallolla', 'Tenavapallolla'],
     oikeaIndeksi: 0,
     selitys: 'D-poikajuniorit (ja D-tyttöjuniorit) pelaavat naisten pallolla, joka on miesten palloa kevyempi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '1 § Pallo',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-d-jaksot-lyhennys',
@@ -575,6 +974,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Juniori-, turnaus- ja leiriotteluissa jakson pituus voidaan sarjamääräyksissä lyhentää kolmeen tai kahteen vuoropariin.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '8 § Otteluaika',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-d-kypara-tekninen-palo',
@@ -586,6 +991,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Tekninen palo', 'Juoksu vastustajalle', 'Ei mitään seuraamusta'],
     oikeaIndeksi: 0,
     selitys: 'Sisäpelaajan rikkoessa kypärän käyttöpakkoa tuomitaan tekninen palo.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '4 § Kypärä / rangaistukset (tekninen palo)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- HARJOITTELIJA · lisää F-G (ohennettu pooli, pienpesis) ----------
@@ -599,6 +1010,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['42 metriä', '100 metriä', '10 metriä'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksen kenttä on tavallisesti 42 metriä pitkä ja 30 metriä leveä.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '1 § Kenttä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-fg-joukkuekoko',
@@ -610,6 +1027,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['5–7 pelaajaa', '20 pelaajaa', 'Yksi pelaaja'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesisjoukkueen koko on 5–7 pelaajaa, ja jokainen pääsee pelaamaan aktiivisesti.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '3 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-fg-ulkopelin-kierto',
@@ -617,14 +1040,17 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['F', 'G'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'roolit',
-    kysymys: 'Miksi ulkopelaajat vaihtavat pelipaikkaa kesken ottelun pienpesiksessä?',
+    kysymys: 'Mitä ulkopelaajien pelipaikoille tapahtuu kesken ottelun F-G-junioreiden otteluissa?',
     vaihtoehdot: [
-      'Jotta kaikki pääsevät kokeilemaan eri pelipaikkoja',
-      'Koska tuomari väsyy',
-      'Koska pallo kuluu loppuun',
+      'Niitä kierrätetään pelaajien kesken',
+      'Ne pysyvät samoina koko ottelun',
+      'Ne arvotaan uudelleen jokaisen palon jälkeen',
     ],
     oikeaIndeksi: 0,
-    selitys: 'Ulkopelipaikkoja kierrätetään, jotta jokainen pelaaja pääsee kokeilemaan eri pelipaikkoja ottelun aikana.',
+    selitys:
+      'Ulkopelaajien pelipaikkoja (lukkaria lukuun ottamatta) kierrätetään kolmen lyöntivuoron välein, jotta jokainen pääsee pelaamaan eri paikoilla.',
+    lahde: { dokumentti: 'Pienpesiksen pelisäännöt', kohta: '8 § Ulkopeli' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-fg-maila-pituus',
@@ -636,6 +1062,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['90 cm', '300 cm', '10 cm'],
     oikeaIndeksi: 0,
     selitys: 'F- ja G-junioreiden otteluissa mailan pituus saa olla enintään 90 senttimetriä.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '2 § Pelivälineet',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-fg-kypara-pakko',
@@ -647,6 +1079,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kaikki pelaajat pelipaikasta riippumatta', 'Vain lyöjä', 'Vain lukkari'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksessä kypärän käyttöpakko koskee kaikkia pelaajia pelipaikasta riippumatta jo alkulämmittelystä alkaen.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '2 § Pelivälineet',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'harj-fg-lyontijarjestys-arvonta',
@@ -663,6 +1101,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'F- ja G-junioreiden ottelun ensimmäisen jakson lyöntijärjestys arvotaan tulospalvelujärjestelmässä ennen ottelun vuoronvalintaa.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'F-G-juniorit: lyöntijärjestys (27 §)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- OSAAJA · E-D (täysien sääntöjen syvennystä) ----------
@@ -681,6 +1125,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Ulkopelaajan on väistettävä sisäpelaajaa, ellei ulkopelaajalla ole palloa hallussaan tai todellista mahdollisuutta saada sitä haltuunsa sallituin keinoin.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '22 § Estäminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-syoton-vaiheet',
@@ -696,6 +1146,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Syötön tekninen suoritus koostuu neljästä vaiheesta: lukkarin sijoittuminen, alkuasento, syöttöliike ja väistyminen.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '25 § Syötön tekninen suoritus',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-syottooikeus',
@@ -712,6 +1168,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Lukkari saa syöttöoikeuden, kun pallo on edellisen lyöjän muututtua lopullisesti etenijäksi käynyt kotipesässä olevan ja jonkin kenttäpesän ulkopelaajan hallussa ja palannut kotipesään.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '24 § Syöttöoikeus',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-ulkopelaajien-sijoittuminen',
@@ -728,6 +1190,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Jos yksikin ulkopelaaja on varsinaisen pelialueen ulkopuolella pallon irrotessa lukkarin kädestä syöttöön ja lyöjä lyö, tuomitaan vapaataivaloikeus kärkietenijälle ja tarvittaessa muille.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '31 § Ulkopelaajien sijoittuminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-koppi-vs-taktinen-pudotus',
@@ -744,6 +1212,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Taktinen pudotus on sallittu, jos pelaaja pudottaa pallon tahallisesti välittömänä jatkona kiinniotolle. Viivyttely tai pompottelu tekee siitä kopin.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '30 § Koppilyönti',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-ajotilanne-vaihtopakko',
@@ -760,6 +1234,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Ajotilanteessa (kaikki kenttäpesät täynnä) on vaihtopakko: jokaisen etenijän täytyy päästä turvaan seuraavalle pesälle tai lopulliseen ratkaisuun.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '40 § Eteneminen ajotilanteessa',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-pesakilpa',
@@ -775,7 +1255,9 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Etenijä palaa pesäkilvassa, jos hän on irti pesästä, jossa hänellä on pesäturva, ja pallo on seuraavalla pesällä olevan ulkopelaajan hallussa.',
+      'Etenijä palaa pesäkilvassa, jos hän on irti pesästä, jossa hänellä on pesäturva, ja pallo on seuraavalla pesällä olevan ulkopelaajan hallussa — paitsi jos hän on palaamassa laittoman lyönnin jälkeen lähtöpesälleen tai on ottanut vastaan vapaataivalta.',
+    lahde: { dokumentti: 'Pesäpallon pelisäännöt 2026', kohta: '33 § Pesäkilpa' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-kunniajuoksu-tuplajuoksu',
@@ -792,6 +1274,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Kunniajuoksun tehnyt pelaaja jää kolmospesälle ja voi yrittää tuplajuoksua heti, kun pallo on käynyt kotipesässä olevan ulkopelaajan hallussa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '42 § Kunniajuoksu',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-jokerien-maara',
@@ -803,23 +1291,35 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kolmea eri jokeripelaajaa, kutakin kerran', 'Rajattoman määrän', 'Vain yhtä koko ottelun ajan'],
     oikeaIndeksi: 0,
     selitys: 'Joukkue voi käyttää jokaisessa sisävuorossa kolmea eri jokeripelaajaa, kutakin kerran.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-vuoronvaihto-ehdot',
     concept: 'vuoronvaihdon-ehdot',
-    ikaluokat: ['E', 'D'],
+    ikaluokat: ['D'],
     vaikeustaso: 'osaaja',
     aihealue: 'ottelu',
     kysymys:
-      'Yksi vuoronvaihdon ehdoista on, että kolme sisäpelaajaa on palanut. Mikä toinen ehto voi myös laukaista vuoronvaihdon? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
+      'Yksi vuoronvaihdon ehdoista on, että kolme sisäpelaajaa on palanut. Mikä toinen ehto voi myös laukaista vuoronvaihdon? (D-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä eikä E-junioreiden pelisarjassa)',
     vaihtoehdot: [
-      'Joukkue ei ole saanut riittävästi juoksuja, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi eikä jokereita ole enää',
+      'Joukkue ei ole saanut riittävästi juoksuja, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi, pallo tulee kotipesässä olevan ulkopelaajan haltuun eikä jokereita ole enää',
       'Ottelu on kestänyt yli tunnin',
       'Yleisö poistuu katsomosta kesken vuoron',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Vuoronvaihto voi tapahtua myös, jos vaadittavaa juoksumäärää ei synny siihen mennessä, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi eikä jokereita ole enää käytettävissä.',
+      'Vuoronvaihto voi tapahtua myös, jos vaadittavaa juoksumäärää ei synny siihen mennessä, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi, pallo tulee kotipesässä olevan ulkopelaajan haltuun eikä jokereita ole enää käytettävissä. E-junioreiden pelisarjassa vuoronvaihdon ehdot ovat erilaiset.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '12 § Vuoronvaihto',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-laiton-lyonti-grippi',
@@ -828,9 +1328,15 @@ export const QUESTIONS: Question[] = [
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
     kysymys: 'Missä kohtaa mailaa lyöminen tekee lyönnistä laittoman D–G-junioreiden otteluissa?',
-    vaihtoehdot: ['Mailan grippiosalla lyöminen', 'Mailan lavan kärjellä lyöminen', 'Mailan keskikohdalla lyöminen'],
+    vaihtoehdot: ['Mailan grippiosalla lyöminen', 'Mailan kärjellä lyöminen', 'Mailan keskikohdalla lyöminen'],
     oikeaIndeksi: 0,
     selitys: 'D–G-junioreiden otteluissa mailan grippiosalla (kahvan päässä) lyöty lyönti tuomitaan laittomaksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '29 § Laiton lyönti, kohta 9',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
   },
   {
     id: 'osaaja-laiton-lyonti-kaksoislyonti',
@@ -842,6 +1348,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kaksoislyönti, joka on laiton', 'Kunnari', 'Näpy'],
     oikeaIndeksi: 0,
     selitys: 'Kaksoislyönti eli pallon osuminen mailaan useammin kuin kerran lyönnin aikana on aina laiton.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '29 § Laiton lyönti, kohta 3',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-syotto-mitaton',
@@ -858,6 +1370,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Syöttö on mitätön muun muassa silloin, kun lukkari syöttää ennen kuin syöttötuomari on ehtinyt tuomita edellisen lyömättä jätetyn syötön.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '23 § Syöttäminen, yleistä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-vapaataival-kaytto',
@@ -869,6 +1387,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Lähtemällä välittömästi etenemään', 'Nostamalla kätensä ylös', 'Huutamalla tuomarille'],
     oikeaIndeksi: 0,
     selitys: 'Vapaataivaloikeuden saaneen on otettava se vastaan välittömästi lähtemällä etenemään, muuten oikeus menetetään.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '39 § Vapaataivaloikeuden käyttäminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- OSAAJA · D (D-erityispiirteitä) ----------
@@ -883,6 +1407,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'D-ikäisten otteluissa, joissa kapteeni käyttää puheoikeutta, toimihenkilöiden rangaistukset kohdistuvat joukkueen ykköspelinjohtajalle.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'I jakso, Yleistä välineistä / puheoikeus (kapteeni)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-d-naisten-pallo-paino',
@@ -894,6 +1424,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['135–140 grammaa', '160–165 grammaa', '95–100 grammaa'],
     oikeaIndeksi: 0,
     selitys: 'Naisten pallo painaa 135–140 grammaa. Sillä pelaavat mm. D-tyttöjuniorit ja D-poikajuniorit.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '1 § Pallo',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-d-juniorikentta',
@@ -905,6 +1441,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['E-poikajuniorit sekä D-tyttöjuniorit', 'Vain D-poikajuniorit', 'Kaikki juniorit ikäluokasta riippumatta'],
     oikeaIndeksi: 0,
     selitys: 'Juniorikentällä pelaavat E-poikajuniorit sekä D-tyttöjuniorit.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-d-lyontijarjestyksen-muutos',
@@ -920,6 +1462,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Joukkue voi muuttaa lyöntijärjestystään ensimmäisen ja toisen jakson välissä sekä toisen jakson ja supervuoroparin välissä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '27 § Lyöntijärjestys',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- OSAAJA · F-G (pienpesis ja erityissäännöt) ----------
@@ -933,6 +1481,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kahden lyöntikierroksen jälkeen', 'Kolmen palon jälkeen', 'Kun tuomari niin päättää'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksessä vuoropari vaihtuu kahden lyöntikierroksen jälkeen – paloilla ei ole merkitystä.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '4 § Otteluaika',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-yksi-vapaataival',
@@ -944,6 +1498,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Yksi, minkä jälkeen syötöt ovat mitättömiä', 'Rajattomasti', 'Ei yhtään'],
     oikeaIndeksi: 0,
     selitys: 'Yhden lyöjän lyöntivuoron aikana voi tulla vain yksi vapaataival, minkä jälkeen loput syötöt ovat mitättömiä.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '7 § Sisäpeli',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-kysymysheitto',
@@ -951,14 +1511,20 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['F', 'G'],
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
-    kysymys: 'Voiko etenijä edetä pienpesiksessä kysymysheitolla?',
+    kysymys: 'Voiko etenijä edetä F-G-junioreiden otteluissa kysymysheitolla?',
     vaihtoehdot: [
       'Ei, kysymysheitolla tai siitä syntyvällä harhaheitolla ei voi edetä',
       'Kyllä, aina saa edetä',
       'Vain kotipesästä lähtien',
     ],
     oikeaIndeksi: 0,
-    selitys: 'Pienpesiksessä kysymysheitolla tai siitä tulevalla harhaheitolla ei voi edetä.',
+    selitys: 'F-G-junioreiden otteluissa kysymysheitolla tai siitä tulevalla harhaheitolla ei voi edetä.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '7 § Sisäpeli (G); F-junioreille "Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa", rajoitettu eteneminen (38 §)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-pelinjohtaja-ei-vetoa',
@@ -966,21 +1532,30 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['F', 'G'],
     vaikeustaso: 'osaaja',
     aihealue: 'roolit',
-    kysymys: 'Onko pelinjohtajalla tai valmentajalla oikeus vedota syöttöä vääräksi pienpesiksessä?',
+    kysymys: 'Onko pelinjohtajalla tai valmentajalla oikeus vedota syöttöä vääräksi F-G-junioreiden otteluissa?',
     vaihtoehdot: ['Ei ole', 'Kyllä, rajattomasti', 'Vain jos tuomari erikseen pyytää'],
     oikeaIndeksi: 0,
-    selitys: 'Pienpesiksessä pelinjohtajalla tai valmentajalla ei ole oikeutta vedota syöttöä vääräksi.',
+    selitys:
+      'F-G-junioreiden otteluissa pelinjohtajalla tai valmentajalla ei ole oikeutta vedota syöttöä vääräksi — tämä oikeus on rajattu vain D-E-junioreiden otteluihin.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '7 § Sisäpeli (G); 23 § Syöttö on oikea, väärä tai mitätön (F, poissulkeva rajaus D-E:hen)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-lukkarin-vaihto',
     concept: 'lukkarin-vaihto-vuoropari',
-    ikaluokat: ['F', 'G'],
+    ikaluokat: ['G'],
     vaikeustaso: 'osaaja',
     aihealue: 'roolit',
     kysymys: 'Milloin lukkari vaihtuu pienpesiksessä?',
     vaihtoehdot: ['Vuoroparin vaihtuessa', 'Joka kolmannella syötöllä', 'Ei koskaan kesken ottelun'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksessä lukkari vaihtuu aina vuoroparin vaihtuessa.',
+    lahde: { dokumentti: 'Pienpesiksen pelisäännöt', kohta: '8 § Ulkopeli' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-sektorit',
@@ -992,6 +1567,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Neljään sektoriin', 'Kahteen sektoriin', 'Kahdeksaan sektoriin'],
     oikeaIndeksi: 0,
     selitys: 'F-junioreiden otteluissa kenttä on jaettu neljään sektoriin (1–4), joissa pelaajat kiertävät pareittain.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'F-juniorit: Ulkopelipaikkojen kierrättäminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-vaihto-kolmen-valein',
@@ -1003,6 +1584,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kolmen lyöntivuoron jälkeen', 'Joka lyöntivuoron jälkeen', 'Vain jaksojen välissä'],
     oikeaIndeksi: 0,
     selitys: 'Pelaaja vaihtaa sektoria ja mahdollisesti tehtävää nimetyn parin kanssa kolmen lyöntivuoron jälkeen.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'F-juniorit: Ulkopelipaikkojen kierrättäminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-tolppasyotto',
@@ -1018,6 +1605,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'F- ja G-junioreiden otteluissa tolppasyöttö (pallo nousee vähintään 3 m lukkarin päälaen yläpuolelle) on mitätön, ellei lyöjä lyö.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'F-G-juniorit: tolppasyöttö (23 §)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-harhaheitolla-eteneminen',
@@ -1034,6 +1627,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'F-G-junioreiden otteluissa lopullisesti etenijäksi muuttunut lyöjä voi edetä harhaheitolla ennen kuin pallo tulee kotipesässä olevan ulkopelaajan haltuun.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'F-G-juniorit: harhaheitolla eteneminen (37 §)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'osaaja-fg-rajoitettu-eteneminen',
@@ -1045,6 +1644,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Yhden pesän yli', 'Kolme pesää', 'Ei yhtään'],
     oikeaIndeksi: 0,
     selitys: 'F-G-junioreiden otteluissa etenijöillä on harhaheitolla oikeus edetä yhden pesän yli rajoitetun etenemisen aikana.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'F-G-juniorit: rajoitettu eteneminen (38 §)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- MESTARI · E-D (kaikkein vaativimmat sääntökohdat) ----------
@@ -1056,13 +1661,15 @@ export const QUESTIONS: Question[] = [
     aihealue: 'eteneminen',
     kysymys: 'Mikä on tuplahaava? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
-      'Tilanne, jossa kaksi etenijää haavoittuu, kun irti pesältä ollut pelaaja menettää turvan seuraavan saadessa sen',
+      'Tilanne, jossa kaksi etenijää voi haavoittua, kun irti pesältä ollut pelaaja saa turvan pesälle, jolla toinen etenijä on',
       'Kaksi perättäistä oikeaa syöttöä',
       'Kaksi juoksua samalla lyönnillä',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Tuplahaava syntyy, kun etenijä on irti pesästä kopinottohetkellä ja seuraavassa pesässä ollut etenijä saa säännönmukaisesti turvan kyseiselle pesälle – tällöin molemmat voivat haavoittua.',
+      'Tuplahaava syntyy, kun etenijä on irti pesältä kopinottohetkellä ja seuraavassa pesässä on toinen etenijä: irti ollut saa turvan sille pesälle, jolla toinen etenijä on – ellei tämä ehdi ensin edetä säännönmukaisesti seuraavalle pesälle. Tällöin molemmat voivat haavoittua.',
+    lahde: { dokumentti: 'Pesäpallon pelisäännöt 2026', kohta: '36 § Tuplahaava' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-ahky',
@@ -1079,6 +1686,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Ähkyssä eli tukehtumisessa etenijä ei ehdi käydä laittoman lyönnin jälkeen lähtöpesällään ennen kuin seuraava etenijä on jo säännönmukaisesti saapunut sille pesälle, jolloin etenijästä tuomitaan palo.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Ähky/tukehtuminen (36 §:n tulkinnat)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-rangaistusluokat',
@@ -1095,6 +1708,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Viralliset rangaistukset ovat mm. huomautus, varoitus, pelirangaistus ja ottelurangaistus. Huomautuksia ei kerätä yhteen keltaiseksi kortiksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '49 § Rangaistukset',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-epaselva-tilanne',
@@ -1106,6 +1725,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Sisäpelaajan eduksi', 'Ulkopelaajan eduksi', 'Sen joukkueen eduksi, joka on voitolla'],
     oikeaIndeksi: 0,
     selitys: 'Jos pesäkilvan tulosta ei voida varmasti ratkaista, tilanne on tuomittava sisäpelaajan eduksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '45 § Epäselvien tilanteiden tuomitseminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-vaara-vihellys',
@@ -1122,6 +1747,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Tuomarin väärän vihellyksen sattuessa tavoittamattomalle lailliselle läpilyönnille tilanne tuomitaan siten kuin se olisi edennyt ilman virheellistä vihellystä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '47 § Tuomarin väärä vihellys',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-tuomarimerkit-laiton',
@@ -1133,6 +1764,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Vuorottelevat lyhyet ja pitkät vihellykset', 'Yksi pitkä vihellys', 'Kolme puolipitkää vihellystä'],
     oikeaIndeksi: 0,
     selitys: 'Laiton lyönti ilmoitetaan vuorottelevilla lyhyillä ja pitkillä vihellyksillä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '48 § Vihellysmerkit',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-kotiutuskilpailu-vaara-vuoro',
@@ -1144,6 +1781,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Parin suoritus mitätöidään ja seuraava pari tulee vuoroon', 'Ottelu päättyy tasapeliin', 'Joukkue saa automaattisesti juoksun'],
     oikeaIndeksi: 0,
     selitys: 'Jos lyöjä tai etenijä on kotiutuskilpailussa väärä, koko parin suoritus mitätöidään ja seuraava pari tulee vuoroon.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Kotiutuskilpailu — Väärällä vuorolla lyöminen ja eteneminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-estaminen-rangaistusasteikko',
@@ -1160,6 +1803,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Ulkopelaajan estäessä rangaistuksena voi olla mm. kärkietenijän, lyöjän tai useamman etenijän vapaataivaloikeus tilanteen vakavuuden mukaan.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '22 § Estäminen — Rangaistukset ulkopelaajan estäessä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-harhaheitto-rajoitus-aikuisten',
@@ -1176,6 +1825,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Täysien sääntöjen mukaan harhaheitto ei sinänsä rajoita etenemistä, mutta erikseen sovitut etenemisrajoitusalueet voivat rajoittaa harhaheitolla etenemistä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '37 § Harhaheitolla eteneminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-vuoronvaihto-kolmas-ehto',
@@ -1185,13 +1840,15 @@ export const QUESTIONS: Question[] = [
     aihealue: 'ottelu',
     kysymys: 'Mikä on yksi vuoronvaihdon laukaisevista ehdoista kahden saadun juoksun jälkeen? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
     vaihtoehdot: [
-      'Kahden lisäjuoksun puuttuminen, kun viimeinen lyöjä muuttuu lopullisesti etenijäksi eikä jokereita ole enää',
+      'Kahden lisäjuoksun puuttuminen, kun viimeinen lyöjä muuttuu lopullisesti etenijäksi, pallo tulee kotipesän ulkopelaajan haltuun eikä jokereita ole enää',
       'Se, että peli on kestänyt yli tunnin',
       'Se, että sama pelaaja on lyönyt kolme kertaa peräkkäin',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Vuoronvaihto voi tapahtua myös, jos kahden saadun juoksun jälkeen ei synny kahta lisäjuoksua siihen mennessä, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi eikä jokereita ole enää käytettävissä.',
+      'Vuoronvaihto voi tapahtua myös, jos kahden saadun juoksun jälkeen ei synny kahta lisäjuoksua siihen mennessä, kun viimeinen käytettävissä oleva lyöjä muuttuu lopullisesti etenijäksi ja pallo tulee kotipesässä olevan ulkopelaajan haltuun, eikä jokereita ole enää käytettävissä.',
+    lahde: { dokumentti: 'Pesäpallon pelisäännöt 2026', kohta: '12 § Vuoronvaihto' },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-lyoja-turva-kotipesa',
@@ -1208,17 +1865,30 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'Lyöjä muuttuu lopullisesti etenijäksi mm. saatuaan kolme oikeaa syöttöä, jolloin hän ei ole enää turvassa kotipesässä ja hänet voidaan polttaa ykköspesälle.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '18 § Milloin lyöjä muuttuu lopullisesti etenijäksi',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-jokerin-lyontivuoro',
     concept: 'jokerin-lyontipakko',
-    ikaluokat: ['E', 'D'],
+    ikaluokat: ['E'],
     vaikeustaso: 'mestari',
     aihealue: 'roolit',
-    kysymys: 'Mitä jokeripelaajien on tehtävä ennen kuin vuoron aloittanut sisäpelaaja pääsee samassa vuorossa uudestaan lyöntivuoroon? (D-E-junioreiden ja sitä vanhempien otteluissa, ei pienpesiksessä)',
+    kysymys: 'Mitä jokeripelaajien on tehtävä ennen kuin vuoron aloittanut sisäpelaaja pääsee samassa vuorossa uudestaan lyöntivuoroon? (E-junioreiden pelisarjassa)',
     vaihtoehdot: ['Jokaisen jokeripelaajan on käytävä lyömässä', 'Jokereiden ei tarvitse lyödä ollenkaan', 'Vain yhden jokerin täytyy lyödä'],
     oikeaIndeksi: 0,
-    selitys: 'Jokaisen jokeripelaajan on käytävä lyömässä ennen kuin vuoron aloittanut sisäpelaaja tulee samassa vuorossa toistamiseen lyöntivuoroon.',
+    selitys:
+      'E-junioreiden pelisarjassa jokaisen jokeripelaajan on käytävä lyömässä ennen kuin vuoron aloittanut sisäpelaaja tulee samassa vuorossa toistamiseen lyöntivuoroon. Tämä on E-pelisarjan (ja F-G-otteluiden) erityissääntö — täyssäännöissä jokerin käyttö on vapaaehtoista.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'Vuoronvaihto (12 §)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-d-kentan-suoja-alue',
@@ -1235,6 +1905,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'D–E-ikäisten otteluissa ulomman kaaren sisäpuolella voi hillitysti toimia yksi pelinjohtaja ja yksi joukkueen pelaaja (tai samanikäinen pelinjohtaja).',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä — poikkeus D-E-ikäisten otteluissa',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- MESTARI · D (D-erityispiirteitä) ----------
@@ -1248,6 +1924,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Tekninen palo', 'Juoksu vastustajalle', 'Lyönti julistetaan automaattisesti kopiksi'],
     oikeaIndeksi: 0,
     selitys: 'Jos pelaajalla ei ole lyömään asettuessaan tai etenemään lähtiessään oikeaa lyöntijärjestysnumeroa, tuomitaan tekninen palo.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue — lyöntijärjestysnumero',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-d-vajaajoukkue',
@@ -1259,6 +1941,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Seitsemän pelaajaa', 'Kaksitoista pelaajaa', 'Kolme pelaajaa'],
     oikeaIndeksi: 0,
     selitys: 'Ellei joukkueella ole ottelun alkaessa ja koko ottelun ajan vähintään seitsemää pelaajaa, ottelu katsotaan luovutetuksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue — vajaa joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 
   // ---------- MESTARI · F-G (pienpesis ja erityissäännöt) ----------
@@ -1272,6 +1960,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kaksi täyttä vuoroparia', 'Neljä jaksoa', 'Ottelulla ei ole vuoroparirajaa'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesisottelun kesto on kaksi täyttä vuoroparia, ja vuoropari vaihtuu kahden lyöntikierroksen jälkeen.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '4 § Otteluaika',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-fg-lyontivuorojen-maara',
@@ -1283,6 +1977,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['14 lyöntivuoroa', '3 lyöntivuoroa', 'Rajoittamaton määrä'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksen sisävuoron aikana molemmilla joukkueilla on yhtä monta lyöntivuoroa, kuitenkin enintään 14.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '7 § Sisäpeli',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-fg-tuomarikortti',
@@ -1298,6 +1998,12 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksessä tuomareilla ei ole tuomarikortti- eikä lisenssipakkoa, mutta vakuutusturva on suositeltava.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '6 § Tuomarit',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-fg-valmentajan-paikka',
@@ -1309,6 +2015,12 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: ['Kenttärajojen sisäpuolella sekä sisä- että ulkopelissä', 'Vain katsomossa', 'Yleisörajan takana koko ajan'],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksessä pelinjohtajat ja valmentajat saavat olla kenttärajojen sisäpuolella opastamassa pelaajia sekä sisä- että ulkopelissä.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '5 § Pelinjohtajien ja valmentajien paikka',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-fg-valmentajan-ohjausrajoitus',
@@ -1325,6 +2037,12 @@ export const QUESTIONS: Question[] = [
     oikeaIndeksi: 0,
     selitys:
       'E-G-junioreiden otteluissa valmentajat voivat vain hillitysti ohjata etenemisratkaisua – tavoitteena on kehittää pelaajan omaa pelinlukutaitoa.',
+    lahde: {
+      dokumentti: 'Erityissäännöt E-junioreiden pelisarjassa sekä F-G-ikäisten otteluissa',
+      kohta: 'Joukkue (7 §) — valmentajan ohjausrajoitus (viittaa pelisääntöjen 6 §:ään)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
   {
     id: 'mestari-fg-kypara-tilanne',
@@ -1340,5 +2058,11 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys: 'Pienpesiksessä pelitilanne pelataan loppuun asti, vaikka kypärä putoaisi, ja vasta sen jälkeen peli keskeytetään kypärän takaisin laittamiseksi.',
+    lahde: {
+      dokumentti: 'Pienpesiksen pelisäännöt',
+      kohta: '2 § Pelivälineet',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-06',
   },
 ];
