@@ -29,3 +29,8 @@ Single-context layout: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/ag
 Kysymyssisältö tarkistetaan virallisia sääntöjä vasten toistettavalla
 rituaalilla (rinnakkaiset ali-agentit + pdftotext-ground-truth). See
 `docs/agents/verifying-content.md`. Lisääminen: `docs/agents/adding-content.md`.
+
+### Istuntokohtaiset työtiedostot (handoff, ali-agenttien scratch)
+
+Handoff-tiedostot ja ali-agenttien väliohjeet/raportit eivät kuulu samaan
+paikkaan kuin pysyvä ground-truth-cache. See `docs/agents/session-artifacts.md`.
