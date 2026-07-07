@@ -429,6 +429,170 @@ export const QUESTIONS: Question[] = [
     selitys: 'Pienpesiksessä paikkoja kierrätetään, jotta kaikki pääsevät pelaamaan ja oppimaan eri rooleja.',
   },
 
+  // ---------- ALOITTELIJA · lisää E-D (täysisääntöjen omat perusfaktat, ei pienpesis) ----------
+  {
+    id: 'aloittelija-de-joukkuekoko',
+    concept: 'joukkueen-koko-taysisaannot',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'perusteet',
+    kysymys:
+      'Montako pelaajaa joukkueessa saa enintään olla D-E-junioreiden ja sitä vanhempien otteluissa? (ei pienpesiksessä)',
+    vaihtoehdot: ['Enintään 12 pelaajaa', 'Enintään 20 pelaajaa', 'Enintään 7 pelaajaa'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Joukkueen muodostavat enintään kaksi pelinjohtajaa ja enintään 12 pelaajaa. Pienpesisjoukkue on pienempi, 5–7 pelaajaa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-kypara-pakko',
+    concept: 'kypara-pakko-taysisaannot',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'perusteet',
+    kysymys: 'Ketkä ovat velvollisia käyttämään kypärää D-E-junioreiden otteluissa?',
+    vaihtoehdot: [
+      'Kaikki peliin osallistuvat pelaajat pelipaikasta riippumatta',
+      'Vain lyöjä ja etenijät',
+      'Kypärä ei ole pakollinen junioreille',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Vuonna 2008 ja sen jälkeen syntyneiden pelaajien (mm. D- ja E-junioreiden) otteluissa kypärän käyttöpakko koskee kaikkia ulko- ja sisäpeliin osallistuvia pelaajia pelipaikasta riippumatta.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '4 § Kypärä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-hutunkeitto',
+    concept: 'hutunkeitto-vuoronvalinta',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'ottelu',
+    kysymys:
+      'Miten päätetään, kumpi joukkue saa valita sisä- vai ulkovuoron ottelun alussa D-E-junioreiden ja sitä vanhempien otteluissa?',
+    vaihtoehdot: [
+      'Hutunkeitolla (mailasta vuorotellen kiinni ottamalla)',
+      'Kolikonheitolla',
+      'Edellisen ottelun voittaja saa aina valita',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Joukkueiden kapteenit suorittavat pelituomarin johdolla vuoronvalinnan hutunkeitolla eli ottamalla vuorotellen kiinni mailan varresta.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '11 § Vuoronvalinta',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-lyontijarjestys-sitovuus',
+    concept: 'lyontijarjestyksen-noudattaminen',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'ottelu',
+    kysymys: 'Kuinka pitkään joukkueen on noudatettava ottelupöytäkirjaan merkittyä lyöntijärjestystä?',
+    vaihtoehdot: [
+      'Koko ottelun ajan (vaihtaa saa vain tiettyjen jaksojen välissä)',
+      'Vain ensimmäisen vuoroparin ajan',
+      'Lyöntijärjestystä saa vaihtaa vapaasti milloin vain',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pöytäkirjaan merkittyä lyöntijärjestystä on noudatettava koko ottelun ajan. Sen saa vaihtaa vain esim. jaksojen välissä ilmoittamalla siitä pelituomarille.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '27 § Lyöntijärjestys',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-d-jakson-vuoroparit',
+    concept: 'jakson-vuoroparien-maara',
+    ikaluokat: ['D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'ottelu',
+    kysymys:
+      'Montako vuoroparia yhteen jaksoon kuuluu täysimittaisessa D-junioreiden ja sitä vanhempien ottelussa, ellei sarjamääräyksissä ole lyhennetty?',
+    vaihtoehdot: ['Neljä', 'Kaksi', 'Kymmenen'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Virallisessa ottelussa pelataan kaksi neljän vuoroparin mittaista jaksoa. Juniori-otteluissa jakson pituutta voidaan sarjamääräyksillä lyhentää.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '8 § Otteluaika',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-suoja-alue-henkilomaara',
+    concept: 'kotipesan-suoja-alue-henkilomaara',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'kentta',
+    kysymys:
+      'Enintään kuinka moni nimetty joukkueen jäsen saa olla kotipesän suoja-alueella kerrallaan johtamassa peliä?',
+    vaihtoehdot: ['Kaksi', 'Yksi', 'Viisi'],
+    oikeaIndeksi: 0,
+    selitys: 'Kotipesän suoja-alueella voi olla enintään kaksi nimettyä joukkueen jäsentä johtamassa peliä hillitysti.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä (kotipesän suoja-alue)',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-vaihtopenkin-toimihenkilot',
+    concept: 'vaihtopenkin-toimihenkilomaara',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'roolit',
+    kysymys: 'Kuinka monta nimettyä toimihenkilöä joukkueen vaihtopelaajien lisäksi saa enintään olla vaihtopenkillä?',
+    vaihtoehdot: ['Enintään 6', 'Enintään 1', 'Rajattomasti'],
+    oikeaIndeksi: 0,
+    selitys: 'Vaihtopenkillä saa olla joukkueen vaihtopelaajien lisäksi enintään 6 nimettyä toimihenkilöä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '7 § Joukkue',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+  {
+    id: 'aloittelija-de-pesarikko',
+    concept: 'pesarikko-kasite',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'eteneminen',
+    kysymys: 'Mitä tarkoittaa pesärikko?',
+    vaihtoehdot: [
+      'Etenijä saapuu pesälle käymättä edellisellä pesällä',
+      'Etenijä juoksee liian nopeasti',
+      'Ulkopelaaja pudottaa pallon',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pesärikon tekee etenijä, joka saapuu pesälle käymättä edellisellä pesällä (myös koppilyönnillä tai vapaataipaleella). Pesärikon tehnyt pelaaja palaa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '34 § Pesärikko',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-07',
+  },
+
   // ---------- HARJOITTELIJA · yleiset (G–D) ----------
   {
     id: 'harj-lyoja-vs-etenija',
