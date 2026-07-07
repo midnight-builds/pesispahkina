@@ -1328,7 +1328,7 @@ export const QUESTIONS: Question[] = [
     vaikeustaso: 'osaaja',
     aihealue: 'lyominen',
     kysymys: 'Missä kohtaa mailaa lyöminen tekee lyönnistä laittoman D–G-junioreiden otteluissa?',
-    vaihtoehdot: ['Mailan grippiosalla lyöminen', 'Mailan lavan kärjellä lyöminen', 'Mailan keskikohdalla lyöminen'],
+    vaihtoehdot: ['Mailan grippiosalla lyöminen', 'Mailan kärjellä lyöminen', 'Mailan keskikohdalla lyöminen'],
     oikeaIndeksi: 0,
     selitys: 'D–G-junioreiden otteluissa mailan grippiosalla (kahvan päässä) lyöty lyönti tuomitaan laittomaksi.',
     lahde: {
@@ -1336,7 +1336,7 @@ export const QUESTIONS: Question[] = [
       kohta: '29 § Laiton lyönti, kohta 9',
       url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
     },
-    tarkistettu: '2026-07-06',
+    tarkistettu: '2026-07-07',
   },
   {
     id: 'osaaja-laiton-lyonti-kaksoislyonti',
