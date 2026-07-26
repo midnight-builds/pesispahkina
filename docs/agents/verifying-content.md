@@ -54,9 +54,15 @@ ja **päivitä `LAHTEET.md`** samalla (dokumentti, URL, hakupäivä, vuosi) —
 muuten seuraava istunto ei tiedä että cache on jo tuore.
 
 Tarvittavat dokumentit: **Pesäpallon pelisäännöt**, **Pienpesiksen
-pelisäännöt**, **Erityissäännöt E-pelisarja ja F–G**. `pdftotext` kuuluu
+pelisäännöt**, **Erityissäännöt E-pelisarja ja F–G** sekä käsimerkkien osalta
+**Pesäpallotuomarin perusnäytöt** (tuomarikoulutusmateriaali,
+https://www.pesis.fi/kilpailu/tuomarikoulutus). `pdftotext` kuuluu
 poppler-utils-pakettiin. HUOM: WebFetch ei osaa lukea näitä PDF:iä suoraan —
-käytä aina pdftotextiä itse sääntötekstin purkuun.
+käytä aina pdftotextiä itse sääntötekstin purkuun. Koulutusmateriaali on
+.pptx-muodossa; sen tekstit puretaan diojen XML:stä (ks. LAHTEET.md).
+
+**Ristiriita koulutusmateriaalin ja pelisääntöjen välillä ratkaistaan aina
+pelisääntöjen hyväksi** — sellainen kysymys saa verdiktin VIRHE.
 
 ### 2. Jaa kysymykset osiin
 

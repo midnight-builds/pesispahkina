@@ -39,6 +39,13 @@ Sisältötesti `src/domain/content.test.ts` kaatuu, jos lisäys on virheellinen.
    erityissääntöjen poikkeuksin, **D** pelisääntöjä. Koko kysymyspankin
    järjestelmällinen tarkistus: ks. `docs/agents/verifying-content.md`.
 
+4. **Vältä toistoa:** katso ensin, mitä `concept`-arvoja lokerossa jo on. Lisää
+   mieluummin **uusi sääntökohta** kuin sama uudelleen. `npm test` tulostaa
+   pehmeän concept-jakaumaraportin (ei kaada) — se paljastaa kattavuusaukot.
+
+Vaihtoehtojen järjestys sekoitetaan käyttöliittymässä ajossa, joten `oikeaIndeksi`
+saa olla mikä tahansa — sitä ei tarvitse arpoa käsin.
+
 ## Tuomarikysymyksen lisääminen
 
 Tuomarikysymys kysyy **tuomitsemista**: mikä on oikea ratkaisu, kuka sen tekee
@@ -58,16 +65,18 @@ sääntöjen tuomariluku.
 - **Sävy:** tuomari-näkökulma kirjoitetaan n. 10–11-vuotiaan lukutasolle ja
   siitä ylöspäin kaikissa ikäluokissa — myös G:ssä ja F:ssä, koska tuomarina
   toimivat lähtökohtaisesti sen ikäiset ja vanhemmat.
-- Verkosta (esim. Pesäpalloliiton lyhennelmät) saa hakea **ideoita** siihen,
-  mitä kannattaa kysyä. Väite verifioidaan silti aina cachetuista
-  sääntöteksteistä, ja `lahde` osoittaa viralliseen sääntöön. Jos
-  sääntökatetta ei löydy, kysymystä ei lisätä.
-4. **Vältä toistoa:** katso ensin, mitä `concept`-arvoja lokerossa jo on. Lisää
-   mieluummin **uusi sääntökohta** kuin sama uudelleen. `npm test` tulostaa
-   pehmeän concept-jakaumaraportin (ei kaada) — se paljastaa kattavuusaukot.
+- **Hyväksytyt lähteet** ovat Pesäpalloliiton omat dokumentit: pelisäännöt,
+  pienpesiksen pelisäännöt, erityissäännöt ja **tuomarikoulutusmateriaali**
+  (perusnäytöt). Kaikki nämä ovat ground-truth-cachessa. Kolmannen osapuolen
+  lyhennelmistä (seurasivustot, blogit) saa hakea vain **ideoita** siitä, mitä
+  kannattaa kysyä — ne eivät kelpaa `lahde`-arvoksi. Jos väitteelle ei löydy
+  katetta hyväksytystä lähteestä, kysymystä ei lisätä.
+- **Ristiriitatilanteessa pelisäännöt voittaa** koulutusmateriaalin.
+- **Käsimerkit:** pelisäännöt nimeävät vain tilanteet, joissa käsimerkkejä
+  käytetään; merkkien muoto on tuomarikoulutusmateriaalissa. Kysymyksissä
+  käytetään sanaa *käsimerkki* (sääntökirjan sana) ja koulutuksen termi
+  *näyttö* mainitaan selityksessä.
 
-Vaihtoehtojen järjestys sekoitetaan käyttöliittymässä ajossa, joten `oikeaIndeksi`
-saa olla mikä tahansa — sitä ei tarvitse arpoa käsin.
 
 ## Näkökulman lisääminen
 
@@ -88,7 +97,8 @@ Muu (UI, tallennus, eteneminen) toimii automaattisesti konfiguraation kautta.
 ## Vaikeustason lisääminen
 
 Muokkaa `VAIKEUSTASOT` ja `VAIKEUSTASO_NIMI` (`config.ts`) sekä `Vaikeustaso`-tyyppi
-ja `SaveData.ageGroups`-tierit (`types.ts`, `progression.ts` `createAgeGroupState`).
+ja `AgeGroupState.tiers` (`types.ts`, `progression.ts` `createAgeGroupState`).
+Huomaa, että eteneminen on `SaveData.progress`-rakenteessa näkökulmittain.
 
 ## Pelimuodon lisääminen
 

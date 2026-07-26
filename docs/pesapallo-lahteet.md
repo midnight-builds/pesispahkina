@@ -10,6 +10,26 @@ virallisten sääntöjen mukaan. Ei arvata eikä käytetä puhekielisiä/vääri
   - Pienpesiksen pelisäännöt
   - Erityissäännöt E-pelisarja ja F–G (nuorimmat ikäluokat)
 
+## Toissijainen lähde: tuomarikoulutusmateriaali
+
+- Pesäpalloliiton tuomarikoulutus: https://www.pesis.fi/kilpailu/tuomarikoulutus
+  - **Pesäpallotuomarin perusnäytöt 2026** — kaksi diasarjaa: peli- ja
+    syöttötuomarille sekä pesätuomareille ja takarajatuomareille.
+
+Tämä on liiton **omaa** materiaalia (samalla CDN:llä kuin sääntö-PDF:t), ei
+kolmannen osapuolen lyhennelmä, ja se kelpaa `lahde`-arvoksi. Se on ainoa
+virallinen lähde, joka kuvaa **käsimerkkien muodon** — pelisäännöt nimeävät
+vain tilanteet, joissa käsimerkkejä käytetään.
+
+**Ristiriitatilanteessa pelisäännöt voittaa.** Koulutusmateriaali
+yksinkertaistaa paikoin sääntöjä opetustarkoituksessa; jos merkin kuvaus ja
+sääntöteksti ovat eri mieltä ratkaisusta, sääntö ratkaisee.
+
+⚠️ **Varo softball-materiaalia.** Verkossa on seurasivustoilla PDF:iä nimellä
+"tuomarin käsimerkit", jotka ovat softballin tai baseballin merkkejä (tunnistat
+niistä sanat *päätuomari*, *sääntö 61*, *käsisyöttö*). Ne EIVÄT ole pesäpalloa
+— ks. myös huomio mailasta ja kentän muodosta alempana.
+
 Nämä on jo purettu tekstiksi ja tallessa levyllä (ei uutta latausta joka
 istunnossa): `.claude/verify/ground-truth/*.txt`, manifest
 `.claude/verify/ground-truth/LAHTEET.md` kertoo mitä on tallessa ja koska
@@ -35,14 +55,18 @@ Kun kysymys kuuluu usealle ikäluokalle, varmista ettei väite ole ristiriidassa
 minkään mukaan otetun ikäluokan sääntöversion kanssa.
 
 ## Käytettäviä termejä (tarkistettu virallisista/lähteistä)
+- Merkinanto: **käsimerkki** on sääntökirjan sana (44 §; hakemistossa
+  "Käsimerkit"). Tuomarikoulutuksessa samoista merkeistä käytetään nimitystä
+  **näyttö** / **perusnäyttö** (esim. "laitonnäyttö" esiintyy myös säännöissä).
+  Kysymyksissä käytetään sanaa *käsimerkki*, ja *näyttö* mainitaan selityksessä.
 - Tuomaristo: **pelituomari** (ylin päätösvalta), **syöttötuomari**,
   **kakkostuomari**, **kolmostuomari**, **takarajatuomari** (kolme viimeistä =
   **pesätuomarit**, säännöissä otsikolla "Muut tuomarit"), **kirjuri**.
   Sana **"päätuomari" ei esiinny säännöissä** — se on puhekieltä; oikea termi
   on pelituomari (tarkistettu 2026 pelisäännöistä 2026-07-26, 43–44 §).
   Välineet: **merkkilaikka** (valkoinen levy, toisella puolella musta ruksi),
-  **vihellysmerkit** (48 §). Käsimerkit mainitaan, mutta niitä ei kuvata
-  säännöissä — niistä ei siksi voi tehdä kysymyksiä.
+  **vihellysmerkit** (48 §). Käsimerkkien muoto on tuomarikoulutusmateriaalissa
+  (ks. yllä), ei säännöissä.
 - Pelipaikat/ulkopeli: **lukkari, koppari (sieppari), pesävahti, polttaja**
 - Sisäpeli: **lyöjä, etenijä**
 - Pesät: **kotipesä, ykköspesä, kakkospesä, kolmospesä**
