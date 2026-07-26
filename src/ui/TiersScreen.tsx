@@ -2,13 +2,14 @@ import { useGame } from '../state/GameContext';
 import {
   AVAUTUMISEEN_TARVITAAN,
   IKALUOKAT,
+  NAKOKULMA_NIMI,
   VAIKEUSTASOT,
   VAIKEUSTASO_NIMI,
 } from '../domain/config';
 import { Stars } from './Stars';
 
 export function TiersScreen() {
-  const { selectedIkaluokka, ageGroupState, poolSize, startRound, goHome } = useGame();
+  const { nakokulma, selectedIkaluokka, ageGroupState, poolSize, startRound, goHome } = useGame();
   if (!selectedIkaluokka) return null;
 
   const info = IKALUOKAT.find((i) => i.koodi === selectedIkaluokka)!;
@@ -23,13 +24,14 @@ export function TiersScreen() {
         <h2 className="topbar__title">
           {info.nimi} <span className="topbar__meta">{info.ikakuvaus}</span>
         </h2>
+        <span className="chip chip--nakokulma">{NAKOKULMA_NIMI[nakokulma]}</span>
       </header>
 
       <p className="section-label">Valitse vaikeustaso</p>
       <div className="cards">
         {VAIKEUSTASOT.map((tier) => {
           const state = group.tiers[tier];
-          const count = poolSize({ ikaluokka: selectedIkaluokka, vaikeustaso: tier });
+          const count = poolSize({ nakokulma, ikaluokka: selectedIkaluokka, vaikeustaso: tier });
           const playable = state.unlocked && count > 0;
           const comingSoon = state.unlocked && count === 0;
 
@@ -63,7 +65,9 @@ export function TiersScreen() {
                   <button
                     type="button"
                     className="btn btn--primary"
-                    onClick={() => startRound({ ikaluokka: selectedIkaluokka, vaikeustaso: tier })}
+                    onClick={() =>
+                      startRound({ nakokulma, ikaluokka: selectedIkaluokka, vaikeustaso: tier })
+                    }
                   >
                     Pelaa
                   </button>

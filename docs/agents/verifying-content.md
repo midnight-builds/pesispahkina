@@ -114,8 +114,11 @@ sisältö). Aja lopuksi `npm run typecheck && npm run lint && npm test`.
 4. Ovatko termit sääntöjen termejä? (Tunnettu ansa: "sisäkenttä" ei esiinny
    säännöissä; vuorot ovat sisävuoro/ulkovuoro.)
 5. Päteekö väite KAIKILLE kysymyksen `ikaluokat`-arvoille oikean
-   sääntöversion mukaan? (G: pienpesis + F–G-erityissäännöt; F: pelisäännöt +
-   F–G-erityissäännöt; E: pelisäännöt + E-erityissäännöt; D: pelisäännöt.)
+   sääntöversion mukaan? (G: pienpesis + F–G-erityissäännöt soveltuvin osin;
+   F: pelisäännöt + F–G-erityissäännöt; E: pelisäännöt + E-erityissäännöt;
+   D: pelisäännöt.)
+6. Onko `nakokulma` oikein? Tuomarikysymyksen on kysyttävä tuomitsemista, ei
+   pelaamista. Termi on **pelituomari**, ei "päätuomari".
 
 ## OHJE.md-mallipohja agenteille
 

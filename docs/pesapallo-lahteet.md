@@ -21,15 +21,28 @@ mitään verkosta.
 Nuorimmat eivät pelaa aikuisten täyssääntöjä. Kysymyksen sisältö on tarkistettava
 sen ikäluokan oikeasta sääntöversiosta:
 
-- **G ja F:** pienpesis + F–G-erityissäännöt (pienempi kenttä, yksinkertaistetut
-  säännöt). Älä käytä täyssääntöjä näiden kysymyksissä.
-- **E:** E-pelisarjan erityissäännöt.
+- **G:** pienpesis + F–G-erityissäännöt soveltuvin osin (pienempi kenttä,
+  yksinkertaistetut säännöt). Älä käytä täyssääntöjä G:n kysymyksissä.
+- **F:** varsinaiset pelisäännöt + F–G-erityissäännöt. Erityissääntöjen oma
+  teksti: *"E-junioreiden pelisarjassa ja F-junioreiden otteluissa noudatetaan
+  pesäpallon pelisääntöjä alla olevin poikkeuksin. Pienpesiksessä ovat voimassa
+  Pienpesiksen pelisäännöt sekä alla olevat poikkeukset soveltuvin osin."*
+  (tarkistettu 2026-07-26). F ei siis pelaa pienpesistä.
+- **E:** varsinaiset pelisäännöt + E-pelisarjan erityissäännöt.
 - **D ja ylöspäin:** pääosin varsinaiset pelisäännöt.
 
 Kun kysymys kuuluu usealle ikäluokalle, varmista ettei väite ole ristiriidassa
 minkään mukaan otetun ikäluokan sääntöversion kanssa.
 
 ## Käytettäviä termejä (tarkistettu virallisista/lähteistä)
+- Tuomaristo: **pelituomari** (ylin päätösvalta), **syöttötuomari**,
+  **kakkostuomari**, **kolmostuomari**, **takarajatuomari** (kolme viimeistä =
+  **pesätuomarit**, säännöissä otsikolla "Muut tuomarit"), **kirjuri**.
+  Sana **"päätuomari" ei esiinny säännöissä** — se on puhekieltä; oikea termi
+  on pelituomari (tarkistettu 2026 pelisäännöistä 2026-07-26, 43–44 §).
+  Välineet: **merkkilaikka** (valkoinen levy, toisella puolella musta ruksi),
+  **vihellysmerkit** (48 §). Käsimerkit mainitaan, mutta niitä ei kuvata
+  säännöissä — niistä ei siksi voi tehdä kysymyksiä.
 - Pelipaikat/ulkopeli: **lukkari, koppari (sieppari), pesävahti, polttaja**
 - Sisäpeli: **lyöjä, etenijä**
 - Pesät: **kotipesä, ykköspesä, kakkospesä, kolmospesä**

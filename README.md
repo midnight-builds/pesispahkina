@@ -9,12 +9,13 @@ tallennetaan selaimen localStorageen. Asennettavissa PWA:na.
 ## Kuvakaappaukset
 
 <p>
-  <img src="docs/screenshots/home.png" alt="Kotinäkymä: ikäluokat G–D" width="240" />
+  <img src="docs/screenshots/home.png" alt="Kotinäkymä: näkökulmavalinta ja ikäluokat G–D" width="240" />
+  <img src="docs/screenshots/home-tuomari.png" alt="Kotinäkymä tuomari-näkökulmassa" width="240" />
   <img src="docs/screenshots/reveal.png" alt="Kysymys ja välitön palaute selityksineen" width="240" />
   <img src="docs/screenshots/result.png" alt="Tulosnäkymä: tähdet, pisteet ja saavutus" width="240" />
 </p>
 
-<sub>Kotinäkymä · välitön palaute selityksineen · tulosnäkymä juhla-animaatioineen</sub>
+<sub>Kotinäkymä · sama tuomari-näkökulmassa · välitön palaute selityksineen · tulosnäkymä juhla-animaatioineen</sub>
 
 ## Kehitys
 
@@ -46,10 +47,13 @@ src/
 - `docs/pesapallo-lahteet.md` — sääntöjen kanoniset lähteet ja termit
 - `docs/pesapallo-ikaluokat.md` — ikäluokat (G–D)
 - **`docs/agents/adding-content.md` — näin lisäät kysymyksiä, ikäluokkia ja pelimuotoja**
-- `docs/backlog.md` — v2-ideat (mm. tuomarikysymykset, sovelluksen sisäinen palaute)
+- `docs/backlog.md` — v2-ideat (mm. sovelluksen sisäinen palaute kysymyksestä)
 
-## Ensimmäisen version rajaus
+## Sisällön rajaus
 
-Ikäluokat G, F, E, D. Vaikeustasot avautuvat kahdesta peräkkäisestä onnistuneesta
-kierroksesta (≥ 8/10). v1:n sisältö painottuu aloittelija-tasolle; korkeammat tasot
-täydentyvät vaiheittain (ks. `docs/agents/adding-content.md`).
+Kaksi näkökulmaa: **pelaaja** (miten toimin pelaajana) ja **tuomari** (mikä on
+oikea ratkaisu, kuka sen tekee ja miten se ilmoitetaan). Molempien alla ikäluokat
+G, F, E, D ja vaikeustasot, jotka avautuvat kahdesta peräkkäisestä onnistuneesta
+kierroksesta (≥ 8/10). Eteneminen on erillinen näkökulmittain (ks.
+`docs/adr/0006-nakokulma-akseli.md`). Sisältö painottuu aloittelija-tasolle;
+korkeammat tasot täydentyvät vaiheittain (ks. `docs/agents/adding-content.md`).

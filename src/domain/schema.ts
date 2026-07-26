@@ -2,9 +2,10 @@
 // Ks. ADR 0004. Enumit johdetaan config.ts:stä → yksi totuuden lähde.
 
 import { z } from 'zod';
-import { AIHEALUEET, IKALUOKAT, VAIKEUSTASOT } from './config';
-import type { Aihealue, Ikaluokka, Question, Vaikeustaso } from './types';
+import { AIHEALUEET, IKALUOKAT, NAKOKULMAT, VAIKEUSTASOT } from './config';
+import type { Aihealue, Ikaluokka, Nakokulma, Question, Vaikeustaso } from './types';
 
+const nakokulmaValues = NAKOKULMAT.map((n) => n.koodi) as [Nakokulma, ...Nakokulma[]];
 const ikaluokkaValues = IKALUOKAT.map((i) => i.koodi) as [Ikaluokka, ...Ikaluokka[]];
 const vaikeustasoValues = VAIKEUSTASOT as [Vaikeustaso, ...Vaikeustaso[]];
 const aihealueValues = AIHEALUEET as [Aihealue, ...Aihealue[]];
@@ -19,6 +20,7 @@ const questionSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/, 'id: vain pienet kirjaimet, numerot ja väliviivat'),
     concept: z.string().min(1),
+    nakokulma: z.enum(nakokulmaValues),
     ikaluokat: z.array(z.enum(ikaluokkaValues)).min(1),
     vaikeustaso: z.enum(vaikeustasoValues),
     aihealue: z.enum(aihealueValues),
@@ -96,11 +98,11 @@ interface ConceptWarning {
  */
 export function conceptReport(questions: readonly Question[]): ConceptWarning[] {
   const warnings: ConceptWarning[] = [];
-  // avain: "ikaluokka|vaikeustaso" -> concept -> count
+  // avain: "nakokulma|ikaluokka|vaikeustaso" -> concept -> count
   const byLokero = new Map<string, Map<string, number>>();
   for (const q of questions) {
     for (const ik of q.ikaluokat) {
-      const key = `${ik}|${q.vaikeustaso}`;
+      const key = `${q.nakokulma}|${ik}|${q.vaikeustaso}`;
       const concepts = byLokero.get(key) ?? new Map<string, number>();
       concepts.set(q.concept, (concepts.get(q.concept) ?? 0) + 1);
       byLokero.set(key, concepts);

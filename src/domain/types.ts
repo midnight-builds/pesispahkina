@@ -1,5 +1,8 @@
 // Domain-tyypit. Sanasto: ks. CONTEXT.md.
 
+/** Kummalta kannalta sääntöä kysytään. Ylin akseli ikäluokan yläpuolella. */
+export type Nakokulma = 'pelaaja' | 'tuomari';
+
 export type Ikaluokka = 'G' | 'F' | 'E' | 'D';
 
 export type Vaikeustaso = 'aloittelija' | 'harjoittelija' | 'osaaja' | 'mestari';
@@ -10,7 +13,8 @@ export type Aihealue =
   | 'roolit'
   | 'lyominen'
   | 'eteneminen'
-  | 'ottelu';
+  | 'ottelu'
+  | 'tuomarointi';
 
 export type Tulos = 'right' | 'wrong';
 
@@ -26,6 +30,8 @@ export interface Question {
   id: string;
   /** Mitä sääntökohtaa kysymys testaa (samankaltaisuuden hallinta, ks. ADR 0004). */
   concept: string;
+  /** Kummalta kannalta kysytään — yksi arvo per kysymys (ks. ADR 0006). */
+  nakokulma: Nakokulma;
   /** 1..n ikäluokkaa — sama kysymys voi kuulua usealle. */
   ikaluokat: Ikaluokka[];
   vaikeustaso: Vaikeustaso;
@@ -44,8 +50,9 @@ export interface Question {
   tarkistettu?: string;
 }
 
-/** (ikäluokka × vaikeustaso) -lokero. */
+/** (näkökulma × ikäluokka × vaikeustaso) -lokero. */
 export interface Lokero {
+  nakokulma: Nakokulma;
   ikaluokka: Ikaluokka;
   vaikeustaso: Vaikeustaso;
 }
@@ -66,14 +73,17 @@ export interface Settings {
   animationsEnabled: boolean;
 }
 
-/** Koko localStorage-möykky (ks. ADR 0002). */
+/** Eteneminen on erillinen per näkökulma (ks. ADR 0006). */
+export type NakokulmaProgress = Partial<Record<Ikaluokka, AgeGroupState>>;
+
+/** Koko localStorage-möykky (ks. ADR 0002). v1 → v2 migraatio: storage.ts. */
 export interface SaveData {
-  schemaVersion: 1;
+  schemaVersion: 2;
   settings: Settings;
   totalPoints: number;
   roundsPlayed: number;
   achievements: string[];
-  ageGroups: Partial<Record<Ikaluokka, AgeGroupState>>;
+  progress: Record<Nakokulma, NakokulmaProgress>;
   questionResults: Record<string, Tulos>;
 }
 

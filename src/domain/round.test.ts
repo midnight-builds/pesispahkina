@@ -7,6 +7,7 @@ function q(id: string, extra: Partial<Question> = {}): Question {
   return {
     id,
     concept: id,
+    nakokulma: 'pelaaja',
     ikaluokat: ['G'],
     vaikeustaso: 'aloittelija',
     aihealue: 'perusteet',
@@ -31,7 +32,7 @@ describe('questionsForLokero', () => {
       q('b', { ikaluokat: ['D'], vaikeustaso: 'aloittelija' }),
       q('c', { ikaluokat: ['G'], vaikeustaso: 'harjoittelija' }),
     ];
-    const res = questionsForLokero(pool, { ikaluokka: 'G', vaikeustaso: 'aloittelija' });
+    const res = questionsForLokero(pool, { nakokulma: 'pelaaja', ikaluokka: 'G', vaikeustaso: 'aloittelija' });
     expect(res.map((x) => x.id)).toEqual(['a']);
   });
 });
@@ -70,7 +71,7 @@ describe('finalizeRound', () => {
       { question: q('b'), chosenIndex: 1, correct: false, streakAfter: 0, pointsEarned: 0 },
       { question: q('c'), chosenIndex: 0, correct: true, streakAfter: 1, pointsEarned: 10 },
     ];
-    const res = finalizeRound({ ikaluokka: 'G', vaikeustaso: 'aloittelija' }, answers);
+    const res = finalizeRound({ nakokulma: 'pelaaja', ikaluokka: 'G', vaikeustaso: 'aloittelija' }, answers);
     expect(res.correctCount).toBe(2);
     expect(res.score).toBe(20);
     expect(res.maxStreak).toBe(1);

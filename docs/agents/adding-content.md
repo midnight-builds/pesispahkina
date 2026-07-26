@@ -19,6 +19,9 @@ Sisältötesti `src/domain/content.test.ts` kaatuu, jos lisäys on virheellinen.
      vanhaa id:tä (historia viittaa siihen).
    - `concept` — mitä **sääntökohtaa** kysymys testaa (slug). Sama concept saa
      esiintyä eri sanamuodoilla, mutta **enintään 3 varianttia per lokero**.
+   - `nakokulma` — `pelaaja` | `tuomari`, **yksi arvo** (ks. ADR 0006). Sama
+     sääntökohta saa esiintyä molemmissa näkökulmissa **eri kysymyksenä**,
+     mutta yksi kysymys ei kuulu molempiin.
    - `ikaluokat` — 1..n arvoa (`G`,`F`,`E`,`D`). Sama kysymys voi kuulua usealle.
    - `vaikeustaso` — `aloittelija` | `harjoittelija` | `osaaja` | `mestari`.
    - `aihealue` — yksi arvo (ks. `src/domain/config.ts`).
@@ -31,15 +34,47 @@ Sisältötesti `src/domain/content.test.ts` kaatuu, jos lisäys on virheellinen.
      viimeksi verrattu ajantasaisiin sääntöihin. Täytä aina kun täytät
      `lahde`-kentän.
 3. **Tarkkuus:** jokainen väite on tarkistettava virallisista säännöistä
-   (ks. `docs/pesapallo-lahteet.md`). G/F noudattavat **pienpesistä** — älä käytä
-   niissä täyssääntöjä. Koko kysymyspankin järjestelmällinen tarkistus:
-   ks. `docs/agents/verifying-content.md`.
+   (ks. `docs/pesapallo-lahteet.md`). **G** noudattaa pienpesistä — älä käytä
+   sen kysymyksissä täyssääntöjä. **F ja E** noudattavat pelisääntöjä
+   erityissääntöjen poikkeuksin, **D** pelisääntöjä. Koko kysymyspankin
+   järjestelmällinen tarkistus: ks. `docs/agents/verifying-content.md`.
+
+## Tuomarikysymyksen lisääminen
+
+Tuomarikysymys kysyy **tuomitsemista**: mikä on oikea ratkaisu, kuka sen tekee
+ja miten se ilmoitetaan. Lähteenä on koko ikäluokan säännöstö — ei vain
+sääntöjen tuomariluku.
+
+- Sääntöjen termi on **pelituomari**, ei "päätuomari". Muut: syöttötuomari,
+  kakkostuomari, kolmostuomari, takarajatuomari, kirjuri. `content.test.ts`
+  kaatuu, jos jossain kysymyksessä esiintyy sana "päätuomari".
+- **Takarajatuomari** mainitaan tuomariston kokoonpanossa ja "Muut tuomarit"
+  -tehtävälistassa (jotta vastaukset ovat täydellisiä), mutta sille ei
+  kirjoiteta omia conceptejä.
+- Aihealue `tuomarointi` on varattu sisällölle, joka koskee **itse tuomaristoa**
+  (kokoonpano, tehtävät, vihellys- ja laikkamerkit, rangaistukset). Jos kysymys
+  koskee jonkin muun säännön ratkaisua, käytä sen säännön omaa aihealuetta
+  (esim. pesäkilpa → `eteneminen`, syötön tuomitseminen → `lyominen`).
+- **Sävy:** tuomari-näkökulma kirjoitetaan n. 10–11-vuotiaan lukutasolle ja
+  siitä ylöspäin kaikissa ikäluokissa — myös G:ssä ja F:ssä, koska tuomarina
+  toimivat lähtökohtaisesti sen ikäiset ja vanhemmat.
+- Verkosta (esim. Pesäpalloliiton lyhennelmät) saa hakea **ideoita** siihen,
+  mitä kannattaa kysyä. Väite verifioidaan silti aina cachetuista
+  sääntöteksteistä, ja `lahde` osoittaa viralliseen sääntöön. Jos
+  sääntökatetta ei löydy, kysymystä ei lisätä.
 4. **Vältä toistoa:** katso ensin, mitä `concept`-arvoja lokerossa jo on. Lisää
    mieluummin **uusi sääntökohta** kuin sama uudelleen. `npm test` tulostaa
    pehmeän concept-jakaumaraportin (ei kaada) — se paljastaa kattavuusaukot.
 
 Vaihtoehtojen järjestys sekoitetaan käyttöliittymässä ajossa, joten `oikeaIndeksi`
 saa olla mikä tahansa — sitä ei tarvitse arpoa käsin.
+
+## Näkökulman lisääminen
+
+Ylin akseli on `NAKOKULMAT` (`src/domain/config.ts`) ja `Nakokulma`-tyyppi
+(`types.ts`). Uusi arvo vaatii myös `SaveData.progress`-rakenteen laajennuksen
+ja save-migraation (ks. ADR 0006 ja `src/storage/storage.ts`) — älä lisää
+näkökulmaa kevyesti.
 
 ## Ikäluokan lisääminen (esim. C, B, A)
 
