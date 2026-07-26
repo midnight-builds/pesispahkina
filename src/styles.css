@@ -364,6 +364,47 @@ button.card:active {
   border-color: var(--ink);
   color: #ffe1b0;
 }
+.chip--nakokulma {
+  margin-left: auto;
+  background: var(--panel-2);
+  color: var(--cyan);
+}
+
+/* ---------- Segmented (näkökulma: pelaaja / tuomari) ---------- */
+.segmented {
+  display: flex;
+  gap: 0;
+  border: 2px solid var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line);
+  background: var(--panel);
+}
+.segmented__option {
+  flex: 1;
+  min-height: var(--touch);
+  padding: 8px 6px;
+  border: 0;
+  border-right: 2px solid var(--ink);
+  background: transparent;
+  font-family: var(--pixel);
+  font-size: 0.62rem;
+  line-height: 1.5;
+  color: var(--muted);
+  cursor: pointer;
+}
+.segmented__option:last-child {
+  border-right: 0;
+}
+.segmented__option--on {
+  background: var(--gold-dark);
+  color: var(--ink);
+  text-shadow: none;
+}
+.segmented__hint {
+  margin: 0 2px;
+  font-family: var(--body);
+  font-size: 1.05rem;
+  color: var(--muted);
+}
 
 /* ---------- Stars ---------- */
 .stars {

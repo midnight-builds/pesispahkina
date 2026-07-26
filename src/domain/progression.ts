@@ -5,6 +5,7 @@ import { AVAUTUMISEEN_TARVITAAN, VAIKEUSTASOT } from './config';
 import type {
   AgeGroupState,
   Ikaluokka,
+  Nakokulma,
   RoundResult,
   SaveData,
   Settings,
@@ -19,12 +20,12 @@ const DEFAULT_SETTINGS: Settings = {
 
 export function createEmptySave(): SaveData {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     settings: { ...DEFAULT_SETTINGS },
     totalPoints: 0,
     roundsPlayed: 0,
     achievements: [],
-    ageGroups: {},
+    progress: { pelaaja: {}, tuomari: {} },
     questionResults: {},
   };
 }
@@ -59,12 +60,15 @@ export function highestUnlockedTier(ageGroup: AgeGroupState): Vaikeustaso {
   return highest;
 }
 
-/** Palauttaa uuden save-tilan, jossa ikäluokka on varmasti alustettu. */
-function ensureAgeGroup(save: SaveData, ik: Ikaluokka): SaveData {
-  if (save.ageGroups[ik]) return save;
+/** Palauttaa uuden save-tilan, jossa (näkökulma × ikäluokka) on varmasti alustettu. */
+function ensureAgeGroup(save: SaveData, nk: Nakokulma, ik: Ikaluokka): SaveData {
+  if (save.progress[nk][ik]) return save;
   return {
     ...save,
-    ageGroups: { ...save.ageGroups, [ik]: createAgeGroupState() },
+    progress: {
+      ...save.progress,
+      [nk]: { ...save.progress[nk], [ik]: createAgeGroupState() },
+    },
   };
 }
 
@@ -89,8 +93,8 @@ function betterBest(
  * kysymyshistoria, tason streak/best ja mahdollinen seuraavan tason avautuminen.
  */
 export function applyRoundResult(save: SaveData, result: RoundResult): ApplyRoundOutcome {
-  const { ikaluokka, vaikeustaso } = result.lokero;
-  const withGroup = ensureAgeGroup(save, ikaluokka);
+  const { nakokulma, ikaluokka, vaikeustaso } = result.lokero;
+  const withGroup = ensureAgeGroup(save, nakokulma, ikaluokka);
   const draft: SaveData = structuredClone(withGroup);
 
   draft.totalPoints += result.score;
@@ -101,7 +105,7 @@ export function applyRoundResult(save: SaveData, result: RoundResult): ApplyRoun
     draft.questionResults[a.question.id] = a.correct ? 'right' : 'wrong';
   }
 
-  const group = draft.ageGroups[ikaluokka]!;
+  const group = draft.progress[nakokulma][ikaluokka]!;
   const tier = group.tiers[vaikeustaso];
   tier.streak = result.success ? tier.streak + 1 : 0;
   tier.best = betterBest(tier.best, { stars: result.stars, score: result.score });

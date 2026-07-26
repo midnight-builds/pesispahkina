@@ -4,9 +4,6 @@ Kevyt lista ideoista, joita ei toteuteta v1:ssä. Ei sitova.
 
 ## v2
 
-- **Tuomarikysymykset.** Oma aihealue (tai laajennus `roolit`/uuteen `tuomarointi`-
-  aihealueeseen): tuomarin merkit, ratkaisut ja tuomarointiin liittyvät säännöt.
-  Tarkista termit ja merkit virallisista säännöistä (ks. `docs/pesapallo-lahteet.md`).
 - **Sovelluksen sisäinen palaute kysymyksestä.** Pelaajan pitää voida ilmoittaa
   helposti, jos kysymys on väärin tai muuten palautteen arvoinen (esim. pieni
   "Ilmoita kysymyksestä" -painike vastauksen paljastuksen yhteydessä).

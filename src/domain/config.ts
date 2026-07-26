@@ -1,7 +1,24 @@
 // Keskitetty konfiguraatio. Uuden ikäluokan/aihealueen lisääminen tehdään TÄSTÄ,
 // ei kovakoodattuna ympäri UI:ta (ks. ADR 0004 ja docs/agents/adding-content.md).
 
-import type { Aihealue, Ikaluokka, Vaikeustaso } from './types';
+import type { Aihealue, Ikaluokka, Nakokulma, Vaikeustaso } from './types';
+
+interface NakokulmaInfo {
+  koodi: Nakokulma;
+  nimi: string;
+  kuvaus: string;
+}
+
+/** Ylin akseli: kummalta kannalta sääntöä kysytään (ks. ADR 0006). */
+export const NAKOKULMAT: NakokulmaInfo[] = [
+  { koodi: 'pelaaja', nimi: 'Pelaaja', kuvaus: 'Miten toimin pelaajana?' },
+  { koodi: 'tuomari', nimi: 'Tuomari', kuvaus: 'Mikä on oikea ratkaisu?' },
+];
+
+export const NAKOKULMA_NIMI: Record<Nakokulma, string> = {
+  pelaaja: 'Pelaaja',
+  tuomari: 'Tuomari',
+};
 
 interface IkaluokkaInfo {
   koodi: Ikaluokka;
@@ -39,6 +56,7 @@ const AIHEALUE_NIMI: Record<Aihealue, string> = {
   lyominen: 'Lyöminen ja syöttö',
   eteneminen: 'Eteneminen, juoksut ja palot',
   ottelu: 'Ottelun kulku',
+  tuomarointi: 'Tuomaristo, merkit ja rangaistukset',
 };
 
 export const AIHEALUEET = Object.keys(AIHEALUE_NIMI) as Aihealue[];

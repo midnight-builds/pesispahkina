@@ -20,11 +20,12 @@ afterEach(() => {
 
 function result(vaikeustaso: Vaikeustaso, overrides: Partial<RoundResult> = {}): RoundResult {
   return {
-    lokero: { ikaluokka: 'G', vaikeustaso },
+    lokero: { nakokulma: 'pelaaja', ikaluokka: 'G', vaikeustaso },
     answers: Array.from({ length: 10 }, () => ({
       question: {
         id: 'x',
         concept: 'c',
+        nakokulma: 'pelaaja',
         ikaluokat: ['G'],
         vaikeustaso,
         aihealue: 'perusteet',

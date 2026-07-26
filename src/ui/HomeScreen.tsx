@@ -1,5 +1,5 @@
 import { useGame } from '../state/GameContext';
-import { IKALUOKAT, VAIKEUSTASO_NIMI } from '../domain/config';
+import { IKALUOKAT, NAKOKULMAT, VAIKEUSTASO_NIMI } from '../domain/config';
 import { highestUnlockedTier } from '../domain/progression';
 import { Stars } from './Stars';
 import { PixelSprite } from './pixel';
@@ -7,7 +7,8 @@ import { BATTER, BALL } from './sprites';
 import { RulesInfoButton } from './RulesInfoButton';
 
 export function HomeScreen() {
-  const { save, openTiers, openSettings } = useGame();
+  const { save, nakokulma, chooseNakokulma, openTiers, openSettings } = useGame();
+  const nakokulmaInfo = NAKOKULMAT.find((n) => n.koodi === nakokulma)!;
 
   return (
     <div className="screen">
@@ -22,10 +23,26 @@ export function HomeScreen() {
         <p className="hero__subtitle">Opi pesäpallon säännöt pelaamalla!</p>
       </header>
 
+      <p className="section-label">Pelaan vai tuomaroin?</p>
+      <div className="segmented" role="group" aria-label="Näkökulma">
+        {NAKOKULMAT.map((n) => (
+          <button
+            key={n.koodi}
+            type="button"
+            className={'segmented__option' + (n.koodi === nakokulma ? ' segmented__option--on' : '')}
+            aria-pressed={n.koodi === nakokulma}
+            onClick={() => chooseNakokulma(n.koodi)}
+          >
+            {n.nimi}
+          </button>
+        ))}
+      </div>
+      <p className="segmented__hint">{nakokulmaInfo.kuvaus}</p>
+
       <p className="section-label">Valitse ikäluokka</p>
       <div className="cards">
         {IKALUOKAT.map((info) => {
-          const started = save.ageGroups[info.koodi];
+          const started = save.progress[nakokulma][info.koodi];
           const tier = started ? highestUnlockedTier(started) : null;
           const bestStars = started
             ? Math.max(0, ...Object.values(started.tiers).map((t) => t.best?.stars ?? 0))

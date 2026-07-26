@@ -15,10 +15,10 @@ export function ResultScreen() {
 
   if (!outcome) return null;
   const { result, newlyUnlocked, newAchievements } = outcome;
-  const { ikaluokka, vaikeustaso } = result.lokero;
+  const { nakokulma, ikaluokka, vaikeustaso } = result.lokero;
   const total = result.answers.length;
 
-  const tierState = save.ageGroups[ikaluokka]?.tiers[vaikeustaso];
+  const tierState = save.progress[nakokulma][ikaluokka]?.tiers[vaikeustaso];
   const almost =
     result.success && !newlyUnlocked && tierState?.streak === AVAUTUMISEEN_TARVITAAN - 1;
 
@@ -26,7 +26,7 @@ export function ResultScreen() {
   // "Seuraava taso" -nappi vain jos siinä on pelattavia kysymyksiä — muuten
   // nappi olisi kuollut (startRound ei tee mitään tyhjällä poolilla).
   const nextPlayable =
-    newlyUnlocked !== null && poolSize({ ikaluokka, vaikeustaso: newlyUnlocked }) > 0;
+    newlyUnlocked !== null && poolSize({ nakokulma, ikaluokka, vaikeustaso: newlyUnlocked }) > 0;
 
   return (
     <div className="screen screen--center">
@@ -75,7 +75,7 @@ export function ResultScreen() {
             <button
               type="button"
               className="btn btn--primary btn--wide"
-              onClick={() => startRound({ ikaluokka, vaikeustaso: nextTier(vaikeustaso)! })}
+              onClick={() => startRound({ nakokulma, ikaluokka, vaikeustaso: nextTier(vaikeustaso)! })}
             >
               Seuraava taso: {VAIKEUSTASO_NIMI[newlyUnlocked]}
             </button>
@@ -83,7 +83,7 @@ export function ResultScreen() {
           <button
             type="button"
             className="btn btn--secondary btn--wide"
-            onClick={() => startRound({ ikaluokka, vaikeustaso })}
+            onClick={() => startRound({ nakokulma, ikaluokka, vaikeustaso })}
           >
             Pelaa uudelleen
           </button>

@@ -54,9 +54,15 @@ ja **päivitä `LAHTEET.md`** samalla (dokumentti, URL, hakupäivä, vuosi) —
 muuten seuraava istunto ei tiedä että cache on jo tuore.
 
 Tarvittavat dokumentit: **Pesäpallon pelisäännöt**, **Pienpesiksen
-pelisäännöt**, **Erityissäännöt E-pelisarja ja F–G**. `pdftotext` kuuluu
+pelisäännöt**, **Erityissäännöt E-pelisarja ja F–G** sekä käsimerkkien osalta
+**Pesäpallotuomarin perusnäytöt** (tuomarikoulutusmateriaali,
+https://www.pesis.fi/kilpailu/tuomarikoulutus). `pdftotext` kuuluu
 poppler-utils-pakettiin. HUOM: WebFetch ei osaa lukea näitä PDF:iä suoraan —
-käytä aina pdftotextiä itse sääntötekstin purkuun.
+käytä aina pdftotextiä itse sääntötekstin purkuun. Koulutusmateriaali on
+.pptx-muodossa; sen tekstit puretaan diojen XML:stä (ks. LAHTEET.md).
+
+**Ristiriita koulutusmateriaalin ja pelisääntöjen välillä ratkaistaan aina
+pelisääntöjen hyväksi** — sellainen kysymys saa verdiktin VIRHE.
 
 ### 2. Jaa kysymykset osiin
 
@@ -114,8 +120,11 @@ sisältö). Aja lopuksi `npm run typecheck && npm run lint && npm test`.
 4. Ovatko termit sääntöjen termejä? (Tunnettu ansa: "sisäkenttä" ei esiinny
    säännöissä; vuorot ovat sisävuoro/ulkovuoro.)
 5. Päteekö väite KAIKILLE kysymyksen `ikaluokat`-arvoille oikean
-   sääntöversion mukaan? (G: pienpesis + F–G-erityissäännöt; F: pelisäännöt +
-   F–G-erityissäännöt; E: pelisäännöt + E-erityissäännöt; D: pelisäännöt.)
+   sääntöversion mukaan? (G: pienpesis + F–G-erityissäännöt soveltuvin osin;
+   F: pelisäännöt + F–G-erityissäännöt; E: pelisäännöt + E-erityissäännöt;
+   D: pelisäännöt.)
+6. Onko `nakokulma` oikein? Tuomarikysymyksen on kysyttävä tuomitsemista, ei
+   pelaamista. Termi on **pelituomari**, ei "päätuomari".
 
 ## OHJE.md-mallipohja agenteille
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { QUESTIONS } from '../data/questions';
-import { IKALUOKAT } from './config';
+import { IKALUOKAT, NAKOKULMAT } from './config';
 import {
   conceptReport,
   findContentIssues,
@@ -21,11 +21,24 @@ describe('kysymyssisältö', () => {
     expect(issues).toEqual([]);
   });
 
-  it('jokaisella ikäluokalla on pelattava aloittelija-lokero', () => {
-    for (const { koodi } of IKALUOKAT) {
-      const pool = questionsForLokero(QUESTIONS, { ikaluokka: koodi, vaikeustaso: 'aloittelija' });
-      expect(pool.length, `Ikäluokka ${koodi} aloittelija`).toBeGreaterThan(0);
+  it('jokaisella (näkökulma × ikäluokka) -parilla on pelattava aloittelija-lokero', () => {
+    for (const { koodi: nakokulma } of NAKOKULMAT) {
+      for (const { koodi } of IKALUOKAT) {
+        const pool = questionsForLokero(QUESTIONS, {
+          nakokulma,
+          ikaluokka: koodi,
+          vaikeustaso: 'aloittelija',
+        });
+        expect(pool.length, `${nakokulma} / ${koodi} / aloittelija`).toBeGreaterThan(0);
+      }
     }
+  });
+
+  it('tuomarikysymykset käyttävät sääntöjen termiä pelituomari, ei "päätuomari"', () => {
+    const paatuomari = QUESTIONS.filter((q) =>
+      [q.kysymys, q.selitys, ...q.vaihtoehdot].some((t) => /päätuomari/i.test(t)),
+    );
+    expect(paatuomari.map((q) => q.id)).toEqual([]);
   });
 
   it('pehmeä concept-raportti (ei kaada) — tulostaa varoitukset', () => {

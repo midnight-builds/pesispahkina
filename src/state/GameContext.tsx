@@ -15,6 +15,7 @@ import type {
   AnsweredQuestion,
   Ikaluokka,
   Lokero,
+  Nakokulma,
   Question,
   RoundResult,
   SaveData,
@@ -50,11 +51,14 @@ interface RoundOutcome {
 export interface GameContextValue {
   save: SaveData;
   view: View;
+  /** Ylin valinta: kummalta kannalta pelataan (ks. ADR 0006). */
+  nakokulma: Nakokulma;
   selectedIkaluokka: Ikaluokka | null;
   round: RoundState | null;
   outcome: RoundOutcome | null;
   ageGroupState: (ik: Ikaluokka) => AgeGroupState;
   poolSize: (lokero: Lokero) => number;
+  chooseNakokulma: (nk: Nakokulma) => void;
   goHome: () => void;
   openTiers: (ik: Ikaluokka) => void;
   openSettings: () => void;
@@ -86,6 +90,7 @@ function present(questions: Question[]): PresentedQuestion[] {
 export function GameProvider({ children }: { children: ReactNode }) {
   const [save, setSave] = useState<SaveData>(() => loadSave());
   const [view, setView] = useState<View>('home');
+  const [nakokulma, setNakokulma] = useState<Nakokulma>('pelaaja');
   const [selectedIkaluokka, setSelectedIkaluokka] = useState<Ikaluokka | null>(null);
   const [round, setRound] = useState<RoundState | null>(null);
   const [outcome, setOutcome] = useState<RoundOutcome | null>(null);
@@ -102,7 +107,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<GameContextValue>(() => {
     function ageGroupState(ik: Ikaluokka): AgeGroupState {
-      return save.ageGroups[ik] ?? createAgeGroupState();
+      return save.progress[nakokulma][ik] ?? createAgeGroupState();
+    }
+
+    function chooseNakokulma(nk: Nakokulma) {
+      setNakokulma(nk);
     }
 
     function poolSize(lokero: Lokero): number {
@@ -129,6 +138,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       if (pool.length === 0) return;
       finalizedRef.current = false;
       const questions = present(buildRound(pool, save.questionResults));
+      setNakokulma(lokero.nakokulma);
       setSelectedIkaluokka(lokero.ikaluokka);
       setRound({
         lokero,
@@ -219,6 +229,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     function doResetProgress() {
       const fresh = resetProgress(save.settings);
       setSave(fresh);
+      setNakokulma('pelaaja');
       setSelectedIkaluokka(null);
       setOutcome(null);
       setRound(null);
@@ -228,11 +239,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
     return {
       save,
       view,
+      nakokulma,
       selectedIkaluokka,
       round,
       outcome,
       ageGroupState,
       poolSize,
+      chooseNakokulma,
       goHome,
       openTiers,
       openSettings,
@@ -242,7 +255,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       updateSettings,
       doResetProgress,
     };
-  }, [save, view, selectedIkaluokka, round, outcome]);
+  }, [save, view, nakokulma, selectedIkaluokka, round, outcome]);
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }

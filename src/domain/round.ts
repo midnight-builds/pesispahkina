@@ -28,7 +28,10 @@ function shuffle<T>(arr: readonly T[], rng: Rng): T[] {
 /** Kysymykset, jotka kuuluvat annettuun lokeroon. */
 export function questionsForLokero(all: readonly Question[], lokero: Lokero): Question[] {
   return all.filter(
-    (q) => q.vaikeustaso === lokero.vaikeustaso && q.ikaluokat.includes(lokero.ikaluokka),
+    (q) =>
+      q.nakokulma === lokero.nakokulma &&
+      q.vaikeustaso === lokero.vaikeustaso &&
+      q.ikaluokat.includes(lokero.ikaluokka),
   );
 }
 

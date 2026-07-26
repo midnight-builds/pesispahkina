@@ -5,6 +5,13 @@ Tämä tiedosto on projektin sanasto (ubiikki kieli) — ei toteutusyksityiskoht
 
 ## Language
 
+**Näkökulma**:
+Kummalta kannalta sääntöä kysytään: `pelaaja` (miten toimin pelaajana) vai
+`tuomari` (mikä on oikea ratkaisu, kuka sen tekee ja miten se ilmoitetaan).
+Ylin valinta, jonka pelaaja tekee; ikäluokka ja vaikeustaso ovat sen alla.
+Sama sääntökohta voi esiintyä molemmissa näkökulmissa eri kysymyksenä.
+_Avoid_: rooli (se on Aihealueen `roolit` = pelipaikat), polku, osio, mode
+
 **Ikäluokka**:
 Pesäpallon virallinen junio-ikäluokka (G, F, E, D, …), joka pelaaja valitsee.
 Kuvaa *kuka pelaaja on*, ei kysymyksen vaikeutta. Pelaajalla voi olla useita
@@ -17,8 +24,8 @@ mestari. Avautuu etenemisen myötä. Kohtisuora akseli ikäluokan kanssa.
 _Avoid_: taso, difficulty level (ilman tarkennusta)
 
 **Lokero**:
-Yksi (ikäluokka × vaikeustaso) -yhdistelmä, josta yhden kierroksen kysymykset
-poimitaan. Esim. "G / aloittelija".
+Yksi (näkökulma × ikäluokka × vaikeustaso) -yhdistelmä, josta yhden kierroksen
+kysymykset poimitaan. Esim. "tuomari / E / aloittelija".
 _Avoid_: bucket, kori
 
 **Kierros**:

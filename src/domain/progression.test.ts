@@ -11,7 +11,7 @@ import type { AnsweredQuestion, RoundResult, Vaikeustaso } from './types';
 function roundResult(overrides: Partial<RoundResult> = {}): RoundResult {
   const answers: AnsweredQuestion[] = overrides.answers ?? [];
   return {
-    lokero: { ikaluokka: 'G', vaikeustaso: 'aloittelija' },
+    lokero: { nakokulma: 'pelaaja', ikaluokka: 'G', vaikeustaso: 'aloittelija' },
     answers,
     correctCount: 9,
     score: 100,
@@ -43,7 +43,7 @@ describe('applyRoundResult', () => {
     const { save, newlyUnlocked } = applyRoundResult(createEmptySave(), roundResult());
     expect(save.totalPoints).toBe(100);
     expect(save.roundsPlayed).toBe(1);
-    expect(save.ageGroups.G!.tiers.aloittelija.streak).toBe(1);
+    expect(save.progress.pelaaja.G!.tiers.aloittelija.streak).toBe(1);
     expect(newlyUnlocked).toBeNull();
   });
 
@@ -52,16 +52,16 @@ describe('applyRoundResult', () => {
     save = applyRoundResult(save, roundResult()).save;
     const out = applyRoundResult(save, roundResult());
     expect(out.newlyUnlocked).toBe<Vaikeustaso>('harjoittelija');
-    expect(out.save.ageGroups.G!.tiers.harjoittelija.unlocked).toBe(true);
-    expect(highestUnlockedTier(out.save.ageGroups.G!)).toBe('harjoittelija');
+    expect(out.save.progress.pelaaja.G!.tiers.harjoittelija.unlocked).toBe(true);
+    expect(highestUnlockedTier(out.save.progress.pelaaja.G!)).toBe('harjoittelija');
   });
 
   it('epäonnistunut kierros nollaa streakin', () => {
     let save = createEmptySave();
     save = applyRoundResult(save, roundResult()).save;
     save = applyRoundResult(save, roundResult({ success: false, correctCount: 4, stars: 0, score: 40 })).save;
-    expect(save.ageGroups.G!.tiers.aloittelija.streak).toBe(0);
-    expect(save.ageGroups.G!.tiers.harjoittelija.unlocked).toBe(false);
+    expect(save.progress.pelaaja.G!.tiers.aloittelija.streak).toBe(0);
+    expect(save.progress.pelaaja.G!.tiers.harjoittelija.unlocked).toBe(false);
   });
 
   it('tallentaa kysymysten viimeisimmän tuloksen', () => {
@@ -70,6 +70,7 @@ describe('applyRoundResult', () => {
         question: {
           id: 'q1',
           concept: 'c',
+          nakokulma: 'pelaaja',
           ikaluokat: ['G'],
           vaikeustaso: 'aloittelija',
           aihealue: 'perusteet',
@@ -92,6 +93,6 @@ describe('applyRoundResult', () => {
     let save = createEmptySave();
     save = applyRoundResult(save, roundResult({ stars: 3, score: 130 })).save;
     save = applyRoundResult(save, roundResult({ stars: 2, score: 200 })).save;
-    expect(save.ageGroups.G!.tiers.aloittelija.best).toEqual({ stars: 3, score: 130 });
+    expect(save.progress.pelaaja.G!.tiers.aloittelija.best).toEqual({ stars: 3, score: 130 });
   });
 });
