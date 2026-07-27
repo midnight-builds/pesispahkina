@@ -36,20 +36,48 @@ istunnossa): `.claude/verify/ground-truth/*.txt`, manifest
 haettu. Ks. `docs/agents/verifying-content.md` kohta 1 ennen kuin haet
 mitään verkosta.
 
-## Mikä sääntöversio koskee mitäkin ikäluokkaa
+## Mikä sääntöversio koskee mitäkin ikäluokkaa ja pelimuotoa
 
 Nuorimmat eivät pelaa aikuisten täyssääntöjä. Kysymyksen sisältö on tarkistettava
-sen ikäluokan oikeasta sääntöversiosta:
+oikeasta sääntöversiosta.
 
-- **G:** pienpesis + F–G-erityissäännöt soveltuvin osin (pienempi kenttä,
-  yksinkertaistetut säännöt). Älä käytä täyssääntöjä G:n kysymyksissä.
-- **F:** varsinaiset pelisäännöt + F–G-erityissäännöt. Erityissääntöjen oma
-  teksti: *"E-junioreiden pelisarjassa ja F-junioreiden otteluissa noudatetaan
-  pesäpallon pelisääntöjä alla olevin poikkeuksin. Pienpesiksessä ovat voimassa
-  Pienpesiksen pelisäännöt sekä alla olevat poikkeukset soveltuvin osin."*
-  (tarkistettu 2026-07-26). F ei siis pelaa pienpesistä.
+**Sääntöversio seuraa PELIMUOTOA JA SARJAA, ei pelkkää ikäluokkaa.** Tämä on
+helppo mennä vikaan: sama ikäluokka voi pelata eri sääntöversioilla eri
+sarjoissa. Erityissääntöjen oma teksti: *"E-junioreiden pelisarjassa ja
+F-junioreiden otteluissa noudatetaan pesäpallon pelisääntöjä alla olevin
+poikkeuksin. Pienpesiksessä ovat voimassa Pienpesiksen pelisäännöt sekä alla
+olevat poikkeukset soveltuvin osin."*
+
+- **G:** käytännössä pienpesis (kaikki G:n aluesarjat pelataan nimikkeellä
+  Junnusuper, ks. alla) + F–G-erityissäännöt soveltuvin osin. Älä käytä
+  täyssääntöjä G:n kysymyksissä ilman rajausta.
+- **F:** F-junioreiden aluesarjaotteluissa varsinaiset pelisäännöt +
+  F–G-erityissäännöt. **F ei kuitenkaan ole pienpesiksen ulkopuolella:**
+  pienpesiksen 2 § puhuu itse *"F- ja G-ikäluokista"*, ja F-ikäisiä pelaa
+  pienpesistä mm. leireillä. Älä siis oleta, ettei pienpesissääntö koskisi
+  F-ikäistä koskaan.
 - **E:** varsinaiset pelisäännöt + E-pelisarjan erityissäännöt.
 - **D ja ylöspäin:** pääosin varsinaiset pelisäännöt.
+
+**Käytännön sääntö kysymyksiä kirjoittaessa:** jos väite tulee pienpesiksestä,
+sano se **kysymystekstissä** ("pienpesiksessä", "F-G-junioreiden otteluissa"),
+älä pelkässä selityksessä. Silloin ikäluokkalistan ei tarvitse ratkaista asiaa.
+
+### Pelimuodot ja sarjanimikkeet — älä sekoita näitä
+
+- **Pienpesis** on pelimuoto, jolla on oma sääntödokumenttinsa (6 v 6).
+- **Junnusuper** on sarjanimike. Liiton tiedote 2.12.2024: kaudesta 2025 alkaen
+  kaikki G-ikäisten aluesarjat pelataan nimikkeellä Junnusuper. Kilpailu-
+  määräykset 2026 listaavat Junnusuperin ja Pienpesiksen **erillisinä sarjoina**
+  (omat otteluajat ja ottelumäärävaatimukset). Liiton sivuilta ei löytynyt
+  dokumenttia, joka määrittelisi Junnusuperin säännöt — **älä siis oleta
+  Junnusuperia ja pienpesistä samaksi asiaksi** (tarkistettu 2026-07-27).
+- **Naperopesis** on kolmas kokonaisuus: pelisäännöt sanovat *"F- ja G-poikien
+  ja -tyttöjen peleissä käytettävät naperopesissäännöt ovat pelisääntöjen
+  liitteenä"*. Tätä liitettä EI ole ground-truth-cachessa — jos kysymys
+  nojaisi naperopesikseen, liite on haettava ensin.
+- Perinteinen 9 v 9 -pesäpallo on G-ikäiselle mahdollista ilmoittautumalla
+  F-junioreiden aluesarjaan tai leirille (sama tiedote).
 
 Kun kysymys kuuluu usealle ikäluokalle, varmista ettei väite ole ristiriidassa
 minkään mukaan otetun ikäluokan sääntöversion kanssa.
@@ -71,7 +99,10 @@ minkään mukaan otetun ikäluokan sääntöversion kanssa.
 - Sisäpeli: **lyöjä, etenijä**
 - Pesät: **kotipesä, ykköspesä, kakkospesä, kolmospesä**
 - Pelivuorot: **sisävuoro / ulkovuoro**, **sisäpeli / ulkopeli**,
-  **sisäjoukkue / ulkojoukkue** (EI "lähi-/kaukapelaaja"). Huom: **"sisäkenttä"
+  **sisäjoukkue / ulkojoukkue** (EI "lähi-/kaukapelaaja"). Huom: yhdyssanoja
+  **"sisäpelivuoro", "ulkopelivuoro", "sisäpelijoukkue" ja "ulkopelijoukkue"
+  ei esiinny säännöissä lainkaan** — ne ovat luontevan kuuloisia mutta keksittyjä
+  (tarkistettu 2026-07-27, korjattu 13 esiintymää kysymyspankista). Huom: **"sisäkenttä"
   ei esiinny säännöissä lainkaan** (tarkistettu 2026 pelisäännöistä,
   pienpesiksestä ja E/F–G-erityissäännöistä 2026-07-05); puhekielessä kuulee
   joskus sanan "ulkokenttä", mutta sekään ei ole sääntötermi. Kenttä jakautuu
