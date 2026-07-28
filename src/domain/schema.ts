@@ -88,13 +88,32 @@ export function findContentIssues(questions: readonly Question[]): ContentIssue[
 /** Enintään montako sanamuotovarianttia samasta conceptista sallitaan per lokero. */
 const CONCEPT_VARIANTTI_RAJA = 3;
 
+/**
+ * Osuus, jonka ylittävä yksittäinen aihealue näkökulman sisällä kertoo, ettei
+ * aihealue enää erottele sisältöä. Syitä on kaksi ja ne vaativat eri korjauksen:
+ * joko sisältö on luokiteltu väärin (ks. ADR 0006 — aihealue ei saa olla
+ * näkökulman kopio) tai näkökulman sisältö itsessään painottuu yhteen aiheeseen,
+ * jolloin korjaus on lisätä kysymyksiä muista aiheista.
+ */
+const AIHEALUE_KASAUTUMISRAJA = 0.5;
+
+/**
+ * ADR 0006: `tuomarointi` merkitsee sisältöä, joka koskee itse tuomaristoa, joten
+ * se esiintyy vain tuomari-näkökulmassa. Muut aihealueet odotetaan molemmilta.
+ */
+function odotetutAihealueet(nakokulma: Nakokulma): Aihealue[] {
+  if (nakokulma === 'tuomari') return AIHEALUEET;
+  return AIHEALUEET.filter((a) => a !== 'tuomarointi');
+}
+
 interface ConceptWarning {
   message: string;
 }
 
 /**
- * Pehmeä raportti: varoittaa yliedustetusta conceptista lokerossa tai liian
- * harvasta conceptikattavuudesta. EI kaada — antaa agentille suunnan.
+ * Pehmeä raportti: varoittaa yliedustetusta conceptista lokerossa, liian
+ * harvasta conceptikattavuudesta sekä vinoutuneesta aihealuejakaumasta.
+ * EI kaada — antaa agentille suunnan.
  */
 export function conceptReport(questions: readonly Question[]): ConceptWarning[] {
   const warnings: ConceptWarning[] = [];
@@ -119,6 +138,33 @@ export function conceptReport(questions: readonly Question[]): ConceptWarning[] 
     if (concepts.size < 2) {
       warnings.push({
         message: `Lokero ${lokero}: vain ${concepts.size} concept — kattavuus kapea.`,
+      });
+    }
+  }
+
+  // Aihealuejakauma per näkökulma. Lokeroraportti ei näe tätä, koska se
+  // ryhmittelee jo näkökulmalla: jos aihealue toistaa näkökulman, vinouma
+  // näkyy vain tässä.
+  const byNakokulma = new Map<Nakokulma, Map<Aihealue, number>>();
+  for (const q of questions) {
+    const aiheet = byNakokulma.get(q.nakokulma) ?? new Map<Aihealue, number>();
+    aiheet.set(q.aihealue, (aiheet.get(q.aihealue) ?? 0) + 1);
+    byNakokulma.set(q.nakokulma, aiheet);
+  }
+  for (const [nakokulma, aiheet] of byNakokulma) {
+    const yhteensa = [...aiheet.values()].reduce((a, b) => a + b, 0);
+    for (const [aihealue, count] of aiheet) {
+      if (count / yhteensa > AIHEALUE_KASAUTUMISRAJA) {
+        const osuus = Math.round((100 * count) / yhteensa);
+        warnings.push({
+          message: `Näkökulma ${nakokulma}: aihealue "${aihealue}" ${count}/${yhteensa} kysymyksestä (${osuus} %) — aihealue ei erottele sisältöä.`,
+        });
+      }
+    }
+    const puuttuvat = odotetutAihealueet(nakokulma).filter((a) => !aiheet.has(a));
+    if (puuttuvat.length > 0) {
+      warnings.push({
+        message: `Näkökulma ${nakokulma}: ei yhtään kysymystä aihealueista ${puuttuvat.join(', ')}.`,
       });
     }
   }

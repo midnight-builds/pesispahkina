@@ -38,6 +38,18 @@ paljastaa kattavuusaukot myös tuomari-puolella.
   esiintyä molemmissa näkökulmissa eri kysymyksenä, mutta yksi kysymys ei voi
   kuulua molempiin — muuten tuomari-osio täyttyisi kierrätetyillä
   pelaajakysymyksillä. Aiemmat kysymykset merkittiin arvolla `pelaaja`.
+- **Aihealuerajaus on käyty läpi ja korjattu (2026-07-28).** Tuomari-näkökulman
+  ensimmäinen sisältöerä (PR #12) ei noudattanut yllä olevaa rajausta vaan
+  kytki aihealueen mekaanisesti näkökulmaan: 118 kysymystä 129:stä oli
+  `tuomarointi`. Läpikäynnissä 30 kysymystä sai sen säännön aihealueen, jota
+  ratkaisu koskee; rajatapaukset ratkaistiin pelaaja-näkökulman vakiintuneen
+  luokittelun mukaan (esim. vapaataival ja estäminen → `eteneminen`, kypärä ja
+  pallo → `perusteet`). Osuus on nyt 88/129. `conceptReport` varoittaa, jos
+  yksittäinen aihealue ylittää puolet näkökulman kysymyksistä — tuomari-puoli
+  ylittää rajan yhä, mikä on aito sisältöpainotus (käsimerkit, rangaistukset ja
+  tuomariston tehtävät ovat oikeasti `tuomarointi`-sisältöä). Korjaus siihen on
+  lisätä sääntöjen soveltamista koskevia tuomarikysymyksiä, ei luokitella
+  uudelleen.
 - **Sisällön lähdesääntö on ikäluokkakohtainen.** Tuomarikysymys tarkistetaan
   sen ikäluokan omasta sääntöversiosta: G = pienpesis (+ F–G-erityissäännöt),
   F ja E = pelisäännöt + erityissäännöt, D = pelisäännöt. Tämän takia
