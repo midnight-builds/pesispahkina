@@ -362,12 +362,13 @@ export const QUESTIONS: Question[] = [
     aihealue: 'eteneminen',
     kysymys: 'Mitä tapahtuu, jos ulkopelaaja ottaa lyödyn pallon kopiksi ennen kuin se osuu maahan?',
     vaihtoehdot: [
-      'Lyöjä joutuu palaamaan (haavoittuu)',
+      'Lyöjä haavoittuu ja siirtyy kotipuolelle',
       'Sisäpeli saa juoksun',
       'Peli keskeytetään',
     ],
     oikeaIndeksi: 0,
-    selitys: 'Ilmasta kiinni otettu lyönti eli koppi haavoittaa lyöjän, ja hän joutuu palaamaan.',
+    selitys:
+      'Ilmasta kiinni otettu lyönti eli koppi haavoittaa lyöjän, ja haavoittuneen on siirryttävä välittömästi kotipuolelle. Haavoittuminen ei ole palo — ne ovat kaksi eri tapaa, joilla ulkopeli saa sisäpelaajan pois pelistä.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
       kohta: 'V JAKSO, 30 § Koppilyönti / III JAKSO, 18 §',
@@ -1335,7 +1336,7 @@ export const QUESTIONS: Question[] = [
     vaihtoehdot: [
       'Tuplajuoksua heti, kun pallo on käynyt kotipesässä olevan ulkopelaajan hallussa',
       'Hän ei voi enää yrittää mitään',
-      'Hän voi palata suoraan ykköspesälle',
+      'Hän voi juosta suoraan ykköspesälle',
     ],
     oikeaIndeksi: 0,
     selitys:
@@ -3120,13 +3121,13 @@ export const QUESTIONS: Question[] = [
     aihealue: 'eteneminen',
     kysymys: 'Etenijä on irti pesältä, jossa hänellä on pesäturva, ja pallo on seuraavalla pesällä olevan ulkopelaajan hallussa. Mikä on ratkaisu?',
     vaihtoehdot: [
-      'Etenijä palaa',
+      'Etenijä palaa eli syntyy palo',
       'Etenijä saa jatkaa seuraavalle pesälle',
-      'Etenijä poltetaan',
+      'Etenijä saa pesäturvan takaisin seuraavasta syötöstä',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Pesäkilvassa etenijä palaa, jos hän on irti pesältä, jossa hänellä on pesäturva, ja pallo on seuraavalla pesällä olevan ulkopelaajan hallussa — ellei hän ole palaamassa laittoman lyönnin jälkeen lähtöpesälleen tai ottanut vastaan vapaataivalta.',
+      'Pesäkilvassa etenijä palaa, jos hän on irti pesältä, jossa hänellä on pesäturva, ja pallo on seuraavalla pesällä olevan ulkopelaajan hallussa — ellei hän ole palaamassa laittoman lyönnin jälkeen lähtöpesälleen tai ottanut vastaan vapaataivalta. Sanat "palaa" ja "poltetaan" tarkoittavat säännöissä samaa asiaa: pelaaja palaa ja syntyy palo. Pesäturvan saa takaisin seuraavasta syötöstä vain se, jota ei polteta.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
       kohta: '33 § Pesäkilpa',
@@ -3141,7 +3142,8 @@ export const QUESTIONS: Question[] = [
     ikaluokat: ['F', 'E', 'D'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'tuomarointi',
-    kysymys: 'Kärkkyvä pelaaja on irti pesältä. Milloin tuomari saa ilmoittaa ratkaisunsa?',
+    kysymys:
+      'Kärkkyvä pelaaja on irti pesältä eikä ulkopelaaja polta häntä koskettamalla. Milloin tuomari saa ilmoittaa ratkaisunsa?',
     vaihtoehdot: [
       'Vasta kun pallo on toimitettu seuraavalle pesälle',
       'Heti kun pelaaja irtoaa pesältä',
@@ -3149,13 +3151,37 @@ export const QUESTIONS: Question[] = [
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Tuomarit eivät saa ilmoittaa ratkaisuaan ennenaikaisesti. Kärkkyvän pelaajan ollessa irti pesältä ratkaisu ilmoitetaan vasta, kun pallo toimitetaan seuraavalle pesälle.',
+      'Tuomarit eivät saa ilmoittaa ratkaisuaan ennenaikaisesti. Kärkkyvän pelaajan ollessa irti pesältä ratkaisu ilmoitetaan vasta, kun pallo toimitetaan seuraavalle pesälle. Jos etenijä ei etene, ulkopelaaja voi kuitenkin polttaa hänet koskettamalla häntä pallolla — silloin ratkaisu tulee jo kosketushetkellä.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
       kohta: '44 § Tuomarin tehtävät, Yleisiä ohjeita pelituomarille',
       url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
     },
     tarkistettu: '2026-07-26',
+  },
+  {
+    id: 'tuom-harj-polttaminen-koskettamalla',
+    concept: 'polttaminen-koskettamalla',
+    nakokulma: 'tuomari',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'eteneminen',
+    kysymys:
+      'Etenijä on menettänyt pesäturvansa eikä lähde etenemään. Miten ulkopelaaja voi silloin polttaa hänet?',
+    vaihtoehdot: [
+      'Koskettamalla häntä pallolla',
+      'Viemällä pallon edelliselle pesälle',
+      'Ilmoittamalla asiasta pelituomarille',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pesäturvan menettänyt pelaaja palaa, kun pallo toimitetaan seuraavalle pesälle. Jos etenijä ei etene, ulkopelaaja voi polttaa hänet koskettamalla häntä pallolla. Jos häntä ei polteta, hän saa pesäturvan takaisin seuraavasta syötöstä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '20 § Milloin sisäpelaaja on turvassa pesällä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
   },
   {
     id: 'tuom-harj-rajalyonnit',
@@ -3626,7 +3652,7 @@ export const QUESTIONS: Question[] = [
     vaikeustaso: 'osaaja',
     aihealue: 'eteneminen',
     kysymys: 'Sisäpelaaja estää paikalleen jättäytymällä ulkopelaajaa tai tuomaria. Mikä on perusratkaisu?',
-    vaihtoehdot: ['Hän palaa', 'Hän saa vapaataipaleen', 'Ratkaisua ei tehdä'],
+    vaihtoehdot: ['Hän palaa eli syntyy palo', 'Hän saa vapaataipaleen', 'Ratkaisua ei tehdä'],
     oikeaIndeksi: 0,
     selitys:
       'Jos sisäpelaaja estää, joko paikalleen jättäytymällä tai pallon eteen siirtymällä, ulkopelaajaa tai tuomaria, hän palaa. Jos rikkomuksesta on etua muille juoksijoille, pelituomari voi lisäksi palauttaa, polttaa tai mitätöidä etenemisen.',
@@ -3647,7 +3673,7 @@ export const QUESTIONS: Question[] = [
     kysymys: 'Ulkopelaaja, jolla ei ole mahdollisuutta saada palloa haltuunsa, asettuu etenevän sisäpelaajan tielle. Mikä on ratkaisu?',
     vaihtoehdot: [
       'Sisäpelaaja saa vapaataivaloikeuden',
-      'Sisäpelaaja palaa',
+      'Sisäpelaaja palaa eli syntyy palo',
       'Tilanne tuomitaan kuten se meni',
     ],
     oikeaIndeksi: 0,
@@ -3738,13 +3764,13 @@ export const QUESTIONS: Question[] = [
     aihealue: 'eteneminen',
     kysymys: 'Etenijä saapuu pesälle käymättä edellisellä pesällä. Mikä on ratkaisu?',
     vaihtoehdot: [
-      'Hän on tehnyt pesärikon ja palaa',
+      'Hän on tehnyt pesärikon ja palaa eli syntyy palo',
       'Eteneminen hyväksytään, jos se tapahtui vapaataipaleella',
-      'Hänet poltetaan',
+      'Hänet palautetaan edelliselle pesälle',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Etenijä tekee pesärikon, jos hän saapuu pesälle käymättä edellisellä pesällä — myös koppilyönnillä ja vapaataipaleella. Pesärikon tehnyt pelaaja palaa.',
+      'Etenijä tekee pesärikon, jos hän saapuu pesälle käymättä edellisellä pesällä — myös koppilyönnillä ja vapaataipaleella. Pesärikon tehnyt pelaaja palaa, eli syntyy palo. Häntä ei siis palauteta edelliselle pesälle korjaamaan virhettä.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
       kohta: '34 § Pesärikko',
@@ -3946,7 +3972,7 @@ export const QUESTIONS: Question[] = [
     kysymys: 'Kärkietenijä ja pallon hallussaan pitänyt ulkopelaaja törmäävät, kun molemmat suorittavat aktiivista pelitehtäväänsä eikä tahallisuutta ole. Mikä on ratkaisu?',
     vaihtoehdot: [
       'Estämistä ei tuomita',
-      'Sisäpelaaja palaa',
+      'Sisäpelaaja palaa eli syntyy palo',
       'Sisäpelaaja saa vapaataipaleen',
     ],
     oikeaIndeksi: 0,
