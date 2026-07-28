@@ -95,6 +95,16 @@ minkään mukaan otetun ikäluokan sääntöversion kanssa.
   Välineet: **merkkilaikka** (valkoinen levy, toisella puolella musta ruksi),
   **vihellysmerkit** (48 §). Käsimerkkien muoto on tuomarikoulutusmateriaalissa
   (ks. yllä), ei säännöissä.
+- Kurinpitorangaistukset (49 §): rangaistuksen nimi on **huomautus**,
+  **varoitus**, **pelirangaistus** tai **ottelurangaistus** — kortti on vain tapa
+  *osoittaa* se ("osoitetaan näyttämällä keltaista korttia"). Kirjoita
+  kysymyksiin muodossa **"varoitus (keltainen kortti)"**: pelkkä kortti ei ole
+  sääntötermi, ja pelkkä "1 pisteen varoitus" (19 §:n sanamuoto) on lukijalle
+  tunnistamaton. **Kortti ei kerro hintaa:** varoitus (keltainen) ja
+  pelirangaistus (punainen) ovat kumpikin 1 rangaistuspiste, ottelurangaistus
+  (keltainen + punainen) 2. Rangaistuspisteet mainitaan selityksessä, koska
+  kahdesta pisteestä seuraa automaattisesti yhden ottelun peli- ja
+  toimitsijakielto.
 - Pelipaikat/ulkopeli: **lukkari, koppari (sieppari), pesävahti, polttaja**
 - Sisäpeli: **lyöjä, etenijä**
 - Pesät: **kotipesä, ykköspesä, kakkospesä, kolmospesä**

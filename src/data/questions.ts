@@ -6437,13 +6437,13 @@ export const QUESTIONS: Question[] = [
     aihealue: 'eteneminen',
     kysymys: 'Etenijä oikaisee kotiin juostessaan kotipolun kiertoviitan. Mitä seuraa?',
     vaihtoehdot: [
-      'Hän palaa ja saa lisäksi 1 pisteen varoituksen',
+      'Hän palaa ja saa lisäksi varoituksen (keltainen kortti)',
       'Hän palaa, muuta seuraamusta ei tule',
       'Eteneminen hyväksytään, jos hän kääntyy takaisin kiertämään viitan',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Mikäli pelaaja oikaisee kotiin juostessaan kiertoviitan, hän palaa ja lisäksi hänelle annetaan 1 pisteen varoitus. Vaikka etenijä epähuomiossa ohittaisi viitan ja kääntyisi takaisin kiertämään sen, hän palaa.',
+      'Mikäli pelaaja oikaisee kotiin juostessaan kiertoviitan, hän palaa ja lisäksi hänelle annetaan varoitus. Varoitus osoitetaan keltaisella kortilla, ja siitä kertyy yksi rangaistuspiste. Vaikka etenijä epähuomiossa ohittaisi viitan ja kääntyisi takaisin kiertämään sen, hän palaa.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
       kohta: '19 § Milloin etenijä saapuu säännönmukaisesti pesälle',
