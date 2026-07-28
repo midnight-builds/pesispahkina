@@ -41,6 +41,18 @@ describe('kysymyssisältö', () => {
     expect(paatuomari.map((q) => q.id)).toEqual([]);
   });
 
+  // "Pelaaja palaa" on säännöissä sama ratkaisu kuin "pelaaja poltetaan" — sisä- ja
+  // ulkopelin muodot samasta palosta (ks. docs/pesapallo-lahteet.md). Jos ne ovat
+  // saman kysymyksen eri vaihtoehtoina, toinen niistä on merkitty vääräksi vaikka
+  // se on oikea vastaus.
+  it('ei tarjoa palon kahta sanamuotoa saman kysymyksen eri vaihtoehtoina', () => {
+    const paloSanat = /\b(palaa|palanut|palavat|poltetaan|poltettava)\b|\bpalo\b/i;
+    const paallekkaiset = QUESTIONS.filter(
+      (q) => q.vaihtoehdot.filter((v) => paloSanat.test(v)).length > 1,
+    );
+    expect(paallekkaiset.map((q) => q.id)).toEqual([]);
+  });
+
   it('pehmeä concept-raportti (ei kaada) — tulostaa varoitukset', () => {
     const warnings = conceptReport(QUESTIONS);
     if (warnings.length > 0) {
