@@ -50,6 +50,14 @@ paljastaa kattavuusaukot myös tuomari-puolella.
   tuomariston tehtävät ovat oikeasti `tuomarointi`-sisältöä). Korjaus siihen on
   lisätä sääntöjen soveltamista koskevia tuomarikysymyksiä, ei luokitella
   uudelleen.
+- **Painotus on korjattu sisältöä lisäämällä (2026-07-28, issue #16).**
+  Tuomari-näkökulmaan lisättiin 54 kysymystä, joissa ratkaistaan sääntötilanne
+  eikä kuvata tuomariston omaa toimintaa. Aihealue on kunkin kysymyksen kohdalla
+  sen säännön aihe, jota ratkaisu koskee. Osuus on nyt 88/184 (48 %), eli
+  `conceptReport` ei enää varoita kasautumisesta, ja jokaisessa aihealueessa on
+  kysymyksiä kaikilla neljällä vaikeustasolla. Kysymysten ikäluokkarajaus seuraa
+  sääntöversiota: 7 §, 12 § ja 13 § poikkeavat E- ja F-junioreilla
+  erityissääntöjen kautta, joten niihin nojaavat kysymykset on rajattu D:hen.
 - **Sisällön lähdesääntö on ikäluokkakohtainen.** Tuomarikysymys tarkistetaan
   sen ikäluokan omasta sääntöversiosta: G = pienpesis (+ F–G-erityissäännöt),
   F ja E = pelisäännöt + erityissäännöt, D = pelisäännöt. Tämän takia
