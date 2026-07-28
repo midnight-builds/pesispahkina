@@ -5440,7 +5440,7 @@ export const QUESTIONS: Question[] = [
       'Ketkä saavat D- ja E-ikäisten otteluissa toimia kotipesän ulomman kaaren sisäpuolella?',
     vaihtoehdot: [
       'Yksi pelinjohtaja ja yksi joukkueen pelaaja tai samanikäinen pelinjohtaja',
-      'Kaksi pelinjohtajaa',
+      'Kaksi aikuista pelinjohtajaa',
       'Koko sisävuorossa oleva joukkue',
     ],
     oikeaIndeksi: 0,
