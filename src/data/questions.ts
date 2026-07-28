@@ -6283,4 +6283,377 @@ export const QUESTIONS: Question[] = [
     tarkistettu: '2026-07-28',
   },
 
+  // ---------- PELAAJA · RATKAISUT JA TERMIEN EROT ----------
+  // Sääntökohtia, jotka nousivat esiin "palaa"-termin selvittelyssä (issue #14):
+  // palon, haavan ja lopullisen ratkaisun erot sekä pesäturvan menetys ja
+  // palautuminen. Nämä puuttuivat pankista kokonaan.
+  {
+    id: 'alo-haavoittuneen-siirtyminen',
+    concept: 'haavoittuneen-siirtyminen',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'eteneminen',
+    kysymys: 'Mitä haavoittuneen pelaajan on tehtävä?',
+    vaihtoehdot: [
+      'Siirryttävä välittömästi kotipuolelle',
+      'Jäätävä pesälle vuoron loppuun asti',
+      'Odotettava lähtöpesällään seuraavaa syöttöä',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Koppi vihelletään yleensä vasta juoksijoiden ehdittyä päätepesilleen. Haavoittuneiden on siirryttävä välittömästi kotipuolelle.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '36 § Koppilyönnillä eteneminen',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'harj-haava-ei-ole-palo',
+    concept: 'haava-ei-ole-palo',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'eteneminen',
+    kysymys: 'Syntyykö koppilyönnistä haavoittuneesta pelaajasta palo?',
+    vaihtoehdot: [
+      'Ei synny — haavoittuminen ja palo ovat kaksi eri ratkaisua',
+      'Kyllä, haava on aina palo',
+      'Kyllä, jos kentällä on samaan aikaan muita etenijöitä',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Etenijän tavoitteena on kiertää kaikki kolme kenttäpesää haavoittumatta tai palamatta, ja ulkopelaajat pyrkivät haavoittamaan tai polttamaan etenijän. Kumpikin päättää etenemisen, mutta ne ovat eri ratkaisuja: haavoittuminen ja palaminen ovat säännöissä omat kohtansa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: 'Johdanto / 21 § Milloin pelaaja on päässyt lopulliseen ratkaisuun',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'harj-polttaminen-koskettamalla',
+    concept: 'polttaminen-koskettamalla',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'eteneminen',
+    kysymys:
+      'Pesäturvansa menettänyt etenijä jää paikalleen eikä lähde etenemään. Miten ulkopelaaja voi polttaa hänet?',
+    vaihtoehdot: [
+      'Koskettamalla häntä pallolla',
+      'Viemällä pallon hänen lähtöpesälleen',
+      'Ilmoittamalla asiasta pelituomarille',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pesäturvan menettänyt pelaaja palaa, kun pallo toimitetaan seuraavalle pesälle. Jos etenijä ei etene, ulkopelaaja voi polttaa hänet koskettamalla häntä pallolla.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '20 § Milloin sisäpelaaja on turvassa pesällä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'osa-lopullisen-ratkaisun-tavat',
+    concept: 'lopullisen-ratkaisun-tavat',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'osaaja',
+    aihealue: 'eteneminen',
+    kysymys: 'Millä tavoilla sisäpelaaja pääsee lopulliseen ratkaisuun?',
+    vaihtoehdot: [
+      'Tuomalla juoksun, haavoittumalla, palamalla tai kun hänen etenemisensä mitätöidään',
+      'Vain palamalla tai tuomalla juoksun',
+      'Vain silloin, kun tuomari viheltää pelin poikki',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pelaaja on päässyt lopulliseen ratkaisuun, kun hän 1) tuo juoksun, 2) haavoittuu, 3) palaa tai 4) hänen etenemisensä on mitätöity. Lopullinen ratkaisu tarkoittaa, että pelaajan eteneminen on päättynyt.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '21 § Milloin pelaaja on päässyt lopulliseen ratkaisuun',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'osa-pesaturvan-palautuminen',
+    concept: 'pesaturvan-palautuminen',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'osaaja',
+    aihealue: 'eteneminen',
+    kysymys:
+      'Etenijä oli irti pesältä, kun pallo tuli pesällä olevan ulkopelaajan haltuun, ja menetti pesäturvansa. Häntä ei kuitenkaan poltettu. Milloin hän saa pesäturvan takaisin?',
+    vaihtoehdot: [
+      'Seuraavasta syötöstä',
+      'Vasta seuraavalla omalla lyöntivuorollaan',
+      'Ei enää saa sitä takaisin',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Jos etenijä on menettänyt pesäturvansa siksi, että hän oli irti pesästä kopin tai pesällä olevan ulkopelaajan pallonhallinnan hetkellä, eikä häntä ole poltettu, hän saa pesäturvan takaisin seuraavasta syötöstä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '20 § Milloin sisäpelaaja on turvassa pesällä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'mes-kunniajuoksun-ohitus',
+    concept: 'kunniajuoksun-ohitus',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'mestari',
+    aihealue: 'eteneminen',
+    kysymys:
+      'Kunniajuoksun tehnyt pelaaja ohittaa kolmospesällä edellään etenevän, joka saapuu pesälle hänen jälkeensä säännönmukaisesti. Mitä tapahtuu?',
+    vaihtoehdot: [
+      'Hän ei saa yrittää tuplajuoksua eikä pala, vaan siirtyy kotipuolelle, ja ohitettu pelaaja saa turvan kolmospesältä',
+      'Hän palaa, ja ohitettu pelaaja jää ilman turvaa',
+      'Hän saa silti yrittää tuplajuoksua',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Jos kunniajuoksun tekijä ohittaa edellään etenevän, joka saapuu hänen jälkeensä säännönmukaisesti kolmospesään, kunniajuoksun tehnyt pelaaja ei saa yrittää tuplajuoksua, mutta häntä ei myöskään polteta: hän siirtyy kotipuolelle ja ohitettu pelaaja saa turvan kolmospesältä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '42 § Kunniajuoksu',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'mes-kiertoviitan-oikaisu',
+    concept: 'kiertoviitan-oikaisu',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'mestari',
+    aihealue: 'eteneminen',
+    kysymys: 'Etenijä oikaisee kotiin juostessaan kotipolun kiertoviitan. Mitä seuraa?',
+    vaihtoehdot: [
+      'Hän palaa ja saa lisäksi 1 pisteen varoituksen',
+      'Hän palaa, muuta seuraamusta ei tule',
+      'Eteneminen hyväksytään, jos hän kääntyy takaisin kiertämään viitan',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Mikäli pelaaja oikaisee kotiin juostessaan kiertoviitan, hän palaa ja lisäksi hänelle annetaan 1 pisteen varoitus. Vaikka etenijä epähuomiossa ohittaisi viitan ja kääntyisi takaisin kiertämään sen, hän palaa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '19 § Milloin etenijä saapuu säännönmukaisesti pesälle',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+
+  // ---------- PELAAJA · LYÖMINEN JA KENTTÄ (istunnon sääntölöydöistä) ----------
+  {
+    id: 'alo-kolme-oikeaa-syottoa',
+    concept: 'kolme-oikeaa-syottoa',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'lyominen',
+    kysymys: 'Montako oikeaa syöttöä lyöjä saa yhdellä lyöntivuorollaan?',
+    vaihtoehdot: ['Kolme', 'Kaksi', 'Niin monta kuin hän jaksaa lyödä'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Lyöjällä on lyöntivuorollaan oikeus saada kolme oikeaa syöttöä. Jos lukkari syöttää kolmen oikean syötön jälkeen vielä syötön ja lyöjä lyö, lyönti on laiton.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '28 § Lyönti',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'alo-vasemmalta-lyominen',
+    concept: 'vasemmalta-lyominen',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'aloittelija',
+    aihealue: 'lyominen',
+    kysymys: 'Lyöjä haluaa lyödä syöttölautasen toiselta puolelta. Mitä hänen on tehtävä?',
+    vaihtoehdot: [
+      'Sanottava kuuluvasti "vasen"',
+      'Siirryttävä hiljaa toiselle puolelle',
+      'Pyydettävä lupa lukkarilta',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Ryhtyessään lyömään lyöjän on asetuttava lautasen vasemmalle puolelle kotipesästä kentälle katsottuna. Jos hän haluaa lyödä toiselta puolelta, hänen on ilmoitettava se sanomalla kuuluvasti "vasen". Sen jälkeen lukkarin on siirryttävä syöttämään ilmoitetulta puolelta.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '28 § Lyönti',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'harj-etukaareen-osuva-lyonti',
+    concept: 'etukaareen-osuva-lyonti',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'lyominen',
+    kysymys: 'Lyöty pallo osuu kotipesän etukaareen. Onko lyönti laillinen?',
+    vaihtoehdot: [
+      'Ei ole — etukaareen osuva lyönti on aina laiton',
+      'On, jos etukaari on merkitty vain viivana',
+      'On, jos pallo pomppaa etukaaresta kentälle',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Kotipesän etukaareen osuva lyönti on aina laiton, vaikka etukaari merkittäisiin kenttään piirrettynä viivana.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä, Tulkinnat',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'harj-mailan-tulppa-irtoaa',
+    concept: 'mailan-tulppa-irtoaa',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'lyominen',
+    kysymys: 'Mailan tulppa irtoaa lyödessä eikä häiritse pallon kiinniottoa. Onko lyönti laiton?',
+    vaihtoehdot: [
+      'Ei ole, mutta mailalla ei saa lyödä ennen kuin se on korjattu',
+      'On — mailan osan irtoaminen tekee lyönnistä aina laittoman',
+      'Ei ole, ja mailalla saa jatkaa lyömistä sellaisenaan',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Lyönti on laiton, jos maila irtoaa lyönnissä lyöjän kädestä tai katkeaa erillisiksi kappaleiksi. Jos mailan tulppa irtoaa, lyönti ei ole laiton, mutta mailalla ei saa lyödä ennen kuin se on korjattu. Jos irronnut tulppa on selvästi häirinnyt pallon kiinniottamista, lyönti tuomitaan laittomaksi.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '29 § Laiton lyönti',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'harj-rajaviivalle-putoava-lyonti',
+    concept: 'rajaviivalle-putoava-lyonti',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'kentta',
+    kysymys:
+      'Lyöjän lyömä pallo putoaa sivurajan päälle. Saako hän lähteä etenemään pesille?',
+    vaihtoehdot: [
+      'Saa — sivurajat kuuluvat varsinaiseen pelialueeseen, joten lyönti on laillinen',
+      'Ei saa — rajalle pudonnut lyönti on laiton',
+      'Saa vain, jos pallo pomppaa rajalta pelialueen puolelle',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Varsinaisen pelialueen muodostavat kotipesä sekä sivurajojen ja takarajan rajaama alue. Sivurajat ja takaraja kuuluvat itsekin varsinaiseen pelialueeseen, joten rajalle pudonnut lyönti on laillinen.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'mes-tuomarialueen-sijainti',
+    concept: 'tuomarialueen-sijainti',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'mestari',
+    aihealue: 'kentta',
+    kysymys: 'Minkä pesän vara-alue on tuomarialue?',
+    vaihtoehdot: ['Ykköspesän', 'Kakkospesän', 'Kolmospesän'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Jokaisella pesällä on oma vara-alueensa. Tuomarialue on ykköspesän vara-alue. Pelinomaisessa tilanteessa pelaajalla on oikeus pelata myös tuomarialueella.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '6 § Kenttä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'osa-rapyla-ainoa-apuvaline',
+    concept: 'rapyla-ainoa-apuvaline',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'osaaja',
+    aihealue: 'perusteet',
+    kysymys: 'Saako pallon kiinniottoon käyttää jotain muuta apuvälinettä kuin räpylää?',
+    vaihtoehdot: [
+      'Ei saa — muiden apuvälineiden käyttö on kielletty',
+      'Saa, jos väline ei ole vaarallinen',
+      'Saa, jos oma räpylä on hajonnut',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pallon kiinniottoa helpottamaan tulee käyttää PPL:n hyväksymää räpylää. Muunlaisten apuvälineiden käyttö pallon kiinniotossa on kielletty.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '3 § Räpylä',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+  {
+    id: 'osa-lyomaan-asettunutta-ei-vaihdeta',
+    concept: 'lyomaan-asettunutta-ei-vaihdeta',
+    nakokulma: 'pelaaja',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'osaaja',
+    aihealue: 'roolit',
+    kysymys: 'Voiko joukkue vaihtaa jo lyömään asettuneen pelaajan pois lyömästä?',
+    vaihtoehdot: [
+      'Ei voi — lyömään asettunutta ei voi vaihtaa pois',
+      'Voi, jos vaihdosta ilmoitetaan pelituomarille',
+      'Voi, jos syöttöä ei ole vielä tehty',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pelaaja asettuu lyömään, kun hän on kotipesässä maila kädessä lyöntiaikeissa ja kun syöttöoikeus on hankittu. Lyömään asettunutta pelaajaa ei voi vaihtaa pois lyömästä. Sama koskee jokeripelaajaa.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '27 § Lyöntijärjestys',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+
+  // ---------- TUOMARI · KOTIPESÄKILVAN PÄÄTÖSVALTA ----------
+  {
+    id: 'tuom-harj-kotipesakilvan-ratkaisija',
+    concept: 'kotipesakilvan-ratkaisija',
+    nakokulma: 'tuomari',
+    ikaluokat: ['F', 'E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'tuomarointi',
+    kysymys: 'Kuka tekee ratkaisun kotipesäkilvassa?',
+    vaihtoehdot: [
+      'Pelituomari — syöttötuomari ilmoittaa siitä oman mielipiteensä',
+      'Syöttötuomari yksin',
+      'Kakkostuomari, koska hän näkee kotipesään parhaiten',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Ottelun kulkua valvoo pelituomari apunaan syöttötuomari ja kolme muuta tuomaria, ja ylin päätösvalta on pelituomarilla. Syöttötuomarin tehtäviin kuuluu kotipesäkilvoissa oman mielipiteensä ilmoittaminen. Muut tuomarit ratkaisevat omien pesiensä pesäkilvat, ja pelituomarilla on oikeus muuttaa muun tuomarin ratkaisu.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '44 § Tuomarin tehtävät, Syöttötuomari',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-07-28',
+  },
+
 ];

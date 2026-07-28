@@ -50,11 +50,41 @@ function normalizeText(text: string): string {
 }
 
 interface ContentIssue {
-  kind: 'duplicate-id' | 'near-duplicate-text';
+  kind: 'duplicate-id' | 'near-duplicate-text' | 'palo-kaksi-sanamuotoa';
   message: string;
 }
 
-/** Kovat virheet: duplikaatti-id:t ja lähes identtiset kysymystekstit. */
+/**
+ * "Pelaaja palaa" (sisäpelin muoto) ja "pelaaja poltetaan" / "syntyy palo"
+ * (ulkopelin muoto) ovat säännöissä sama ratkaisu — ks. docs/pesapallo-lahteet.md.
+ * Jos ne ovat saman kysymyksen ERI vaihtoehtoina, toinen niistä on merkitty
+ * vääräksi vaikka se on oikea vastaus (pisteytysbugi, issue #14).
+ *
+ * Tarkistus vaatii nimenomaan molemmat sanamuodot eri vaihtoehdoissa. Pelkkä
+ * palo-sanaston toistuminen ei riitä: kysymys saa aivan hyvin verrata paloa ja
+ * haavaa tai erottaa toisistaan kaksi eri seuraamusta saman palon päälle.
+ */
+const PALAA_MUOTO = /\b(pala|palaa|palaavat|palanut|palasi)\b/i;
+const POLTTO_MUOTO = /\b(palo|palon|paloa|poltetaan|poltettu|poltettava|polttaa)\b/i;
+/** Kieltävä vaihtoehto ("paloa ei tule") ei väitä paloa, vaan kiistää sen. */
+const KIELTO = /\b(ei|eikä|eivät)\b/i;
+
+function vaittaa(vaihtoehto: string, muoto: RegExp): boolean {
+  return muoto.test(vaihtoehto) && !KIELTO.test(vaihtoehto);
+}
+
+function paloKaksiSanamuotoa(vaihtoehdot: readonly string[]): boolean {
+  return vaihtoehdot.some(
+    (a, i) =>
+      vaittaa(a, PALAA_MUOTO) &&
+      vaihtoehdot.some((b, j) => j !== i && vaittaa(b, POLTTO_MUOTO)),
+  );
+}
+
+/**
+ * Kovat virheet: duplikaatti-id:t, lähes identtiset kysymystekstit ja palon
+ * kaksi sanamuotoa saman kysymyksen eri vaihtoehtoina.
+ */
 export function findContentIssues(questions: readonly Question[]): ContentIssue[] {
   const issues: ContentIssue[] = [];
 
@@ -78,6 +108,15 @@ export function findContentIssues(questions: readonly Question[]): ContentIssue[
       issues.push({
         kind: 'near-duplicate-text',
         message: `Lähes identtinen kysymysteksti: ${ids.join(', ')}`,
+      });
+    }
+  }
+
+  for (const q of questions) {
+    if (paloKaksiSanamuotoa(q.vaihtoehdot)) {
+      issues.push({
+        kind: 'palo-kaksi-sanamuotoa',
+        message: `Palon kaksi sanamuotoa eri vaihtoehtoina (palaa = poltetaan): ${q.id}`,
       });
     }
   }
