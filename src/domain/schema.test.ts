@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { conceptReport } from './schema';
+import { conceptReport, findContentIssues } from './schema';
 import type { Aihealue, Nakokulma, Question } from './types';
 
 function q(id: string, aihealue: Aihealue, nakokulma: Nakokulma = 'tuomari'): Question {
@@ -73,5 +73,90 @@ describe('conceptReport — aihealuejakauma', () => {
     const kasautuma = messages(questions).filter((m) => m.includes('ei erottele sisältöä'));
     expect(kasautuma).toHaveLength(1);
     expect(kasautuma[0]).toContain('Näkökulma tuomari');
+  });
+});
+
+describe('findContentIssues — palon kaksi sanamuotoa', () => {
+  function withOptions(id: string, vaihtoehdot: string[]): Question {
+    return { ...q(id, 'eteneminen'), vaihtoehdot };
+  }
+
+  function paloIssues(question: Question): string[] {
+    return findContentIssues([question])
+      .filter((i) => i.kind === 'palo-kaksi-sanamuotoa')
+      .map((i) => i.message);
+  }
+
+  // Tämä oli issue #14:n pisteytysbugi: "palaa" ja "poltetaan" ovat sama ratkaisu.
+  it('kaataa, jos "palaa" ja "poltetaan" ovat eri vaihtoehtoina', () => {
+    const issues = paloIssues(
+      withOptions('pesakilpa', [
+        'Etenijä palaa',
+        'Etenijä saa jatkaa seuraavalle pesälle',
+        'Etenijä poltetaan',
+      ]),
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain('pesakilpa');
+  });
+
+  it('kaataa myös, kun toinen muoto on "syntyy palo"', () => {
+    expect(
+      paloIssues(withOptions('pesarikko', ['Hän palaa', 'Hänestä syntyy palo', 'Hän jää pesälle'])),
+    ).toHaveLength(1);
+  });
+
+  it('sallii palon merkityksen avaamisen yhdessä vaihtoehdossa', () => {
+    expect(
+      paloIssues(
+        withOptions('avattu', [
+          'Etenijä palaa eli syntyy palo',
+          'Etenijä saa jatkaa seuraavalle pesälle',
+          'Etenijä saa pesäturvan takaisin seuraavasta syötöstä',
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('sallii palon ja haavan vertailun', () => {
+    expect(
+      paloIssues(
+        withOptions('haava', [
+          'Ei synny — haavoittuminen ja palo ovat kaksi eri ratkaisua',
+          'Kyllä, haava on aina palo',
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('sallii kaksi eri seuraamusta saman palon päälle', () => {
+    expect(
+      paloIssues(
+        withOptions('kiertoviitta', [
+          'Hän palaa ja saa lisäksi 1 pisteen varoituksen',
+          'Hän palaa, muuta seuraamusta ei tule',
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('sallii palon kiistävän vaihtoehdon palaa-vaihtoehdon rinnalla', () => {
+    expect(
+      paloIssues(
+        withOptions('pelikyvyton', [
+          'Paloa ei tule, ja tilalle voidaan sijoittaa toinen pelaaja',
+          'Etenijä palaa aina, syystä riippumatta',
+          'Ottelu keskeytetään selvityksen ajaksi',
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('ei sekoita palauttamista palamiseen', () => {
+    expect(
+      paloIssues(
+        withOptions('palautus', ['Hänet palautetaan edelliselle pesälle', 'Hänestä syntyy palo']),
+      ),
+    ).toEqual([]);
   });
 });
