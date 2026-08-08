@@ -3,11 +3,18 @@
 ## Päätös
 
 PesisPähkinä julkaistaan staattisena sivuna **GitHub Pagesiin**. Hosting säilyy
-GitHub Pagesissa, mutta canonical-osoite on custom domain
-`https://pesispahkina.talonpoika.dev/` (myös `https://pesispähkinä.talonpoika.dev/`
-IDN-muotona). Sivusto julkaistaan domainin **juuressa**, ei enää repoalipolussa
-`midnight-builds.github.io/pesispahkina`. Repo:
-`git@github.com:midnight-builds/pesispahkina.git`.
+GitHub Pagesissa, mutta GitHub Pagesin custom domain ja canonical-osoite on
+`https://pesispahkina.talonpoika.dev/`. Sivusto julkaistaan domainin
+**juuressa**, ei enää repoalipolussa `midnight-builds.github.io/pesispahkina`.
+Repo: `git@github.com:midnight-builds/pesispahkina.git`.
+
+Lisäksi tarjotaan Unicode/IDN-alias `https://pesispähkinä.talonpoika.dev/`
+(DNS/IDNA-muoto `xn--pesisphkin-v5ae.talonpoika.dev`). GitHub Pagesiin **ei**
+yritetä asettaa kahta custom domainia: alias toteutetaan erillisessä
+infra-vaiheessa Cloudflaren proxatulla DNS-tietueella ja pysyvällä 308
+Redirect Rulella, joka säilyttää URL-polun ja query-parametrit ja ohjaa
+canonical ASCII -osoitteeseen. Sovelluksen Vite/PWA-base pysyy `/`:na, ja
+README:ssa pidetään vain canonical ASCII -osoite.
 
 Seuraukset:
 - **Ei URL-reititintä.** Näkymät (koti, kierros, tulos, asetukset) hoidetaan
