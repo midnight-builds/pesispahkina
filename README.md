@@ -4,7 +4,7 @@ Mobiili ensin -selainpeli, joka opettaa pesäpallon sääntöjä lapsille ja hei
 vanhemmilleen. Toimii ilman kirjautumista ja ilman backendiä; eteneminen
 tallennetaan selaimen localStorageen. Asennettavissa PWA:na.
 
-**▶ Pelaa: https://midnight-builds.github.io/pesispahkina/**
+**▶ Pelaa: https://pesispahkina.talonpoika.dev/**
 
 ## Kuvakaappaukset
 

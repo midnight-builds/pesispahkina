@@ -2,10 +2,10 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// Julkaistaan GitHub Pagesiin projektisivuna: https://midnight-builds.github.io/pesispahkina/
+// Julkaistaan GitHub Pagesiin custom domainin juuressa: https://pesispahkina.talonpoika.dev/
 // Ks. docs/adr/0003-github-pages-julkaisu.md
 export default defineConfig({
-  base: '/pesispahkina/',
+  base: '/',
   plugins: [
     react(),
     VitePWA({
@@ -20,8 +20,8 @@ export default defineConfig({
         background_color: '#0b1020',
         display: 'standalone',
         orientation: 'any',
-        scope: '/pesispahkina/',
-        start_url: '/pesispahkina/',
+        scope: '/',
+        start_url: '/',
         icons: [
           { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
           { src: 'icon-maskable.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'maskable' },
