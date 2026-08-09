@@ -81,6 +81,12 @@ export function SettingsScreen() {
           </div>
         )}
       </div>
+
+      <p className="section-label">Tietosuoja</p>
+      <p className="privacy-note">
+        Keräämme omalla analytiikallamme anonyymejä käyttötilastoja palvelun kehittämiseksi. Emme
+        käytä seurantaan evästeitä, tunnista yksittäisiä käyttäjiä tai myy analytiikkatietoja.
+      </p>
     </div>
   );
 }

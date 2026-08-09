@@ -49,6 +49,14 @@ src/
 - **`docs/agents/adding-content.md` — näin lisäät kysymyksiä, ikäluokkia ja pelimuotoja**
 - `docs/backlog.md` — v2-ideat (mm. sovelluksen sisäinen palaute kysymyksestä)
 
+## Tietosuoja
+
+Käyttötilastot kerätään itse isännöidyllä GoatCounterilla
+(`https://analytics.talonpoika.dev`): ei evästeitä, ei yksittäisen käyttäjän
+tunnistamista, ei datan myyntiä. Analytiikka on käytössä vain tuotanto- ja
+preview-buildissa (`.env.production`), ei kehityspalvelimessa. Ks.
+`docs/adr/0008-analytiikka-goatcounter.md`.
+
 ## Sisällön rajaus
 
 Kaksi näkökulmaa: **pelaaja** (miten toimin pelaajana) ja **tuomari** (mikä on
