@@ -913,3 +913,10 @@ button.card:active {
     font-size: 1.7rem;
   }
 }
+
+.privacy-note {
+  margin: 4px 2px 8px;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: #cfe3d6;
+}
