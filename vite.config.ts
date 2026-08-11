@@ -80,5 +80,7 @@ export default defineConfig(({ mode }) => ({
   test: {
     globals: true,
     environment: 'node',
+    // e2e/ on Playwrightin, ei vitestin — oletus-include poimisi *.spec.ts:n.
+    exclude: ['node_modules/**', 'e2e/**'],
   },
 }));

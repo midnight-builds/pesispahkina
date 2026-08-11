@@ -27,9 +27,13 @@ Sisältötesti `src/domain/content.test.ts` kaatuu, jos lisäys on virheellinen.
    - `aihealue` — yksi arvo (ks. `src/domain/config.ts`).
    - `kysymys`, `vaihtoehdot` (2–4), `oikeaIndeksi` (0-pohjainen), `selitys`.
    - `lahde` (valinnainen, mutta **suositeltu uusille kysymyksille**, ks. ADR
-     0005) — `{ dokumentti, kohta?, url? }`. `kohta` on luvun/aiheen nimi
-     ("Kenttä ja pelipaikat"), **ei sivu- tai pykälänumero** — numerointi
-     muuttuu vuosittain kun uusi sääntö-PDF julkaistaan.
+     0005) — `{ dokumentti, kohta?, url? }`. `kohta` on pykälänumero +
+     luvun/aiheen nimi ("49 § Rangaistukset") — tämä on koko kysymyspankin
+     vakiintunut muoto. Pykälänumerointi voi muuttua kun uusi sääntö-PDF
+     julkaistaan; numero viittaa siihen sääntöversioon, jota vasten väite on
+     viimeksi tarkistettu (`tarkistettu`-kenttä kertoo ajankohdan), ja
+     vuosipäivityksen yhteydessä numerot päivitetään samalla kun väitteet
+     tarkistetaan uudelleen. Sivunumeroa ei käytetä koskaan.
    - `tarkistettu` (valinnainen, muotoa `VVVV-KK-PP`) — milloin väite on
      viimeksi verrattu ajantasaisiin sääntöihin. Täytä aina kun täytät
      `lahde`-kentän.
