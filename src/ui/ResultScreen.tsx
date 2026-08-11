@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useGame } from '../state/GameContext';
+import { useGame } from '../state/game-context';
 import { AVAUTUMISEEN_TARVITAAN, VAIKEUSTASO_NIMI } from '../domain/config';
 import { pickComment, type CommentSituation } from '../domain/comments';
 import { nextTier } from '../domain/progression';

@@ -1,4 +1,4 @@
-import { useGame } from '../state/GameContext';
+import { useGame } from '../state/game-context';
 import {
   AVAUTUMISEEN_TARVITAAN,
   IKALUOKAT,

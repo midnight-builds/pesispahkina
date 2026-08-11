@@ -1,4 +1,4 @@
-import { useGame } from '../state/GameContext';
+import { useGame } from '../state/game-context';
 import { IKALUOKAT, NAKOKULMAT, VAIKEUSTASO_NIMI } from '../domain/config';
 import { highestUnlockedTier } from '../domain/progression';
 import { Stars } from './Stars';

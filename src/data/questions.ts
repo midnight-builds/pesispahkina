@@ -1057,7 +1057,7 @@ export const QUESTIONS: Question[] = [
     id: 'harj-fg-kentan-koko',
     concept: 'pienpesis-kentan-koko',
     nakokulma: 'pelaaja',
-    ikaluokat: ['F', 'G'],
+    ikaluokat: ['F'],
     vaikeustaso: 'harjoittelija',
     aihealue: 'kentta',
     kysymys: 'Kuinka pitkä pienpesiksen kenttä on tavallisesti?',
@@ -3295,6 +3295,29 @@ export const QUESTIONS: Question[] = [
     tarkistettu: '2026-07-26',
   },
   {
+    id: 'tuom-harj-varoitus-mista',
+    concept: 'rangaistus-varoitus-syyt',
+    nakokulma: 'tuomari',
+    ikaluokat: ['E', 'D'],
+    vaikeustaso: 'harjoittelija',
+    aihealue: 'tuomarointi',
+    kysymys: 'Mistä pelaajalle voidaan tuomita varoitus (keltainen kortti)?',
+    vaihtoehdot: [
+      'Pitkittyvästä protestoinnista',
+      'Kopin ottamisesta',
+      'Kunnarin lyömisestä',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Varoitus tuomitaan yleensä muun muassa pitkittyvästä protestoinnista, äänekkäästä asiattomasta kielenkäytöstä ja pelin viivyttämisestä. Kopin ottaminen ja kunnarin lyöminen ovat tavallisia pelitekoja, eivät rikkomuksia.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '49 § Rangaistukset',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-08-11',
+  },
+  {
     id: 'tuom-harj-tekninen-palo-kypara',
     concept: 'tekninen-palo-kypara',
     nakokulma: 'tuomari',
@@ -4468,6 +4491,96 @@ export const QUESTIONS: Question[] = [
       url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
     },
     tarkistettu: '2026-07-26',
+  },
+  {
+    id: 'tuom-d-osa-ottelurangaistus-pelikielto',
+    concept: 'ottelurangaistus-pelikielto',
+    nakokulma: 'tuomari',
+    ikaluokat: ['D'],
+    vaikeustaso: 'osaaja',
+    aihealue: 'tuomarointi',
+    kysymys: 'Mitä ottelurangaistuksesta seuraa ottelusta sulkemisen lisäksi?',
+    vaihtoehdot: [
+      'Yhden ottelun pelikielto',
+      'Kolmen ottelun pelikielto',
+      'Ei mitään muuta',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Ottelurangaistus johtaa ottelusta sulkemiseen loppuajaksi ja yhden ottelun pelikieltoon. Lisäksi sarjaa johtava elin voi määrätä lisärangaistuksen.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '49 § Rangaistukset',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-08-11',
+  },
+  {
+    id: 'tuom-d-osa-pelirangaistus-vs-ottelurangaistus',
+    concept: 'pelirangaistus-vs-ottelurangaistus',
+    nakokulma: 'tuomari',
+    ikaluokat: ['D'],
+    vaikeustaso: 'osaaja',
+    aihealue: 'tuomarointi',
+    kysymys:
+      'Sekä pelirangaistus että ottelurangaistus sulkevat pelaajan ottelusta loppuajaksi. Miten ottelurangaistus eroaa pelirangaistuksesta?',
+    vaihtoehdot: [
+      'Siitä seuraa lisäksi yhden ottelun pelikielto ja kaksi rangaistuspistettä',
+      'Poissuljetun tilalle ei saa ottaa vaihtopelaajaa',
+      'Siitä ei tarvitse tehdä raporttia sarjaa johtavalle elimelle',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Pelirangaistuksesta tulee yksi rangaistuspiste, ottelurangaistuksesta kaksi ja lisäksi yhden ottelun pelikielto. Molemmissa poissuljetun tilalle saa ottaa vaihtopelaajan, ja molemmista pelituomari tekee aina raportin sarjaa johtavalle elimelle.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '49 § Rangaistukset',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-08-11',
+  },
+  {
+    id: 'tuom-d-mest-toinen-pisterangaistus',
+    concept: 'ottelurangaistus-toinen-pisterangaistus',
+    nakokulma: 'tuomari',
+    ikaluokat: ['D'],
+    vaikeustaso: 'mestari',
+    aihealue: 'tuomarointi',
+    kysymys:
+      'Pelaaja on saanut ottelussa varoituksen ja syyllistyy samassa ottelussa toiseen varoituksen arvoiseen rikkomukseen. Mitä hänelle tuomitaan?',
+    vaihtoehdot: ['Ottelurangaistus', 'Toinen varoitus', 'Huomautus'],
+    oikeaIndeksi: 0,
+    selitys:
+      'Ottelurangaistus tuomitaan toisesta yhden rangaistuspisteen arvoisesta rikkomuksesta samalle joukkueen jäsenelle. Se osoitetaan keltaisella ja punaisella kortilla, ja tekijä saa rangaistustililleen kaksi (1+1) rangaistuspistettä.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '49 § Rangaistukset',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-08-11',
+  },
+  {
+    id: 'tuom-d-mest-pelikielto-pisteista',
+    concept: 'rangaistuspisteet-pelikielto',
+    nakokulma: 'tuomari',
+    ikaluokat: ['D'],
+    vaikeustaso: 'mestari',
+    aihealue: 'tuomarointi',
+    kysymys: 'Pelaajalle on kertynyt kaksi rangaistuspistettä. Mitä siitä seuraa?',
+    vaihtoehdot: [
+      'Yhden ottelun peli- ja toimitsijakielto automaattisesti',
+      'Ei mitään, pisteet nollautuvat ottelun jälkeen',
+      'Pelikielto vain, jos sarjaa johtava elin erikseen päättää siitä',
+    ],
+    oikeaIndeksi: 0,
+    selitys:
+      'Kaksi rangaistuspistettä — samassa ottelussa tai eri otteluissa kertyneenä — johtaa yhden ottelun peli- ja toimitsijakieltoon, joka astuu voimaan automaattisesti. Kahden ylittävät rangaistuspisteet jäävät voimaan.',
+    lahde: {
+      dokumentti: 'Pesäpallon pelisäännöt 2026',
+      kohta: '49 § Rangaistukset, Rangaistuspisteet ja peli- ja toimitsijakiellot',
+      url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
+    },
+    tarkistettu: '2026-08-11',
   },
 
   // ---------- TUOMARI · KÄSIMERKIT (perusnäytöt) ----------

@@ -2,14 +2,14 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import { ResultScreen } from './ResultScreen';
-import type { GameContextValue } from '../state/GameContext';
+import type { GameContextValue } from '../state/game-context';
 import type { RoundResult, SaveData, Vaikeustaso } from '../domain/types';
 import { createEmptySave } from '../domain/progression';
 
 // useGame mockataan, jotta ResultScreen voidaan renderöidä hallitulla tuloksella
 // ilman koko kierroksen pelaamista.
 const useGameMock = vi.fn();
-vi.mock('../state/GameContext', () => ({
+vi.mock('../state/game-context', () => ({
   useGame: () => useGameMock(),
 }));
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useGame } from '../state/GameContext';
+import { useGame } from '../state/game-context';
 import { ACHIEVEMENTS } from '../domain/achievements';
 
 export function SettingsScreen() {
