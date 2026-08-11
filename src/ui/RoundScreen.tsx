@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useGame } from '../state/GameContext';
+import { useGame } from '../state/game-context';
 import { VAIKEUSTASO_NIMI } from '../domain/config';
 import { pickComment, type CommentSituation } from '../domain/comments';
 import { QuestionSourceButton } from './QuestionSourceButton';

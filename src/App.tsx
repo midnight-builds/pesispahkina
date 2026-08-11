@@ -1,4 +1,4 @@
-import { useGame } from './state/GameContext';
+import { useGame } from './state/game-context';
 import { HomeScreen } from './ui/HomeScreen';
 import { TiersScreen } from './ui/TiersScreen';
 import { RoundScreen } from './ui/RoundScreen';

@@ -20,16 +20,23 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // Virhe (ei varoitus): varoitukset jäävät roikkumaan, ja rikkoutunut
+      // Fast Refresh huomataan vasta kun HMR lakkaa toimimasta.
+      'react-refresh/only-export-components': ['error', { allowConstantExport: true }],
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      // Tyyppi-importit `import type` -muodossa (koodikannan vallitseva tapa) —
+      // pitää tyypit erillään ajonaikaisista riippuvuuksista bundlatessa.
+      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
+      // == sallittu vain null-vertailuun (x == null kattaa myös undefinedin).
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
     },
   },
-  // Node-puolen konfiguraatiotiedostot
+  // Node-puolen konfiguraatiotiedostot ja e2e-testit
   {
-    files: ['*.{js,ts}', 'vite.config.ts'],
+    files: ['*.{js,ts}', 'vite.config.ts', 'e2e/**/*.ts'],
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     languageOptions: {
       globals: globals.node,

@@ -1,10 +1,18 @@
 // Pelin keskitetty tila: save-data, näkymä ja käynnissä oleva kierros.
 // Yksi pelimuoto (tietovisakierros) — kierroslogiikka on tämän sauman takana.
 
-import { createContext, useContext, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useMemo, useRef, useState, type ReactNode } from 'react';
 import confetti from 'canvas-confetti';
+import {
+  GameContext,
+  type GameContextValue,
+  type PresentedQuestion,
+  type RoundOutcome,
+  type RoundState,
+  type View,
+} from './game-context';
 import { QUESTIONS } from '../data/questions';
-import { ACHIEVEMENT_BY_ID, evaluateAchievements, type AchievementDef } from '../domain/achievements';
+import { ACHIEVEMENT_BY_ID, evaluateAchievements } from '../domain/achievements';
 import { buildRound, finalizeRound, questionsForLokero } from '../domain/round';
 import { scoreAnswer } from '../domain/scoring';
 import { applyRoundResult, createAgeGroupState } from '../domain/progression';
@@ -17,59 +25,9 @@ import type {
   Lokero,
   Nakokulma,
   Question,
-  RoundResult,
   SaveData,
   Settings,
-  Vaikeustaso,
 } from '../domain/types';
-
-type View = 'home' | 'tiers' | 'round' | 'result' | 'settings';
-
-interface PresentedQuestion {
-  question: Question;
-  /** Näyttöpaikka → alkuperäinen vaihtoehtoindeksi (vaihtoehdot sekoitetaan). */
-  optionOrder: number[];
-}
-
-interface RoundState {
-  lokero: Lokero;
-  questions: PresentedQuestion[];
-  index: number;
-  answers: AnsweredQuestion[];
-  streak: number;
-  phase: 'question' | 'revealed';
-  chosenDisplayIndex: number | null;
-}
-
-interface RoundOutcome {
-  result: RoundResult;
-  newlyUnlocked: Vaikeustaso | null;
-  newAchievements: AchievementDef[];
-  celebrate: boolean;
-}
-
-export interface GameContextValue {
-  save: SaveData;
-  view: View;
-  /** Ylin valinta: kummalta kannalta pelataan (ks. ADR 0006). */
-  nakokulma: Nakokulma;
-  selectedIkaluokka: Ikaluokka | null;
-  round: RoundState | null;
-  outcome: RoundOutcome | null;
-  ageGroupState: (ik: Ikaluokka) => AgeGroupState;
-  poolSize: (lokero: Lokero) => number;
-  chooseNakokulma: (nk: Nakokulma) => void;
-  goHome: () => void;
-  openTiers: (ik: Ikaluokka) => void;
-  openSettings: () => void;
-  startRound: (lokero: Lokero) => void;
-  chooseAnswer: (displayIndex: number) => void;
-  advance: () => void;
-  updateSettings: (partial: Partial<Settings>) => void;
-  doResetProgress: () => void;
-}
-
-const GameContext = createContext<GameContextValue | null>(null);
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -260,8 +218,3 @@ export function GameProvider({ children }: { children: ReactNode }) {
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }
 
-export function useGame(): GameContextValue {
-  const ctx = useContext(GameContext);
-  if (!ctx) throw new Error('useGame must be used within GameProvider');
-  return ctx;
-}
