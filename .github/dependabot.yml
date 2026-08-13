@@ -9,9 +9,17 @@ updates:
       minor-ja-patch:
         update-types: [minor, patch]
     open-pull-requests-limit: 5
+    # Versiopäivityksille 7 pv jäähy; turvallisuuspäivitykset ohittavat sen aina.
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
       day: monday
+    groups:
+      minor-ja-patch:
+        update-types: [minor, patch]
+    cooldown:
+      default-days: 7

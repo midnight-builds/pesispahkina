@@ -10,6 +10,30 @@ This project is **PesisPähkinä**.
 ## Context
 This repository is newly scaffolded. Keep the setup lightweight until the first real feature lands.
 
+## Portti
+
+Aja järjestyksessä; kaikkien on oltava vihreitä ennen mergeä:
+
+1. `npm run lint`
+2. `npm run typecheck`
+3. `npm test`
+4. `npm run build`
+5. `npm run test:e2e` (ajaa buildattua `dist`:iä vasten; selainasennus kerran: `npx playwright install --with-deps chromium`)
+
+tuotantokriittinen: ei
+
+Deploy: push mainiin → `.github/workflows/deploy.yml` julkaisee GitHub Pagesiin
+(https://pesispahkina.talonpoika.dev/); katko korjaantuu seuraavalla pushilla.
+
+Ennen kuin ehdotat PR:n tekemistä, tarjoa käyttäjälle adversariaalista
+katselmusta: ali-agentti, joka yrittää kaataa muutoksen ja antaa jokaisesta
+löydöksestä konkreettisen skenaarion + tiedosto:rivi-ankkurin.
+
+## Etäkäyttö
+
+When starting Claude remotely for this repository on codexsrv, prefer the
+standard remote-control server mode and the canonical tmux/service naming model.
+
 ## Agent skills
 
 ### Issue tracker
