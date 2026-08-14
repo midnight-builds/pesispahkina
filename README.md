@@ -51,11 +51,14 @@ src/
 
 ## Tietosuoja
 
-Käyttötilastot kerätään itse isännöidyllä GoatCounterilla
+Käyttötilastot kerätään itse isännöidyllä Umami v3:lla
 (`https://analytics.talonpoika.dev`): ei evästeitä, ei yksittäisen käyttäjän
-tunnistamista, ei datan myyntiä. Analytiikka on käytössä vain tuotanto- ja
-preview-buildissa (`.env.production`), ei kehityspalvelimessa. Ks.
-`docs/adr/0008-analytiikka-goatcounter.md`.
+tunnistamista, ei datan myyntiä. Tuotantodomainissa
+`pesispahkina.talonpoika.dev` ladataan tavallinen tracker (`script.js`,
+collector `/api/send`) sekä Umamin virallisen mallin mukainen `recorder.js`
+heatmap-keruuta varten. Session Replay pidetään pois päältä Umamin asetuksissa,
+eikä Distinct ID:tä, `identify`-kutsuja tai henkilötietoja käytetä. Ks.
+`docs/adr/0009-analytiikka-umami.md`.
 
 ## Sisällön rajaus
 

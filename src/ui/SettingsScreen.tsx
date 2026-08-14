@@ -84,8 +84,9 @@ export function SettingsScreen() {
 
       <p className="section-label">Tietosuoja</p>
       <p className="privacy-note">
-        Keräämme omalla analytiikallamme anonyymejä käyttötilastoja palvelun kehittämiseksi. Emme
-        käytä seurantaan evästeitä, tunnista yksittäisiä käyttäjiä tai myy analytiikkatietoja.
+        Keräämme omalla Umami-analytiikallamme anonyymejä käyttö- ja heatmap-tilastoja palvelun
+        kehittämiseksi. Emme käytä evästeitä, tunnista yksittäisiä käyttäjiä, käytä Session
+        Replayta emmekä myy analytiikkatietoja.
       </p>
     </div>
   );

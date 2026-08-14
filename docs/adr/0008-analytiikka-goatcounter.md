@@ -1,4 +1,6 @@
-# Anonyymi analytiikka itse isännöidyllä GoatCounterilla
+# SUPERSEDED: Anonyymi analytiikka itse isännöidyllä GoatCounterilla
+
+Tämä ADR on korvattu dokumentilla `0009-analytiikka-umami.md`.
 
 ## Päätös
 
