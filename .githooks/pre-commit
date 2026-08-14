@@ -1,0 +1,4 @@
+#!/bin/sh
+# Nopea portti ennen committia; raskaat vaiheet (testit, build, e2e) ajaa CI.
+# Asentuu npm ci:n prepare-vaiheessa (git config core.hooksPath .githooks).
+npm run lint && npm run typecheck

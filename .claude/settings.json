@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git fetch --quiet origin 2>/dev/null; BEHIND=$(git rev-list --count HEAD..@{upstream} 2>/dev/null || echo 0); if [ \"$BEHIND\" -gt 0 ]; then echo \"WARNING: this working tree is $BEHIND commit(s) behind $(git rev-parse --abbrev-ref @{upstream}). The files you are about to read are NOT what is deployed. Run 'git pull --ff-only' before drawing any conclusion about the live site.\"; fi",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
