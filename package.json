@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "content:check": "vitest run src/domain/content.test.ts"
+    "content:check": "vitest run src/domain/content.test.ts",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "dependencies": {
     "@fontsource/press-start-2p": "^5.2.7",
