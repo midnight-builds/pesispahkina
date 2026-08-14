@@ -7,6 +7,9 @@ import '@fontsource/press-start-2p/latin-ext.css';
 import '@fontsource/vt323/latin.css';
 import '@fontsource/vt323/latin-ext.css';
 import './styles.css';
+import { installUmami } from './analytics/umami';
+
+installUmami();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
