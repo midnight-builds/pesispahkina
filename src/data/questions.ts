@@ -303,13 +303,14 @@ export const QUESTIONS: Question[] = [
     kysymys: 'Miten lukkari syöttää pallon lyöjälle?',
     vaihtoehdot: ['Suoraan ylöspäin', 'Kovaa vaakasuoraan', 'Vierittäen maata pitkin'],
     oikeaIndeksi: 0,
-    selitys: 'Lukkari heittää pallon suoraan ylöspäin kotipesän yläpuolelle. Tämä erottaa pesäpallon baseballista.',
+    selitys:
+      'Lukkari seisoo kotipesässä lyöjän vieressä ja syöttää pallon pystysuoraan ylöspäin: pallon on noustava vähintään metri lukkarin päälaen yläpuolelle ja pudottava syöttölautaselle.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
       kohta: 'IV JAKSO, 23 § Yleistä / 25 § Syötön tekninen suoritus',
       url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
     },
-    tarkistettu: '2026-07-06',
+    tarkistettu: '2026-11-12',
   },
 
   // ---------- ALOITTELIJA · eteneminen ja palot (G–D) ----------
@@ -362,19 +363,19 @@ export const QUESTIONS: Question[] = [
     aihealue: 'eteneminen',
     kysymys: 'Mitä tapahtuu, jos ulkopelaaja ottaa lyödyn pallon kopiksi ennen kuin se osuu maahan?',
     vaihtoehdot: [
-      'Lyöjä haavoittuu ja siirtyy kotipuolelle',
+      'Kopinottohetkellä liikkeellä olleet pelaajat haavoittuvat ja siirtyvät kotipuolelle',
       'Sisäpeli saa juoksun',
       'Peli keskeytetään',
     ],
     oikeaIndeksi: 0,
     selitys:
-      'Ilmasta kiinni otettu lyönti eli koppi haavoittaa lyöjän, ja haavoittuneen on siirryttävä välittömästi kotipuolelle. Haavoittuminen ei ole palo — ne ovat kaksi eri tapaa, joilla ulkopeli saa sisäpelaajan pois pelistä.',
+      'Ilmasta kiinni otettu lyönti eli koppi haavoittaa ne pelaajat, jotka olivat kopinottohetkellä liikkeellä pesältä toiselle — myös lyöjän, jos hän oli jo lähtenyt juoksemaan. Pesässä pysyneet eivät haavoitu. Haavoittuneiden on siirryttävä välittömästi kotipuolelle. Haavoittuminen ei ole palo — ne ovat kaksi eri tapaa, joilla ulkopeli saa sisäpelaajan pois pelistä.',
     lahde: {
       dokumentti: 'Pesäpallon pelisäännöt 2026',
-      kohta: 'V JAKSO, 30 § Koppilyönti / III JAKSO, 18 §',
+      kohta: 'V JAKSO, 30 § Koppilyönti / VI JAKSO, 36 § Koppilyönnillä eteneminen',
       url: 'https://www.pesis.fi/kilpailu/saannot-maaraykset',
     },
-    tarkistettu: '2026-07-06',
+    tarkistettu: '2026-11-12',
   },
   {
     id: 'eteneminen-turvassa',
