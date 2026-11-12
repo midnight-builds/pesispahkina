@@ -49,3 +49,24 @@ export function installUmami(env = import.meta.env, hostname = window.location.h
   });
   appendScript(RECORDER_SCRIPT_ID, recorderSrc, sharedAttrs);
 }
+
+type EventData = Record<string, string | number | boolean>;
+
+declare global {
+  interface Window {
+    umami?: { track: (eventName: string, data?: EventData) => void };
+  }
+}
+
+/**
+ * Lähettää Umamiin nimetyn eventin. No-op, jos tracker ei ole latautunut
+ * (kehitys, väärä host, mainosesto) — analytiikka ei saa koskaan kaataa peliä.
+ * Dataan vain pelin valintoja ja tuloksia, ei henkilötietoja (ks. ADR 0009).
+ */
+export function trackEvent(eventName: string, data?: EventData) {
+  try {
+    window.umami?.track(eventName, data);
+  } catch {
+    // Ohitetaan tarkoituksella.
+  }
+}

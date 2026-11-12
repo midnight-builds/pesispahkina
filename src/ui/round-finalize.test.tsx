@@ -59,4 +59,26 @@ describe('Kierroksen viimeistely tapahtuu täsmälleen kerran', () => {
 
     setItem.mockRestore();
   });
+
+  it('lähettää kierroksesta tasan yhden aloitus- ja yhden valmis-eventin', async () => {
+    const track = vi.fn();
+    window.umami = { track };
+    render(
+      <StrictMode>
+        <GameProvider>
+          <App />
+        </GameProvider>
+      </StrictMode>,
+    );
+
+    await playRoundToResult();
+
+    expect(track.mock.calls.map((c) => c[0])).toEqual(['kierros-aloitettu', 'kierros-valmis']);
+    expect(track).toHaveBeenLastCalledWith(
+      'kierros-valmis',
+      expect.objectContaining({ nakokulma: 'pelaaja', ikaluokka: 'G', kysymyksia: 10 }),
+    );
+
+    delete window.umami;
+  });
 });

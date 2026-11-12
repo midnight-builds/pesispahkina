@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
-import { beforeEach, describe, expect, it } from 'vitest';
-import { installUmami, shouldEnableUmami } from './umami';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { installUmami, shouldEnableUmami, trackEvent } from './umami';
 
 describe('Umami analytics loader', () => {
   beforeEach(() => {
@@ -51,5 +51,35 @@ describe('Umami analytics loader', () => {
 
     expect(document.querySelectorAll('#umami-tracker')).toHaveLength(1);
     expect(document.querySelectorAll('#umami-recorder')).toHaveLength(1);
+  });
+});
+
+describe('trackEvent', () => {
+  afterEach(() => {
+    delete window.umami;
+  });
+
+  it('forwards the event to the Umami tracker', () => {
+    const track = vi.fn();
+    window.umami = { track };
+
+    trackEvent('kierros-aloitettu', { nakokulma: 'pelaaja', ikaluokka: 'G', vaikeustaso: 'aloittelija' });
+
+    expect(track).toHaveBeenCalledWith('kierros-aloitettu', {
+      nakokulma: 'pelaaja',
+      ikaluokka: 'G',
+      vaikeustaso: 'aloittelija',
+    });
+  });
+
+  it('is a no-op when the tracker is missing or throws', () => {
+    expect(() => trackEvent('kierros-valmis')).not.toThrow();
+
+    window.umami = {
+      track: () => {
+        throw new Error('blocked');
+      },
+    };
+    expect(() => trackEvent('kierros-valmis')).not.toThrow();
   });
 });
