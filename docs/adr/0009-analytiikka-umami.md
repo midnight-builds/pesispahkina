@@ -25,6 +25,15 @@ PesisPähkinä kerää käyttötilastot itse isännöidyllä Umami v3:lla osoitt
   `connect-src` sallivat analytiikkaoriginin
   `https://analytics.talonpoika.dev`; `img-src` ei tarvitse analytiikkaoriginia,
   koska Umami v3 käyttää tässä asennuksessa `fetch`-pohjaista lähetystä.
+- Sovellus on yhden URL:n SPA, joten pelkät pageviewt eivät kerro pelaamisesta.
+  Kierroksista lähetetään `umami.track()`-eventit `src/analytics/umami.ts`:n
+  `trackEvent`-kääreellä (no-op ilman trackeria):
+  - `kierros-aloitettu`: `nakokulma`, `ikaluokka`, `vaikeustaso`
+  - `kierros-valmis`: samat + `oikein`, `kysymyksia`, `tahdet`, `lapaisty`
+
+  Keskeytetyt kierrokset näkyvät erotuksena aloitettu − valmis. Erotus on
+  suuntaa-antava: eventtejä ei jonoteta, joten ennen async-trackerin latautumista
+  tai offline-tilassa lähteneet eventit katoavat.
 - Käyttäjälle kerrotaan Asetukset-näkymässä, että käytössä on anonyymi
   käyttö- ja heatmap-analytiikka ilman evästeitä ja ilman Session Replayta.
 

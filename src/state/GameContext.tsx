@@ -17,6 +17,7 @@ import { buildRound, finalizeRound, questionsForLokero } from '../domain/round';
 import { scoreAnswer } from '../domain/scoring';
 import { applyRoundResult, createAgeGroupState } from '../domain/progression';
 import { playCelebrate, playCorrect, playReveal } from '../audio/sounds';
+import { trackEvent } from '../analytics/umami';
 import { loadSave, persistSave, resetProgress } from '../storage/storage';
 import type {
   AgeGroupState,
@@ -108,6 +109,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
         chosenDisplayIndex: null,
       });
       setView('round');
+      trackEvent('kierros-aloitettu', { ...lokero });
     }
 
     function chooseAnswer(displayIndex: number) {
@@ -149,6 +151,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
         achievements: [...applied.achievements, ...earnedIds],
       };
       commitSave(withAchievements);
+      trackEvent('kierros-valmis', {
+        ...state.lokero,
+        oikein: result.correctCount,
+        kysymyksia: result.answers.length,
+        tahdet: result.stars,
+        lapaisty: result.success,
+      });
 
       const celebrate = result.stars === 3 || newlyUnlocked !== null;
       setOutcome({
