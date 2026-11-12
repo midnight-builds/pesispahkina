@@ -90,8 +90,13 @@ export function RoundScreen() {
         <div className={'reveal' + (lastAnswer.correct ? ' reveal--ok' : ' reveal--no')}>
           <p className="reveal__headline">{comment}</p>
           <p className="reveal__explanation">{q.selitys}</p>
+        </div>
+      )}
+
+      {revealed && lastAnswer && (
+        <div className="round-actions">
           <QuestionSourceButton lahde={q.lahde} tarkistettu={q.tarkistettu} />
-          <button type="button" className="btn btn--primary btn--wide" onClick={advance}>
+          <button type="button" className="btn btn--primary" onClick={advance}>
             {isLast ? 'Näytä tulokset' : 'Jatka'}
           </button>
         </div>
