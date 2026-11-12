@@ -14,8 +14,14 @@ export function QuestionSourceButton({ lahde, tarkistettu }: QuestionSourceButto
 
   return (
     <>
-      <button type="button" className="btn btn--ghost btn--small" onClick={() => setOpen(true)}>
-        🔍 Lähde
+      <button
+        type="button"
+        className="btn btn--ghost btn--icon"
+        onClick={() => setOpen(true)}
+        aria-label="Lähde"
+        title="Lähde"
+      >
+        🔍
       </button>
       {open && (
         <div className="modal-backdrop" role="presentation" onClick={() => setOpen(false)}>
